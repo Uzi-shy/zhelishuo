@@ -51,7 +51,7 @@ export default function xxx({route,navigation}){
 
 
   return (
-      <View style={{marginBottom:50,}}>
+      <View style={{}}>
        <ImageBackground style={{width: '100%', height: '100%',alignItems:'center',}} >
         <View style={{flexDirection:'row',justifyContent:'flex-start',width:"100%"}}>
         

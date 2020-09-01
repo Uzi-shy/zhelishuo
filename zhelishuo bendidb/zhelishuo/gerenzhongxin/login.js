@@ -92,7 +92,7 @@ export default class Search extends Component {
                   if (json.code == "200") {
                     
                     alert("登录成功");
-                    navigation.push('个人中心');
+                    navigation.navigate('个人中心');
                   }else if (json.code == "400") {
                       alert("用户名或密码错误");
                   }

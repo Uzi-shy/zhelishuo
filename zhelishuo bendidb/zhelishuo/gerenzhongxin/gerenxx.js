@@ -23,15 +23,27 @@ import DatePicker from "react-native-datepicker";
 // import {ReactNavComponent, Widget} from 'rn-yunxi'
 const {height,width}=Dimensions.get('window')
 
+
+
+
 export default class  gerenxx extends Component{
-    static navigationOptions = ({ navigation }) => ({
-        title: `${navigation.state.params.name}`,
-      });
+
+    
+
+
     constructor(props){
               super(props);
+            //   const {navigation} = this.props;
+            //   let username = this.props.navigation.getParam("username"); 
              this.state = {
+                 username:'',
+                 searchname:'',
+                 searchgexinqianming: '',
+                 searchsex: '',
+                 searchbirthday: '',
+                 
                    text: '',
-                   data:'',
+                   data:2020-1-1,
                    time:'20:00',
                    datatime:'2016-05-05 20:00',
                    datatime1:'2019-05-05 20:00'
@@ -63,20 +75,58 @@ export default class  gerenxx extends Component{
               onPanResponderTerminate: (e) => console.log('onPanResponderTerminate')
             });
           }
+
+
+          _insertdate=()=>{
+        //    var navigation=this.props.navigation;
+            // let {username} = this.props.navigation.params.username;
+            // let {phonenumber} = this.props.phonenumber;
+            // let {password} = route.params;
+            // const { username } = route.params;
+            // let username = this.props.getusername;
+          fetch('http://10.0.2.2:3000/insertgerenxx', {
+                        method: 'POST',
+                        headers: {
+                          'Accept': 'application/json',
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            username:this.state.username,
+                            name:this.state.searchname,
+                            gexinqianming: this.state.searchgexinqianming,
+                            sex: this.state.searchsex,
+                            data: this.state.data,
+                        })
+                      })
+                      // promise=false;
+                     this.props.navigation.navigate('浙里说账号登录');
+        };
+
+
+
+
+
     render(){
+        const {navigation,route}=this.props;
+
+        // this.setState({username:route.params});
+        // this.state.username=username;
+        // let username = this.props.navigation.state.params.username;
+
         return(
 
-            <View  >
+            <View  
+            >
                 
            <View style={[styles.top]}>
                     
                     <View style={[styles.nav_container]}>
                         <View style={{ flexDirection: "row" }}>
                             <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
-                                this.props.navigation.goBack()
+                                this.props.navigation.goBack();
                             }} />
                         </View>
-                        <Text style={{fontFamily:"yegenyou", color: "#000", fontSize: 30 }}>个人信息</Text>
+                        <Text style={{fontFamily:"yegenyou", color: "#000", fontSize: 30 }}>{route.params.username}个人信息</Text>
                         <View>
                         </View>
                     </View>
@@ -98,16 +148,26 @@ export default class  gerenxx extends Component{
                            placeholder="输入昵称"
                            multiline={false}
                            underlineColorAndroid="#7B7B7B"
+                           onChangeText={(text) => {
+                            this.setState({ searchname: text});
+
+                        }}
                         ></TextInput>
                     </View>
                     <View style={{flexDirection:'row',alignItems:'center',marginBottom:20}}>
-                    <Text style={{fontSize:18}}>密码</Text>
-                     <Text style={{color:'red'}}>*</Text>
+                    <Text style={{fontSize:18}}>个性签名</Text>
+                     <Text style={{color:'red'}}></Text>
                      <TextInput style={{position:'absolute',marginLeft:90,width:280}}
                            placeholder="6-20位，区分大小写"
                            multiline={false}
-                           secureTextEntry={true}
                            underlineColorAndroid="#7B7B7B"
+                           onChangeText={(text) => {
+                               if(text!=''){
+                                   this.setState({ searchgexinqianming: text });
+                               }else{
+                                this.setState({ searchgexinqianming: "暂无" });
+                               }
+                        }}
                         ></TextInput>
                     </View>
 
@@ -115,13 +175,16 @@ export default class  gerenxx extends Component{
                         <Text style={{fontSize:18}}>性别</Text>
                         <Text style={{color:'red'}}>*</Text>
                  <RadioGroup style={{flexDirection:'row',marginLeft:40}}
-                     onSelect = {(index, value) => this.onSelect(index, value)}
-                     underlineColorAndroid="#7B7B7B"
-                >
-                     <RadioButton value={'item1'} >
+                     onSelect = {(index, value) =>{
+                         this.onSelect(index, value) ;
+                         this.setState({searchsex:value})}
+                    }
+                     selrctedValue ={this.state.searchsex}
+                      underlineColorAndroid="#7B7B7B">
+                    <RadioButton value={'男'} >
                          <Text>男</Text>
                      </RadioButton>
-                    <RadioButton value={'item2'}>
+                    <RadioButton value={'女'}>
                         <Text>女</Text>
                      </RadioButton>
                 </RadioGroup>
@@ -145,7 +208,12 @@ export default class  gerenxx extends Component{
           maxDate="2020-01-01"
           confirmBtnText="确定"
           cancelBtnText="取消"
-          onDateChange={(date) => {this.setState({date: date});}}
+          onDateChange={(date) => {
+              console.log(date);
+              this.setState({date: date});
+              this.setState({username:route.params.username})
+              console.log(this.state.data)
+          }}
         />
                     </View>
 
@@ -173,7 +241,19 @@ export default class  gerenxx extends Component{
                     </View>
 
                     <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',marginBottom:20,width:"100%",marginTop:20}}>
-                    <TouchableOpacity style={{backgroundColor:'#6C6C6C',width:250,height:40,justifyContent:'center',alignItems:'center',borderRadius:40,borderColor:'#8E8E8E',elevation:4}}>
+                    <TouchableOpacity 
+                    style={{
+                        backgroundColor:'#6C6C6C',
+                        width:250,
+                        height:40,
+                        justifyContent:'center',
+                        alignItems:'center',
+                        borderRadius:40,
+                        borderColor:'#8E8E8E',
+                        elevation:4}}
+                        onPress={() => {
+                            this._insertdate();
+                        }}>
                         <Text style={{fontSize:20}}>保存</Text>
                     </TouchableOpacity>
 

@@ -108,15 +108,15 @@ app.post('/insertgerenxx', async (req, res) => {
     var dbo = db.db("user");
     // var myobj =req.body.response;
     console.log("req.body+"+req.body)
-    var myobj =req.body;
-    dbo.collection("KouXiangTang").insertOne(myobj, function (err, res) {
-      if (err) throw err;
-      console.log("文档插入成功");
-      console.log(111)
-      db.close();
-    });
-  })
-});
+      var myobj =req.body;
+      dbo.collection("KouXiangTangxx").insertOne(myobj, function (err, res) {
+        if (err) throw err;
+        console.log("文档插入成功");
+        console.log(123);
+        db.close();
+      });
+    })
+  });
 
   // app.get('./test', async (req, res) => {
 
@@ -263,19 +263,21 @@ app.post('/guanzhuxijie', async (req, res) => {
 
 
 
-// //关注页面数据
-// app.get('/index/guanzhu', async (req, res) => {
-//   MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
-//     if (err) throw err;
-//     var dbo = db.db("user");
-//     dbo.collection("guanzhu").find({}).toArray(function (err, result) {
-//       if (err) throw err;
-//       res.send({ result });
-//       console.log(result)
-//       db.close();
+//个人中心页面数据
+app.get('/personal', async (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("user");
+    dbo.collection("KouXiangTangxx").find({
+      "username":req.body.username,
+    }).toArray(function (err, result) {
+      if (err) throw err;
+      res.send({ result });
+      console.log(result)
+      db.close();
     
-//     })
-//   })
-// })
+    })
+  })
+})
 
 

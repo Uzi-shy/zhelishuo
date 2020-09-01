@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, Text,TouchableWithoutFeedback, Button,View ,TextInput,TouchableOpacity, Alert, Dimensions,AppRegistry,Keyboard} from "react-native";
+import { StyleSheet, Text,TouchableWithoutFeedback, Button,View ,TextInput,TouchableOpacity, Alert, Dimensions,AppRegistry,Keyboard,ScrollView} from "react-native";
 import { Switch } from "react-native-gesture-handler";
-import DialogSelected from '../gerenzhongxin/AlertSelected';
+import DialogSelected from '../src/alertSelected';
 import AntDesign from"react-native-vector-icons/Ionicons";
 
 
@@ -13,6 +13,36 @@ const selectedArr = ["拍照", "图库"];
 
 
 export default class extends Component{
+  static defaultProps = {
+    multiList: [
+        {
+            id: 0,
+            key:0,
+            "name": "诗歌",
+            select: false
+        },
+        {
+            id: 1,
+            key:1,
+            "name": "画作",
+            select: false
+        },
+        {
+            id: 2,
+            key:2,
+            "name": "作者",
+            select: false
+        },
+        {
+            id: 3,
+            key:3,
+            "name": "其他",
+            select: false
+        },
+
+    ]
+  };
+
     constructor(props) {
         super(props);
         this.state={value1:'',value2:'',value3:''}
@@ -23,9 +53,11 @@ export default class extends Component{
         this.callbackSelected = this.callbackSelected.bind(this);
         this.state={
           text:'',
-          height:0
+          height:0,
+          multiData:this.props.multiList,
+          selectMultiItem:[]
         }
-        this.onChange=this.onChange.bind(this);
+        
         // this.state={changeText:'所有人可见'};
 
         
@@ -35,16 +67,62 @@ export default class extends Component{
         //   }
 
     }
-    onChange(event){
-      console.log(event.nativeEvent);
-      this.setState({
-        text:event.nativeEvent.text,
-        height:event.nativeEvent.contentSize.height
-      });
-    }
-    onContentSizeChange(params){
-      console.log(params);
-    }
+//多选
+_selectMultiItemPress(item) {
+  if (item.select) {
+      this.state.selectMultiItem.splice(this.state.selectMultiItem.findIndex(function (x) {
+          return x === item.id;
+      }), 1);
+  } else {
+      this.state.selectMultiItem.push(item.id);
+  }
+  this.state.multiData[item.id].select = !item.select;
+  this.setState({ multiData: this.state.multiData });
+}
+//递交 选中 
+_submitMultiPress() {
+  alert(`选中了${JSON.stringify(this.state.selectMultiItem)}`)
+}
+//渲染多选标记
+_renderMultiMark() {
+  let multiData = this.state.multiData;
+  let len = multiData.length;
+  let menuArr = [];
+  for (let i = 0; i < len; i++) {
+      let item = multiData[i];
+      if (item.select) {
+          menuArr.push(
+              //选中状态
+              <TouchableOpacity
+                  onPress={() => this._selectMultiItemPress(item)} 
+                  style={[styles.markRow, styles.markChecked]}>
+                  <Text style={styles.markCheckedText}>{item.name}</Text>
+              </TouchableOpacity>
+          )
+      } else {
+          menuArr.push(
+
+              // 未选中状态
+              <TouchableOpacity
+                  onPress={() => this._selectMultiItemPress(item)}
+                   style={[styles.markRow, styles.markUnCheck]}>
+                  <Text style={styles.markUnCheckText}>{item.name}</Text>
+              </TouchableOpacity>
+          )
+      }
+  }
+  
+  return (
+      //讲各类状态框输出到前端页面
+      <View style={styles.multiBox}>
+          {menuArr}
+      </View>
+  );
+}
+    
+
+    
+
     toggleSwitch1=(value)=>{
       this.setState({switch1Value:value})}
   toggleSwitch2=(value)=>{
@@ -66,10 +144,7 @@ export default class extends Component{
                 break;
         }
     }
-    tapBackground=()=>{
-      Keyboard.dismiss();
-    }
-
+    
   render(){
 
   return(    
@@ -86,7 +161,7 @@ export default class extends Component{
           onPress={() => {
             {    Alert.alert('ok') }
           }}>
-         <View style={{padding:5,marginTop:10,left:15}}>
+         <View style={{padding:5,marginTop:10,left:5}}>
          {/* <AntDesign name={'arrow-back'} size={40} color={'#3C3C3C'}/> */}
           </View>
           </TouchableWithoutFeedback>
@@ -165,55 +240,14 @@ export default class extends Component{
 
          
          <View style={styles.container}>
-             <Text>选择分类：</Text>
+             <Text>选择分类：</Text> 
+            <ScrollView
+                    style={{flexDirection:"row"}}
+                >{this._renderMultiMark()}</ScrollView>
 
 
-            <View style={{position:"absolute",left:220,flexDirection:'row',width:'100%'}}>
-         <TouchableWithoutFeedback 
-                                
-             style={[styles.touchButton]}
-             onPress={() => {
-             alert('OK')
-             }}>
-                  
-                  <View style={styles.touchable}>
-            <Text style={styles.touchButtonText}>诗歌</Text>
-            </View>
-            
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback 
-                                
-             style={[styles.touchButton]}
-             onPress={() => {
-             alert('OK')
-             }}>
-                  <View style={styles.touchable}>
-            <Text style={styles.touchButtonText}>画作</Text>
-            </View>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback 
-                                
-                                style={[styles.touchButton]}
-                                onPress={() => {
-                                alert('OK')
-                                }}>
-                                     <View style={styles.touchable}>
-                               <Text style={styles.touchButtonText}>作者</Text>
-                               </View>
-                               </TouchableWithoutFeedback>
-                               <TouchableWithoutFeedback 
-                                
-             style={[styles.touchButton]}
-             onPress={() => {
-             alert('OK')
-             }}>
-                  <View style={styles.touchable}>
-            <Text style={styles.touchButtonText}>其他</Text>
-            </View>
-            </TouchableWithoutFeedback>
-        
-   
-         </View>
+
+         
          </View>
 
 
@@ -301,7 +335,41 @@ container:{
       flexDirection:"row",
       justifyContent:'space-between',
 
-  }
+  },
+  multiBox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 100,
+
+    
+},
+markRow: {
+    width: 45,
+    height: 28,
+    lineHeight: 28,
+    padding: 5,
+    marginRight: 10,
+    borderRadius: 8,
+    borderWidth: 0.6,
+},
+markChecked: {
+    backgroundColor: "#4F4F4F",
+    borderColor: "white",
+},
+markUnCheck: {
+    backgroundColor: "white",
+    borderColor: "#111",
+},
+markCheckedText: {
+    fontSize: 16,
+    color: "white",
+    textAlign: "center",
+    flexDirection:"row"
+},
+markUnCheckText: {
+    fontSize: 16,
+    color: "#000",
+    textAlign: "center",
+},
   
 })
-

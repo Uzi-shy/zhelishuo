@@ -27,7 +27,7 @@ var promiseinsert=false;
 
 
 
-export default class App extends Component {
+export default class register extends Component {
    
   
    
@@ -83,7 +83,7 @@ _judgeusername=()=>{
 
 
   _insertdate=()=>{
-    var navigation=this.props.navigation;
+    
   fetch('http://10.0.2.2:3000/insert', {
                 method: 'POST',
                 headers: {
@@ -96,10 +96,13 @@ _judgeusername=()=>{
                   username: this.state.searchusername,
                   password: this.state.searchPass,
                   loginstate:"false",
+                  
                 })
               })
               // promise=false;
-              navigation.navigate('个人信息');
+              this.props.navigation.push('个人信息',{
+                username:this.state.searchusername,
+              });
 };
 
 
@@ -112,7 +115,7 @@ _judgeusername=()=>{
         <View style={[styles.nav_container]}>
                         <View style={{ flexDirection: "row" }}>
                             <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
-                                this.props.navigation.goBack()
+                                this.props.navigation.goBack();
                             }} />
                         </View>
                         <Text style={{fontFamily:"yegenyou", color: "#000", fontSize: 30 }}>注册</Text>
@@ -217,7 +220,7 @@ _judgeusername=()=>{
                   promiseinsert=false;
                   this._insertdate();
                    }else{
-                     Alert.alert("插入失败");
+                     Alert.alert("再次点击注册");
                    }
 
                 promiseinsert=false;

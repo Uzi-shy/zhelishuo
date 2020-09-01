@@ -148,10 +148,10 @@ class FadeView extends React.Component {
             this.state.translateValue,
             {
                 toValue: {
-                    x: -50,
-                    y: 50,
+                    x: -20,
+                    y: 20,
                 },                   // 透明度最终变为1，即完全不透明
-                duration: 10000,              // 让动画持续一段时间
+                duration: 9000,              // 让动画持续一段时间
                 // delay:1000,
                 // easing:Easing.bounce(20)
             }
@@ -186,7 +186,7 @@ export default class MainFadeView extends React.Component {
 
  animated={true}/>
 
-                <FadeView style={{ width: 600, height: 1000 }}>
+                <FadeView style={{ width: 600, height: 900 }}>
                     <Image source={pc.pic}
                         style={{ width: 600, height: 800 }} />
                 </FadeView>

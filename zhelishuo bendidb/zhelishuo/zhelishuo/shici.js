@@ -226,234 +226,201 @@
 
 
 import React from 'react';
-import { ImageBackground,StyleSheet, Alert,Image,Text, View,TextInput,ScrollView,TouchableWithoutFeedback,TouchableHighlight,TouchableNativeFeedback } from 'react-native';
+import { ImageBackground, StyleSheet, Alert, Image, Text, View, TextInput, ScrollView, TouchableWithoutFeedback, TouchableHighlight, TouchableNativeFeedback } from 'react-native';
 import BetterBanner from 'react-native-better-banner';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {createAppContainer} from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import AntDesign from"react-native-vector-icons/AntDesign";
-import Feather from"react-native-vector-icons/Feather";
-import SimpleLineIcons from"react-native-vector-icons/SimpleLineIcons";
-import { DrawerActions } from '@react-navigation/native';
- 
+import AntDesign from "react-native-vector-icons/AntDesign";
+import Feather from "react-native-vector-icons/Feather";
+import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 
 
-import { BottomTabBar } from '@react-navigation/bottom-tabs';
 
+export default function huazuo({ navigation }) {
 
-const Topna = createMaterialTopTabNavigator();
-const Stack = createStackNavigator();
-
-
-export default function App() {
-  
-  
-  return (
-    <NavigationContainer independent="true"> 
-    <Stack.Navigator mode="modal" headerMode="none">
-    <Stack.Screen name="画作" component={huazuo}/>
-      
-    </Stack.Navigator>
-    </NavigationContainer>
-    
-  );
-}
-
-function huazuo({navigation}){
-  
   return (
     <View>
-      <ImageBackground style={{width: '100%', height: '100%'}} source={require('E:/ad/zhelishuo/img/诗人1.jpg')}>
+      <ImageBackground style={{ width: '100%', height: '100%' }} source={require('../img/诗人1.jpg')}>
 
-      <View style={{flexDirection: 'row'}}>
-      <TouchableWithoutFeedback  
-                                
-                                style={{marginLeft:115}}
-                                onPress={() => {
-                                 
-                                 
-                                }}>
-                                 <View style={{marginTop:15,marginLeft:15,borderTopWidth:2,borderColor:"black",borderRightWidth:2,borderBottomWidth:2}}>
-                                 <Text style={{fontSize:20,fontFamily:"yegenyou"}}>诗词</Text>
-                                  </View>
-      </TouchableWithoutFeedback>
-      <View style={{
-        flexDirection: 'row',
-        marginLeft:15,
-        top:10,
-        width:"70%",
-        height:"70%",
-        backgroundColor:"#C0C0C0",
-        borderRadius:10,
-      }}>
-        <Image source={require('../img/放大镜.jpg')} style={{width: 30, height:30,borderRadius:10,alignItems:"center",top:2}}/>
-        <TextInput></TextInput>
-        
-      </View><Text style={{fontSize:20,fontFamily:"yegenyou",position:'absolute',right:10,top:12}}>搜索</Text>
-     </View>
-      
-
-      <ScrollView   style={{marginVertical:15,marginHorizontal:5}}>{/* 按钮栏目 */}
-
-    <View style={{flexDirection: 'row'}}>
-      <View>{/* 左 */}
- 
-        {/* 左1号 */}
-        <View style={{ width: 200, height:380,backgroundColor:'white',borderRadius:10,marginVertical:5,marginHorizontal:5}}>
-          <View>{/* 图片 */}
-            <TouchableHighlight onPress={()=>{ navigation.navigate('画作'), Alert.alert("进入画作页面");}}>
-            <Image     source={require('E:/ad/zhelishuo/img/a.jpg')} style={{width: '100%', height:300}} />
-            </TouchableHighlight>
-            <Text style={{fontSize:14,fontWeight:"bold"}}>一句话的介绍可以很长长长长</Text>
-            <View style={{padding:20,flexDirection: 'row',marginVertical:10,justifyContent: 'space-between'}}>{/* 信息栏 */}
-            <Image     source={require('E:/ad/zhelishuo/img/古风头像男.jpg')} style={{width: 25, height: 25,borderRadius:400}}
-            /><Text>小黄</Text>
-           <View style={{flexDirection: 'row'}}>
-           <TouchableHighlight onPress={()=>{ Alert.alert("点赞+1");}}>
-           <AntDesign name={'hearto'} size={25}/>
-           </TouchableHighlight>
-           <Text>10086</Text>
-           </View>
-          </View>
+      <View style={{ height: 90, width: "100%", backgroundColor: "#FFFFFF", borderBottomRightRadius: 15, borderBottomLeftRadius: 15, elevation: 5, }}>
+          <View style={{ flex: 0.7, marginTop: '6%', flexDirection: "row", width: "90%", justifyContent: "space-between", alignItems: "center", }}>
+            <View style={{ flexDirection: "row" }}>
+              <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
+                navigation.goBack();
+              }} />
+            </View>
+            <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 30 }}>古诗词</Text>
+            <View>
+              {/* <Entypo name={'home'} size={25} color={'#000'} onPress={() => {
+                                this.props.navigation.popToTop();
+                            }} /> */}
+            </View>
           </View>
         </View>
 
 
+        <ScrollView style={{ marginVertical: 15, marginHorizontal: 5 }}>{/* 按钮栏目 */}
 
-        {/* 左2号 */}
-        <View style={{ width: 200, height:250,backgroundColor:'white',borderRadius:10,marginVertical:5,marginHorizontal:5,justifyContent: 'space-between',}}>
-          <View>{/* 图片 */}
-            <TouchableHighlight onPress={()=>{ navigation.navigate('画作'), Alert.alert("进入画作页面");}}>
-            <Image     source={require('E:/ad/zhelishuo/img/春.jpg')} style={{width: '100%', height:170}} />
-            </TouchableHighlight>
-            <Text style={{fontSize:14,fontWeight:"bold"}}>一句话的介绍可以很长长长长</Text>
-            <View style={{padding:20,flexDirection: 'row',marginVertical:10,justifyContent: 'space-between'}}>{/* 信息栏 */}
-            <Image     source={require('E:/ad/zhelishuo/img/古风头像男.jpg')} style={{width: 25, height: 25,borderRadius:400}}
-            /><Text>小黄</Text>
-           <View style={{flexDirection: 'row'}}>
-           <TouchableHighlight onPress={()=>{ Alert.alert("点赞+1");}}>
-           <AntDesign name={'hearto'} size={25}/>
-           </TouchableHighlight>
-           <Text>10086</Text>
-           </View>
+          <View style={{ flexDirection: 'row' }}>
+            <View>{/* 左 */}
+
+              {/* 左1号 */}
+              <View style={{ width: 200, height: 380, backgroundColor: 'white', borderRadius: 10, marginVertical: 5, marginHorizontal: 5 }}>
+                <View>{/* 图片 */}
+                  <TouchableHighlight onPress={() => { navigation.navigate('画作'), Alert.alert("进入画作页面"); }}>
+                    <Image source={require('../img/a.jpg')} style={{ width: '100%', height: 300 }} />
+                  </TouchableHighlight>
+                  <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
+                  <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
+                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    /><Text>小黄</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>
+                        <AntDesign name={'hearto'} size={25} />
+                      </TouchableHighlight>
+                      <Text>10086</Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+
+
+
+              {/* 左2号 */}
+              <View style={{ width: 200, height: 250, backgroundColor: 'white', borderRadius: 10, marginVertical: 5, marginHorizontal: 5, justifyContent: 'space-between', }}>
+                <View>{/* 图片 */}
+                  <TouchableHighlight onPress={() => { navigation.navigate('画作'), Alert.alert("进入画作页面"); }}>
+                    <Image source={require('../img/春.jpg')} style={{ width: '100%', height: 170 }} />
+                  </TouchableHighlight>
+                  <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
+                  <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
+                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    /><Text>小黄</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>
+                        <AntDesign name={'hearto'} size={25} />
+                      </TouchableHighlight>
+                      <Text>10086</Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+
+
+
+              {/* 左3号 */}
+              <View style={{ width: 200, height: 380, backgroundColor: 'white', borderRadius: 10, marginVertical: 5, marginHorizontal: 5, justifyContent: 'space-between', }}>
+                <View>{/* 图片 */}
+                  <TouchableHighlight onPress={() => { navigation.navigate('画作'), Alert.alert("进入画作页面"); }}>
+                    <Image source={require('../img/冬.jpg')} style={{ width: '100%', height: 300 }} />
+                  </TouchableHighlight>
+                  <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
+                  <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
+                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    /><Text>小黄</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>
+                        <AntDesign name={'hearto'} size={25} />
+                      </TouchableHighlight>
+                      <Text>10086</Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+
+
+
+            </View>
+
+
+
+
+
+            <View>{/* 右 */}
+              {/* 右1号 */}
+              <View style={{ width: 200, height: 250, backgroundColor: 'white', borderRadius: 10, marginVertical: 5, marginHorizontal: 5, justifyContent: 'space-between', }}>
+                <View>{/* 图片 */}
+                  <TouchableHighlight onPress={() => { navigation.navigate('画作'), Alert.alert("进入画作页面"); }}>
+                    <Image source={require('../img/蓝色小山.jpg')} style={{ width: '100%', height: 170 }} />
+                  </TouchableHighlight>
+                  <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
+                  <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
+                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    /><Text>小黄</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>
+                        <AntDesign name={'hearto'} size={25} />
+                      </TouchableHighlight>
+                      <Text>10086</Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+
+              {/* 右2号 */}
+              <View style={{ width: 200, height: 250, backgroundColor: 'white', borderRadius: 10, marginVertical: 5, marginHorizontal: 5, justifyContent: 'space-between', }}>
+                <View>{/* 图片 */}
+                  <TouchableHighlight onPress={() => { navigation.navigate('画作'), Alert.alert("进入画作页面"); }}>
+                    <Image source={require('../img/诗画浙江.jpg')} style={{ width: '100%', height: 170 }} />
+                  </TouchableHighlight>
+                  <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
+                  <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
+                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    /><Text>小黄</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>
+                        <AntDesign name={'hearto'} size={25} />
+                      </TouchableHighlight>
+                      <Text>10086</Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+
+
+
+
+              {/* 右3号 */}
+              <View style={{ width: 200, height: 380, backgroundColor: 'white', borderRadius: 10, marginVertical: 5, marginHorizontal: 5 }}>
+                <View>{/* 图片 */}
+                  <TouchableHighlight onPress={() => { navigation.navigate('画作'), Alert.alert("进入画作页面"); }}>
+                    <Image source={require('../img/b.jpg')} style={{ width: '100%', height: 300 }} />
+                  </TouchableHighlight>
+                  <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
+                  <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
+                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    /><Text>小黄</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>
+                        <AntDesign name={'hearto'} size={25} />
+                      </TouchableHighlight>
+                      <Text>10086</Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+
+
+
+
+
+
+
+
+
+            </View>
+
+
+
+
           </View>
-          </View>
-        </View>
 
 
-
-        {/* 左3号 */}
-        <View style={{ width: 200, height:380,backgroundColor:'white',borderRadius:10,marginVertical:5,marginHorizontal:5,justifyContent: 'space-between',}}>
-          <View>{/* 图片 */}
-            <TouchableHighlight onPress={()=>{ navigation.navigate('画作'), Alert.alert("进入画作页面");}}>
-            <Image     source={require('E:/ad/zhelishuo/img/冬.jpg')} style={{width: '100%', height:300}} />
-            </TouchableHighlight>
-            <Text style={{fontSize:14,fontWeight:"bold"}}>一句话的介绍可以很长长长长</Text>
-            <View style={{padding:20,flexDirection: 'row',marginVertical:10,justifyContent: 'space-between'}}>{/* 信息栏 */}
-            <Image     source={require('E:/ad/zhelishuo/img/古风头像男.jpg')} style={{width: 25, height: 25,borderRadius:400}}
-            /><Text>小黄</Text>
-           <View style={{flexDirection: 'row'}}>
-           <TouchableHighlight onPress={()=>{ Alert.alert("点赞+1");}}>
-           <AntDesign name={'hearto'} size={25}/>
-           </TouchableHighlight>
-           <Text>10086</Text>
-           </View>
-          </View>
-          </View>
-        </View>
+        </ScrollView>
 
 
-
-      </View>
-      
-      
-      
-      
-      
-      <View>{/* 右 */}
-      {/* 右1号 */}
-      <View style={{ width: 200, height:250,backgroundColor:'white',borderRadius:10,marginVertical:5,marginHorizontal:5,justifyContent: 'space-between',}}>
-          <View>{/* 图片 */}
-            <TouchableHighlight onPress={()=>{ navigation.navigate('画作'), Alert.alert("进入画作页面");}}>
-            <Image     source={require('E:/ad/zhelishuo/img/蓝色小山.jpg')} style={{width: '100%', height:170}} />
-            </TouchableHighlight>
-            <Text style={{fontSize:14,fontWeight:"bold"}}>一句话的介绍可以很长长长长</Text>
-            <View style={{padding:20,flexDirection: 'row',marginVertical:10,justifyContent: 'space-between'}}>{/* 信息栏 */}
-            <Image     source={require('E:/ad/zhelishuo/img/古风头像男.jpg')} style={{width: 25, height: 25,borderRadius:400}}
-            /><Text>小黄</Text>
-           <View style={{flexDirection: 'row'}}>
-           <TouchableHighlight onPress={()=>{ Alert.alert("点赞+1");}}>
-           <AntDesign name={'hearto'} size={25}/>
-           </TouchableHighlight>
-           <Text>10086</Text>
-           </View>
-          </View>
-          </View>
-      </View>
-
-      {/* 右2号 */}
-      <View style={{ width: 200, height:250,backgroundColor:'white',borderRadius:10,marginVertical:5,marginHorizontal:5,justifyContent: 'space-between',}}>
-          <View>{/* 图片 */}
-            <TouchableHighlight onPress={()=>{ navigation.navigate('画作'), Alert.alert("进入画作页面");}}>
-            <Image     source={require('E:/ad/zhelishuo/img/诗画浙江.jpg')} style={{width: '100%', height:170}} />
-            </TouchableHighlight>
-            <Text style={{fontSize:14,fontWeight:"bold"}}>一句话的介绍可以很长长长长</Text>
-            <View style={{padding:20,flexDirection: 'row',marginVertical:10,justifyContent: 'space-between'}}>{/* 信息栏 */}
-            <Image     source={require('E:/ad/zhelishuo/img/古风头像男.jpg')} style={{width: 25, height: 25,borderRadius:400}}
-            /><Text>小黄</Text>
-           <View style={{flexDirection: 'row'}}>
-           <TouchableHighlight onPress={()=>{ Alert.alert("点赞+1");}}>
-           <AntDesign name={'hearto'} size={25}/>
-           </TouchableHighlight>
-           <Text>10086</Text>
-           </View>
-          </View>
-          </View>
-        </View>
-
-
-
-
-        {/* 右3号 */}
-        <View style={{ width: 200, height:380,backgroundColor:'white',borderRadius:10,marginVertical:5,marginHorizontal:5}}>
-          <View>{/* 图片 */}
-            <TouchableHighlight onPress={()=>{ navigation.navigate('画作'), Alert.alert("进入画作页面");}}>
-            <Image     source={require('E:/ad/zhelishuo/img/b.jpg')} style={{width: '100%', height:300}} />
-            </TouchableHighlight>
-            <Text style={{fontSize:14,fontWeight:"bold"}}>一句话的介绍可以很长长长长</Text>
-            <View style={{padding:20,flexDirection: 'row',marginVertical:10,justifyContent: 'space-between'}}>{/* 信息栏 */}
-            <Image     source={require('E:/ad/zhelishuo/img/古风头像男.jpg')} style={{width: 25, height: 25,borderRadius:400}}
-            /><Text>小黄</Text>
-           <View style={{flexDirection: 'row'}}>
-           <TouchableHighlight onPress={()=>{ Alert.alert("点赞+1");}}>
-           <AntDesign name={'hearto'} size={25}/>
-           </TouchableHighlight>
-           <Text>10086</Text>
-           </View>
-          </View>
-          </View>
-        </View>
-
-
-
-
-
-
-
-      
-
-      </View>
-
-
-
-
-    </View>
-        
-        
-      </ScrollView>
-
-      
       </ImageBackground>
     </View>
 

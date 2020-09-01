@@ -13,6 +13,7 @@ import {
 import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import F1 from './flastlist1';
 import F2 from './flastlist2';
+import F3 from './flatlist3';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
 const ENTRIES1 = [
@@ -82,7 +83,7 @@ function MyCarousel({navigation}){
       <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',width:"100%",height:80,backgroundColor:'white',borderBottomLeftRadius:20,borderBottomRightRadius:20,elevation:10}}>
         <View></View>
         <Text style={{fontSize:30,fontWeight:'bold',fontFamily:'yegenyou',marginTop:15}}>浙里有料</Text>
-        <TouchableWithoutFeedback style={{marginTop:15,marginRight:20}}>
+        <TouchableWithoutFeedback style={{marginTop:15,marginRight:20}} onPress={()=>{ navigation.navigate("搜索")}}>
           <Ionicons name={'search'} size={30}  />
         </TouchableWithoutFeedback>
       </View>
@@ -123,11 +124,24 @@ function MyCarousel({navigation}){
 
       <View style={{marginTop:10,flexDirection:'row',justifyContent:'space-between'}}>
       <Text style={{fontSize:22,fontWeight:'bold'}}>名句介绍</Text>
-      <TouchableWithoutFeedback style={{marginRight:20}} onPress={()=>Alert.alert('ok')}>
+      <TouchableWithoutFeedback style={{marginRight:20}} onPress={()=>{
+        navigation.navigate("名句介绍查看更多");
+        Alert.alert('ok')}}>
           <Text style={{fontSize:15}}>查看全部</Text>
       </TouchableWithoutFeedback>
       </View>
       <F2/>
+
+
+      <View style={{marginTop:10,flexDirection:'row',justifyContent:'space-between'}}>
+      <Text style={{fontSize:22,fontWeight:'bold'}}>画作评析</Text>
+      <TouchableWithoutFeedback style={{marginRight:20}} onPress={()=>{
+        navigation.navigate("画作评析查看更多");
+        Alert.alert('ok')}}>
+          <Text style={{fontSize:15}}>查看全部</Text>
+      </TouchableWithoutFeedback>
+      </View>
+      <F3/>
 
 
     </View>
