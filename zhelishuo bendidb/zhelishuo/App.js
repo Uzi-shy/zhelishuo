@@ -35,7 +35,7 @@ import zhelishuoqitawenxue from './zhelishuo/qitawenxue';
 
 
 //在浙里说
-import plus from './src/plus';
+import plus from './src/plus1';
 
 
 
