@@ -13,6 +13,7 @@ import {
   ActivityIndicator,
   ListFooterComponent,
   TouchableNativeFeedback,
+  
   Alert
 } from 'react-native';
 
@@ -24,7 +25,7 @@ export default App = ({navigation}) => {
   const [isdata, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.0.2.2:3000/index/guanzhu')
+    fetch('http://192.168.50.28:3000/index/guanzhu')
 
       .then((response) => response.json())
       .then((json) => setData(json.result))

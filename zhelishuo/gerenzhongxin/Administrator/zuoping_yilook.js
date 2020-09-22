@@ -28,15 +28,15 @@ export default class yummy extends Component {
     }
 
 
-    //审核通过 
-    _onClickzpsh_get () {
+    //删除帖子
+    _onClickzpsh_delete () {
         const{navigation,route}=this.props;
 
         // this.setState({id:route.params.id});
         // this.setState({username:route.params.username});
         // console.log(this.state.id);
         // console.log(this.state.username);
-        fetch('http://192.168.50.28:3000/sh_get', {
+        fetch('http://192.168.50.28:3000/sh__delete', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -136,17 +136,12 @@ export default class yummy extends Component {
                              borderWidth: 1, alignItems: 'center', justifyContent: 'center',
                               marginRight: 30, padding: 5 }}
                               onPress={() => {
-                                  this._onClickzpsh_get();
+                                  this._onClickzpsh_delete();
                                 this.props.navigation.goBack();
                             }}>
-                            <Text>审核通过</Text>
+                            <Text>删除该帖</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ width: 70, height: 30, borderRadius: 20, borderColor: 'grey', borderWidth: 1, alignItems: 'center', justifyContent: 'center', marginRight: 30, padding: 5 }}
-                        onPress={() => {
-                            this.props.navigation.goBack();
-                        }}>
-                            <Text>回炉重造</Text>
-                        </TouchableOpacity>
+                        
                     </View>
                 </View>
 

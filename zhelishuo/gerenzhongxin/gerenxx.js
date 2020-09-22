@@ -244,7 +244,7 @@ export default class gerenxx extends Component {
         // let {password} = route.params;
         // const { username } = route.params;
         // let username = this.props.getusername;
-        fetch('http://10.0.2.2:3000/insertgerenxx', {
+        fetch('http://192.168.50.28:3000/insertgerenxx', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

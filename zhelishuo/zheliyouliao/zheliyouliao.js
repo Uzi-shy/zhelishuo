@@ -7,7 +7,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
-  Alert,
+  Alert,Image,
 
 } from 'react-native';
 import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
@@ -78,12 +78,12 @@ function MyCarousel({navigation}){
   return (
 
 
-    <View style={{marginBottom:90}}>
+    <View style={{marginBottom:60}}>
   
-      <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',width:"100%",height:80,backgroundColor:'white',borderBottomLeftRadius:20,borderBottomRightRadius:20,elevation:10}}>
+      <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',width:"100%",height:50,backgroundColor:'white',borderBottomLeftRadius:20,borderBottomRightRadius:20,elevation:5}}>
         <View></View>
-        <Text style={{fontSize:30,fontWeight:'bold',fontFamily:'yegenyou',marginTop:15}}>浙里有料</Text>
-        <TouchableWithoutFeedback style={{marginTop:15,marginRight:20}} onPress={()=>{ navigation.navigate("搜索")}}>
+        <Text style={{fontSize:22,fontWeight:'bold',alignItems:'center',marginTop:10,marginLeft:50}}>浙里有料</Text>
+        <TouchableWithoutFeedback style={{marginTop:10,marginRight:20}} onPress={()=>{ navigation.navigate("搜索")}}>
           <Ionicons name={'search'} size={30}  />
         </TouchableWithoutFeedback>
       </View>
@@ -92,10 +92,10 @@ function MyCarousel({navigation}){
 
     <View style={styles.container}>
       <TouchableOpacity onPress={goForward}>
-        <Text style={{fontSize:28,marginLeft:15,marginTop:15,marginBottom:10,
+        <Text style={{fontSize:24,marginLeft:26,marginTop:15,marginBottom:10,
     textShadowRadius:2,
     textShadowColor:'grey'
-,textShadowOffset:{width:2,hegith:-3}}}>诗画艺术展</Text>
+,textShadowOffset:{width:2,hegith:-2}}}>诗画艺术展</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={()=>{
         navigation.navigate("书画展")}}>
@@ -115,8 +115,8 @@ function MyCarousel({navigation}){
       /></TouchableOpacity>
 
       <View style={{right:20,height:0.5,backgroundColor:'#7B7B7B',marginRight:30,marginTop:18}}/>
-              <View style={{marginTop:10,flexDirection:'row',justifyContent:'space-between'}}>
-      <Text style={{fontSize:22,fontWeight:'bold'}}>诗人生平</Text>
+              <View style={{marginLeft:30, marginTop:10,flexDirection:'row',justifyContent:'space-between'}}>
+      <Text style={{fontSize:24,fontWeight:'bold'}}>诗人生平</Text>
       <TouchableWithoutFeedback style={{marginRight:20}} onPress={()=>{
         navigation.navigate("诗人生平查看更多");
         }}
@@ -128,8 +128,8 @@ function MyCarousel({navigation}){
 
       <F1/>
 
-      <View style={{marginTop:10,flexDirection:'row',justifyContent:'space-between'}}>
-      <Text style={{fontSize:22,fontWeight:'bold'}}>名句介绍</Text>
+      <View style={{marginLeft:30,marginTop:10,flexDirection:'row',justifyContent:'space-between'}}>
+      <Text style={{fontSize:24,fontWeight:'bold'}}>名句介绍</Text>
       <TouchableWithoutFeedback style={{marginRight:20}} onPress={()=>{
         navigation.navigate("名句介绍查看更多");
         }}>
@@ -139,8 +139,8 @@ function MyCarousel({navigation}){
       <F2/>
 
 
-      <View style={{marginTop:10,flexDirection:'row',justifyContent:'space-between'}}>
-      <Text style={{fontSize:22,fontWeight:'bold'}}>画作评析</Text>
+      <View style={{marginLeft:30,marginTop:10,flexDirection:'row',justifyContent:'space-between'}}>
+      <Text style={{fontSize:24,fontWeight:'bold'}}>画作评析</Text>
       <TouchableWithoutFeedback style={{marginRight:20}} onPress={()=>{
         navigation.navigate("画作评析查看更多");
         }}>
@@ -151,6 +151,40 @@ function MyCarousel({navigation}){
 
 
     </View>
+    <Text style={{marginLeft:30,fontSize:24,fontWeight:'bold'}}>更多模块</Text>
+    
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{flexDirection:"row",marginLeft:10,marginTop:10,marginBottom:20}}>
+    
+
+      <TouchableOpacity style={{marginLeft:20}}>
+    <Image source={{uri:'http://121.196.27.141/img/a.jpg'}} style={{height:80 ,width:80,borderRadius:20,marginRight:15}}/>	
+    <Text sty={{}}>诗画高考真题</Text>	
+      </TouchableOpacity>
+
+      <TouchableOpacity style={{marginLeft:20}}>
+    <Image source={{uri:'http://121.196.27.141/img/a.jpg'}} style={{height:80 ,width:80,borderRadius:20,marginRight:15}}/>	
+    <Text sty={{}}>诗画拼图游戏</Text>	
+      </TouchableOpacity>
+
+      <TouchableOpacity style={{marginLeft:20}}>
+    <Image source={{uri:'http://121.196.27.141/img/a.jpg'}} style={{height:80 ,width:80,borderRadius:20,marginRight:15}}/>
+    <Text sty={{}}>诗画麻将游戏</Text>		
+      </TouchableOpacity>
+
+      <TouchableOpacity style={{marginLeft:20}}>
+    <Image source={{uri:'http://121.196.27.141/img/a.jpg'}} style={{height:80 ,width:80,borderRadius:20,marginRight:15}}/>		
+    <Text sty={{}}>古风汉服商场</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={{marginLeft:20}}>
+    <Image source={{uri:'http://121.196.27.141/img/a.jpg'}} style={{height:80 ,width:80,borderRadius:20,marginRight:15}}/>		
+    <Text sty={{}}>古风美图鉴赏</Text>
+      </TouchableOpacity>
+
+      
+
+
+    </ScrollView>
     </ScrollView>
     </View>
   );

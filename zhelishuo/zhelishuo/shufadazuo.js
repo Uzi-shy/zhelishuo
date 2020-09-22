@@ -242,7 +242,7 @@ export default function huazuo({ navigation }) {
 
   return (
     <View>
-      <ImageBackground style={{ width: '100%', height: '100%' }} source={require('../img/诗人1.jpg')}>
+      <ImageBackground style={{ width: '100%', height: '100%' }} source={require('../img/dufu.jpg')}>
 
       <View style={{ height: 90, width: "100%", backgroundColor: "#FFFFFF", borderBottomRightRadius: 15, borderBottomLeftRadius: 15, elevation: 5, }}>
           <View style={{ flex: 0.7, marginTop: '6%', flexDirection: "row", width: "90%", justifyContent: "space-between", alignItems: "center", }}>
@@ -274,7 +274,7 @@ export default function huazuo({ navigation }) {
                   </TouchableHighlight>
                   <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
                   <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
-                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    <Image source={require('../img/boy.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
                     /><Text>小黄</Text>
                     <View style={{ flexDirection: 'row' }}>
                       <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>
@@ -292,11 +292,11 @@ export default function huazuo({ navigation }) {
               <View style={{ width: 200, height: 250, backgroundColor: 'white', borderRadius: 10, marginVertical: 5, marginHorizontal: 5, justifyContent: 'space-between', }}>
                 <View>{/* 图片 */}
                   <TouchableHighlight onPress={() => { navigation.navigate('画作'), Alert.alert("进入画作页面"); }}>
-                    <Image source={require('../img/春.jpg')} style={{ width: '100%', height: 170 }} />
+                    <Image source={require('../img/spring.jpg')} style={{ width: '100%', height: 170 }} />
                   </TouchableHighlight>
                   <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
                   <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
-                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    <Image source={require('../img/boy.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
                     /><Text>小黄</Text>
                     <View style={{ flexDirection: 'row' }}>
                       <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>
@@ -314,11 +314,11 @@ export default function huazuo({ navigation }) {
               <View style={{ width: 200, height: 380, backgroundColor: 'white', borderRadius: 10, marginVertical: 5, marginHorizontal: 5, justifyContent: 'space-between', }}>
                 <View>{/* 图片 */}
                   <TouchableHighlight onPress={() => { navigation.navigate('画作'), Alert.alert("进入画作页面"); }}>
-                    <Image source={require('../img/冬.jpg')} style={{ width: '100%', height: 300 }} />
+                    <Image source={require('../img/a.jpg')} style={{ width: '100%', height: 300 }} />
                   </TouchableHighlight>
                   <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
                   <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
-                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    <Image source={require('../img/boy.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
                     /><Text>小黄</Text>
                     <View style={{ flexDirection: 'row' }}>
                       <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>
@@ -343,11 +343,11 @@ export default function huazuo({ navigation }) {
               <View style={{ width: 200, height: 250, backgroundColor: 'white', borderRadius: 10, marginVertical: 5, marginHorizontal: 5, justifyContent: 'space-between', }}>
                 <View>{/* 图片 */}
                   <TouchableHighlight onPress={() => { navigation.navigate('画作'), Alert.alert("进入画作页面"); }}>
-                    <Image source={require('../img/蓝色小山.jpg')} style={{ width: '100%', height: 170 }} />
+                    <Image source={require('../img/a.jpg')} style={{ width: '100%', height: 170 }} />
                   </TouchableHighlight>
                   <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
                   <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
-                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    <Image source={require('../img/boy.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
                     /><Text>小黄</Text>
                     <View style={{ flexDirection: 'row' }}>
                       <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>
@@ -363,11 +363,11 @@ export default function huazuo({ navigation }) {
               <View style={{ width: 200, height: 250, backgroundColor: 'white', borderRadius: 10, marginVertical: 5, marginHorizontal: 5, justifyContent: 'space-between', }}>
                 <View>{/* 图片 */}
                   <TouchableHighlight onPress={() => { navigation.navigate('画作'), Alert.alert("进入画作页面"); }}>
-                    <Image source={require('../img/诗画浙江.jpg')} style={{ width: '100%', height: 170 }} />
+                    <Image source={require('../img/c.jpg')} style={{ width: '100%', height: 170 }} />
                   </TouchableHighlight>
                   <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
                   <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
-                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    <Image source={require('../img/boy.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
                     /><Text>小黄</Text>
                     <View style={{ flexDirection: 'row' }}>
                       <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>
@@ -390,7 +390,7 @@ export default function huazuo({ navigation }) {
                   </TouchableHighlight>
                   <Text style={{ fontSize: 14, fontWeight: "bold" }}>一句话的介绍可以很长长长长</Text>
                   <View style={{ padding: 20, flexDirection: 'row', marginVertical: 10, justifyContent: 'space-between' }}>{/* 信息栏 */}
-                    <Image source={require('../img/古风头像男.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
+                    <Image source={require('../img/boy.jpg')} style={{ width: 25, height: 25, borderRadius: 400 }}
                     /><Text>小黄</Text>
                     <View style={{ flexDirection: 'row' }}>
                       <TouchableHighlight onPress={() => { Alert.alert("点赞+1"); }}>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     Dimensions, SafeAreaView, Text, View, StyleSheet,
-    TouchableOpacity, ActivityIndicator, Image, ScrollView, Alert
+    TouchableOpacity, ActivityIndicator, Image, ScrollView, Alert,RefreshControl,
 } from "react-native";
 import { FlatList } from 'react-native-gesture-handler';
 import Feather from 'react-native-vector-icons/Feather'
@@ -19,6 +19,7 @@ export default class ContentWaterfall extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            refreshing: false,
             isLoading: true,
             isdata:[],
 
@@ -26,8 +27,30 @@ export default class ContentWaterfall extends Component {
     }
 
 
+
+
+    _onRefresh() {
+
+        if (this.state.refreshing ==false) {
+            this._updateState( true);
+            this.componentDidMount();
+    
+            //2秒后结束刷新
+            setTimeout( ()=>{
+                this._updateState( false);
+                this.componentDidMount();
+            }, 2000)
+    
+        }
+    }
+    
+    //更新State
+    _updateState( refresh){
+        this.setState({refreshing: refresh});
+    }
+
     componentDidMount() {
-        fetch('http://10.0.2.2:3000/zuoping_wei',
+        fetch('http://192.168.50.28:3000/zuoping_wei',
             {
                 method: 'POST',
                 headers: {

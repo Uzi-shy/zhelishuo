@@ -13,7 +13,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 import shuhuazhan from './shuhuazhan' ;
 
-import srsp from '../flastlist1';
+import srsp from './flastlist1';
 
 import mjjs from '../flastlist2';
 

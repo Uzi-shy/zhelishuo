@@ -2,9 +2,9 @@ import React, { Component, useState } from 'react';
 import {
   ImageBackground,
   StyleSheet, Alert, Image,
-  Text, View, TextInput, ScrollView,ActivityIndicator,
+  Text, View, TextInput, ScrollView, ActivityIndicator,
   TouchableNativeFeedback, TouchableHighlight, Button,
-  Dimensions,FlatList,RefreshControl
+  Dimensions, FlatList, RefreshControl
 } from 'react-native';
 import BetterBanner from 'react-native-better-banner';
 import { NavigationContainer } from '@react-navigation/native';
@@ -76,12 +76,12 @@ export default class Zheliyouliao extends Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
       refreshing: false,
       image: {
-        uri:'',
-        width:0,
+        uri: '',
+        width: 0,
         height: 0,
         mime: 0,
       },
@@ -101,23 +101,23 @@ export default class Zheliyouliao extends Component {
   //下拉视图开始刷新时调用
   _onRefresh() {
 
-    if (this.state.refreshing ==false) {
-        this._updateState( true);
-        this.componentDidMount();
+    if (this.state.refreshing == false) {
+      this._updateState(true);
+      this.componentDidMount();
 
-        //2秒后结束刷新
-        setTimeout( ()=>{
-            this._updateState( false);
-            this.componentDidMount();
-        }, 2000)
+      //2秒后结束刷新
+      setTimeout(() => {
+        this._updateState(false);
+        this.componentDidMount();
+      }, 2000)
 
     }
-}
+  }
 
-//更新State
-_updateState( refresh){
-    this.setState({refreshing: refresh});
-}
+  //更新State
+  _updateState(refresh) {
+    this.setState({ refreshing: refresh });
+  }
 
   // componentDidMount() {
   //   fetch('/personal', {
@@ -136,7 +136,7 @@ _updateState( refresh){
       cropping: cropping,
       width: 500,
       height: 500,
-      cropperCircleOverlay:true,
+      cropperCircleOverlay: true,
       includeExif: true,
       mediaType,
     })
@@ -300,28 +300,28 @@ _updateState( refresh){
   // }
 
 
-  
- 
+
+
 
   componentDidMount() {
-    const {navigation,route}=this.props;
-      fetch('http://10.0.2.2:3000/personal',
-       {
+    const { navigation, route } = this.props;
+    fetch('http://192.168.50.28:3000/personal',
+      {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          
+
           username: route.params.username,
         })
       })
-      
-    
+
+
       .then((response) => response.json())
       .then((json) => {
-        this.setState({ isdata: json.result});
+        this.setState({ isdata: json.result });
       })
       .catch((error) => console.error(error))
       .finally(() => {
@@ -331,11 +331,11 @@ _updateState( refresh){
 
   renderImage(image) {
     return (
-      <View style={{height:80,width:80,borderRadius:400,backgroundColor:'black'}}>
-      <Image
-        style={{ width: 80, height: 80, resizeMode: 'contain',borderRadius:400 }}
-        source={image}
-      /></View>
+      <View style={{ height: 80, width: 80, borderRadius: 400, backgroundColor: 'black' }}>
+        <Image
+          style={{ width: 80, height: 80, resizeMode: 'contain', borderRadius: 400 }}
+          source={image}
+        /></View>
     );
   }
 
@@ -347,166 +347,199 @@ _updateState( refresh){
     return this.renderImage(image);
   }
 
-  
+
 
 
   render() {
 
     const { isdata, isLoading } = this.state;
-   
+
 
     //const {navigation,route}=this.props;
     return (
-      
-      <View >
-        <PopUp ref={ref=>this.popUp=ref}>
-          <View style={{alignItems:'center',padding:10}}>
-            <Text style={{fontSize:20,marginBottom:5}}>选择照片</Text>
-            <View style={{height:0.5,backgroundColor:'black',width:'100%',marginVertical:10}}/>
-            <TouchableOpacity style={{padding:5}} onPress={() =>{ this.pickSingle(true, true),this.popUp.hide()}}>
-              <Text style={{fontSize:15}}>查看大图</Text>
-              
-            </TouchableOpacity>
-            <View style={{height:0.5,backgroundColor:'black',width:'100%',marginVertical:10}}/>
-            <TouchableOpacity style={{padding:5}} onPress={() => {this.pickSingleWithCamera(true),this.popUp.hide()}}>
-              <Text style={{fontSize:15}}>拍照</Text>
-              
-            </TouchableOpacity>
-            <View style={{height:0.5,backgroundColor:'black',width:'100%',marginVertical:10}}/>
-            <TouchableOpacity style={{padding:5}} onPress={() =>{ this.pickSingle(true, true),this.popUp.hide()}}>
-              <Text style={{fontSize:15}}>从相册中选择</Text>
-              
-            </TouchableOpacity>
-            
-            <View style={{height:0.5,backgroundColor:'black',width:'100%',marginVertical:10}}/>
-            <View style={{height:10,width:'100%',opacity:0}}/>
-            <TouchableOpacity style={{padding:5}} onPress={() => { this.popUp.hide() }}>
-              <Text style={{fontSize:15}}>取消</Text>
-            </TouchableOpacity>
-            
-         </View>
+
+      <View style={{ marginBottom: 50 }}>
+        <ScrollView style={{}}>
+          <PopUp ref={ref => this.popUp = ref}>
+            <View style={{ alignItems: 'center', padding: 10 }}>
+              <Text style={{ fontSize: 20, marginBottom: 5 }}>选择照片</Text>
+              <View style={{ height: 0.5, backgroundColor: 'black', width: '100%', marginVertical: 10 }} />
+              <TouchableOpacity style={{ padding: 5 }} onPress={() => { this.pickSingle(true, true), this.popUp.hide() }}>
+                <Text style={{ fontSize: 15 }}>查看大图</Text>
+
+              </TouchableOpacity>
+              <View style={{ height: 0.5, backgroundColor: 'black', width: '100%', marginVertical: 10 }} />
+              <TouchableOpacity style={{ padding: 5 }} onPress={() => { this.pickSingleWithCamera(true), this.popUp.hide() }}>
+                <Text style={{ fontSize: 15 }}>拍照</Text>
+
+              </TouchableOpacity>
+              <View style={{ height: 0.5, backgroundColor: 'black', width: '100%', marginVertical: 10 }} />
+              <TouchableOpacity style={{ padding: 5 }} onPress={() => { this.pickSingle(true, true), this.popUp.hide() }}>
+                <Text style={{ fontSize: 15 }}>从相册中选择</Text>
+
+              </TouchableOpacity>
+
+              <View style={{ height: 0.5, backgroundColor: 'black', width: '100%', marginVertical: 10 }} />
+              <View style={{ height: 10, width: '100%', opacity: 0 }} />
+              <TouchableOpacity style={{ padding: 5 }} onPress={() => { this.popUp.hide() }}>
+                <Text style={{ fontSize: 15 }}>取消</Text>
+              </TouchableOpacity>
+
+            </View>
           </PopUp>
 
 
-        {isLoading ? <ActivityIndicator /> : (
-          <FlatList
-            showsVerticalScrollIndicator={false}
-            data={isdata}
-            bounces={true}
-            refreshControl={
-              <RefreshControl
+          {isLoading ? <ActivityIndicator /> : (
+            <FlatList
+              showsVerticalScrollIndicator={false}
+              data={isdata}
+              bounces={true}
+              refreshControl={
+                <RefreshControl
                   tintColor={'red'}
                   titleColor={'brown'}
                   title={'正在刷新......'}
                   refreshing={this.state.refreshing}
                   onRefresh={this._onRefresh.bind(this)}
-              />
-          }
-            keyExtractor={({ id }, index) => id}
-            renderItem={({ item }) => (
-              <View style={{ }}>
+                />
+              }
+              keyExtractor={({ id }, index) => id}
+              renderItem={({ item }) => (
+                <View style={{}}>
 
+                  <ScrollView style={{}}>
 
+                    <ImageBackground style={{ width: '100%' }} source={{ uri: item.toux.uri }}>
+                      <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
 
-
-
-
-
-
-
-
-
-                <ScrollView>
-                  
-                  <ImageBackground style={{ width: '100%' }} source={require('../img/杜甫2.jpg')}>
-
-                    <TouchableWithoutFeedback style={{ flexDirection: 'row', justifyContent: 'flex-end', marginRight: 25, marginTop: 25, }}
-                      onPress={() => {
-                        this.props.navigation.push("设置");
-                      }}
-                    >
-                      <AntDesign name={"setting"} size={30} style={{ color: '#4F4F4F' }} />
-                    </TouchableWithoutFeedback>
-
-                    <View style={{ backgroundColor: "white", width: width, height: 500, marginTop: 220, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderTopColor: '#BEBEBE', borderWidth: 0.3, elevation: 60 }}>
-                      <TouchableWithoutFeedback style={{ width: 80, height: 80, marginTop: -30, marginLeft: 30, borderRadius: 400, borderWidth: 0.3, elevation: 60 }}
-                        onPress={() =>{this.popUp.show()} }>
-                          
-                        <Image source={{uri:item.toux.uri}} style={{ resizeMode: 'cover', width: 80, height: 80, borderRadius: 400 }} />
-                        {this.state.image ? this.renderAsset(this.state.image) : null}
-                        {this.onclik_changetoux()}
-                        
-          {/* {this.state.images
-            ? this.state.images.map((i) => (
-                <View key={i.uri}>{this.renderAsset(i)}</View>
-                
-              ))
-            : null} */}
-            
-                      </TouchableWithoutFeedback>
-
-                      <View style={{ marginLeft: 30 }}>
-                    <Text style={{ fontSize: 25, marginTop: 10, fontWeight: 'bold' }}>{item.name}</Text>
-                        <Text style={{ fontSize: 15, color: '#7B7B7B', marginTop: 10 }}>浙里说账号：857857857</Text>
-                        <TouchableWithoutFeedback onPress={() => Alert.alert('ok')}>
-                    <Text style={{ fontSize: 17, color: '#272727', marginTop: 5 }}>{item.gexinqianming}</Text>
+                        <TouchableWithoutFeedback style={{ justifyContent: 'flex-end', marginTop: 10, }}
+                          onPress={() => {
+                            this.props.navigation.push("设置");
+                          }}
+                        >
+                          <Feather name={"moon"} size={30} style={{ color: '#4F4F4F' }} />
                         </TouchableWithoutFeedback>
-                        <View style={{ flexDirection: 'row', justifyContent: 'flex-start', width: "100%", marginTop: 10 }}>
-                          <TouchableWithoutFeedback style={{ backgroundColor: '#d0d0d0', opacity: 0.8, height: 25, width: 45, borderRadius: 8, marginRight: 10 }}>
-                            <View style={{ alignItems: 'center', justifyContent: 'center', padding: 4 }}>
-                    <Text>{(Math.floor((item.data%100)/10))}0后</Text>
-                            </View>
+
+                        <TouchableWithoutFeedback style={{ justifyContent: 'flex-end', marginLeft: 5, marginTop: 10, }}
+                          onPress={() => {
+                            this.props.navigation.push("设置");
+                          }}
+                        >
+                          <AntDesign name={"bells"} size={27} style={{ color: '#4F4F4F' }} />
+                        </TouchableWithoutFeedback>
+
+
+
+
+
+                        <TouchableWithoutFeedback style={{ justifyContent: 'flex-end', marginTop: 10, }}
+                          onPress={() => {
+                            this.props.navigation.push("设置");
+                          }}
+                        >
+                          <AntDesign name={"setting"} size={30} style={{ color: '#4F4F4F' }} />
+                        </TouchableWithoutFeedback>
+
+                      </View>
+
+
+
+                      <View style={{ backgroundColor: "white", width: width, marginTop: 220, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderTopColor: '#BEBEBE', borderWidth: 0.3, elevation: 60, marginBottom: 2 }}>
+                        <TouchableWithoutFeedback style={{ width: 80, height: 80, marginTop: -30, marginLeft: 30, borderRadius: 400, borderWidth: 0.3, elevation: 60 }}
+                          onPress={() => { this.popUp.show() }}>
+
+                          <Image source={{ uri: item.toux.uri }} style={{ resizeMode: 'cover', width: 80, height: 80, borderRadius: 400 }} />
+                          {this.state.image ? this.renderAsset(this.state.image) : null}
+                          {this.onclik_changetoux()}
+
+                          {/* {this.state.images? this.state.images.map((i) => (
+                            <View key={i.uri}>{this.renderAsset(i)}</View>
+                
+                            ))
+                        : null} */}
+
+                        </TouchableWithoutFeedback>
+
+                        <View style={{ marginLeft: 30 }}>
+                          <Text style={{ fontSize: 25, marginTop: 10, fontWeight: 'bold' }}>{item.name}</Text>
+                          <Text style={{ fontSize: 15, color: '#7B7B7B', marginTop: 10 }}>浙里说账号：857857857</Text>
+                          <TouchableWithoutFeedback onPress={() => Alert.alert('ok')}  onPress={() => {
+                            this.props.navigation.push("个性签名");
+                          }}>
+                            <Text style={{ fontSize: 17, color: '#272727', marginTop: 5 }}>{item.gexinqianming}</Text>
                           </TouchableWithoutFeedback>
-                          <TouchableWithoutFeedback style={{ backgroundColor: '#d0d0d0', opacity: 0.8, height: 25, width: 30, borderRadius: 8, marginRight: 10 }}>
-                            <View style={{ alignItems: 'center', justifyContent: 'center', padding: 2 }}>
-                            <Text>{item.sex}</Text>
-                            </View>
-                          </TouchableWithoutFeedback>
-                          <TouchableWithoutFeedback style={{ backgroundColor: '#d0d0d0', opacity: 0.8, height: 25, width: 70, borderRadius: 8, marginRight: 10 }}>
-                            <View style={{ alignItems: 'center', justifyContent: 'center', padding: 4 }}>
-                              <Text>作者认证</Text>
-                            </View>
-                          </TouchableWithoutFeedback>
-                          <TouchableWithoutFeedback style={{ backgroundColor: '#d0d0d0', opacity: 0.8, height: 25, width: 70, borderRadius: 8, marginRight: 10 }}>
-                            <View style={{ alignItems: 'center', justifyContent: 'center', padding: 4 }}>
-                              <Text>编辑资料</Text>
-                            </View>
-                          </TouchableWithoutFeedback>
-                        </View>
-                        <View style={{ flexDirection: 'row', marginTop: 30 }}>
-                          <TouchableWithoutFeedback style={{ marginRight: 25 }}>
-          <Text style={{ fontWeight: 'bold', }}>{item.dongtai}</Text>
-                            <Text style={{ color: '#3C3C3C', fontSize: 16 }}>动态</Text>
-                          </TouchableWithoutFeedback>
-                          <TouchableWithoutFeedback style={{ marginRight: 25 }}>
-          <Text style={{ fontWeight: 'bold', }}>{item.guanzhu}</Text>
-                            <Text style={{ color: '#3C3C3C', fontSize: 16 }}>关注</Text>
-                          </TouchableWithoutFeedback>
-                          <TouchableWithoutFeedback style={{ marginRight: 25 }}>
-          <Text style={{ fontWeight: 'bold', }}>{item.fensi}</Text>
-                            <Text style={{ color: '#3C3C3C', fontSize: 16 }}>粉丝</Text>
-                          </TouchableWithoutFeedback>
-                          <TouchableWithoutFeedback style={{ marginRight: 25 }}>
-          <Text style={{ fontWeight: 'bold', }}>{item.shouchang}</Text>
-                            <Text style={{ color: '#3C3C3C', fontSize: 16 }}>点赞与收藏</Text>
-                          </TouchableWithoutFeedback>
+                          <View style={{ flexDirection: 'row', justifyContent: 'flex-start', width: "100%", marginTop: 10 }}>
+                            <TouchableWithoutFeedback style={{ backgroundColor: '#d0d0d0', opacity: 0.8, height: 25, width: 45, borderRadius: 8, marginRight: 10 }}>
+                              <View style={{ alignItems: 'center', justifyContent: 'center', padding: 4 }}>
+                                <Text>{(Math.floor((item.data % 100) / 10))}0后</Text>
+                              </View>
+                            </TouchableWithoutFeedback>
+                            <TouchableWithoutFeedback style={{ backgroundColor: '#d0d0d0', opacity: 0.8, height: 25, width: 30, borderRadius: 8, marginRight: 10 }}>
+                              <View style={{ alignItems: 'center', justifyContent: 'center', padding: 2 }}>
+                                <Text>{item.sex}</Text>
+                              </View>
+                            </TouchableWithoutFeedback>
+                            <TouchableWithoutFeedback style={{ backgroundColor: '#d0d0d0', opacity: 0.8, height: 25, width: 70, borderRadius: 8, marginRight: 10 }}
+                            onPress={() => {
+                              this.props.navigation.push("认证");}}>
+                              <View style={{ alignItems: 'center', justifyContent: 'center', padding: 4 }}>
+                                <Text>作者认证</Text>
+                              </View>
+                            </TouchableWithoutFeedback>
+                            <TouchableWithoutFeedback style={{ backgroundColor: '#d0d0d0', opacity: 0.8, height: 25, width: 70, borderRadius: 8, marginRight: 10 }}
+                            onPress={() => {
+                              this.props.navigation.push("编辑个人资料");}}>
+                              <View style={{ alignItems: 'center', justifyContent: 'center', padding: 4 }}>
+                                <Text>编辑资料</Text>
+                              </View>
+                            </TouchableWithoutFeedback>
+                          </View>
+                          <View style={{ flexDirection: 'row', marginTop: 30 }}>
+                            <TouchableWithoutFeedback style={{ marginRight: 25 }}>
+                              <Text style={{ fontWeight: 'bold', }}>{item.dongtai}</Text>
+                              <Text style={{ color: '#3C3C3C', fontSize: 16 }}>动态</Text>
+                            </TouchableWithoutFeedback>
+                            <TouchableWithoutFeedback style={{ marginRight: 25 }}>
+                              <Text style={{ fontWeight: 'bold', }}>{item.guanzhu}</Text>
+                              <Text style={{ color: '#3C3C3C', fontSize: 16 }}>关注</Text>
+                            </TouchableWithoutFeedback>
+                            <TouchableWithoutFeedback style={{ marginRight: 25 }}>
+                              <Text style={{ fontWeight: 'bold', }}>{item.fensi}</Text>
+                              <Text style={{ color: '#3C3C3C', fontSize: 16 }}>粉丝</Text>
+                            </TouchableWithoutFeedback>
+                            <TouchableWithoutFeedback style={{ marginRight: 25 }}>
+                              <Text style={{ fontWeight: 'bold', }}>{item.shouchang}</Text>
+                              <Text style={{ color: '#3C3C3C', fontSize: 16 }}>点赞与收藏</Text>
+                            </TouchableWithoutFeedback>
+
+                          </View>
+
 
                         </View>
+
+                        <View style={{ height: 0.9, backgroundColor: '#ADADAD', marginTop: 20 }} />
+                        {/* <View style ={{height:600}}> */}
+                        <Personalnavigation />
+                        {/* </View> */}
 
 
                       </View>
-                      <View style={{ height: 0.9, backgroundColor: '#ADADAD', marginTop: 20 }} />
-                      <Personalnavigation />
-
-                    </View>
 
 
 
 
 
-                  </ImageBackground>
-                </ScrollView>
-              </View>)}></FlatList>)}
+                    </ImageBackground>
+                  </ScrollView>
+                </View>
+              )
+              }>
+
+            </FlatList>
+          )
+          }
+        </ScrollView>
+
       </View>
 
 
@@ -514,26 +547,26 @@ _updateState( refresh){
   }
 
   //修改头像
-  onclik_changetoux(){
-    const {navigation,route}=this.props;
-    if(this.state.image.uri!=""){
-      fetch('http://10.0.2.2:3000/change_toux', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              username: route.params.username,
+  onclik_changetoux() {
+    const { navigation, route } = this.props;
+    if (this.state.image.uri != "") {
+      fetch('http://192.168.50.28:3000/change_toux', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: route.params.username,
 
-                toux:this.state.image
-            })
+          toux: this.state.image
         })
+      })
 
-        
-  };
-    }
-    
+
+    };
+  }
+
 }
 
 

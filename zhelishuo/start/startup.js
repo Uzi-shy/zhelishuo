@@ -101,24 +101,26 @@ import {
     Image,
     TouchableOpacity,
     StatusBar,
-    TouchableNativeFeedback
+    TouchableNativeFeedback,
+    Dimensions,
 } from 'react-native';
 import Splash from './daojishi';
 StatusBar.setBackgroundColor("transparent");
 StatusBar.setTranslucent(true);
 StatusBar.setBarStyle('dark-content');
+const { width, height } = Dimensions.get('window');
 
 
 const img=[
-    {pic:require('../img/春.jpg')},
-    {pic:require('../img/夏.jpg')},
-    {pic:require('../img/秋.jpg')},
-    {pic:require('../img/冬.jpg')},
-    {pic:require('../img/蓝色小山.jpg')},
+    {pic:require('../img/spring.jpg')},
+    {pic:require('../img/summer.jpg')},
+    {pic:require('../img/autumn.jpg')},
+    {pic:require('../img/winter.jpg')},
+    {pic:require('../img/bulemt.jpg')},
 ]
 
 //    const pc=img[Math.random(0,4)]
-  var num=parseInt(Math.random() * (5) );;
+  var num=parseInt(Math.random() * (5) );
 
    const pc=img[num]
 
@@ -186,11 +188,8 @@ export default class MainFadeView extends React.Component {
 
  animated={true}/>
 
-                <FadeView style={{ width: 600, height: 900 }}>
-                    <Image source={pc.pic}
-                        style={{ width: 600, height: 800 }} />
-                </FadeView>
-                <TouchableNativeFeedback
+                {/* <FadeView style={{ width: 600, height: 900 }}> */}
+                    <TouchableNativeFeedback
                     style={{ backgroundColor: "red", height: 20, width: 20, }}
                     onPress={
                         setTimeout(()=>{
@@ -199,6 +198,10 @@ export default class MainFadeView extends React.Component {
                     }>
                     <Splash />
                 </TouchableNativeFeedback >
+                    <Image source={pc.pic}
+                        style={{ width:width,height:height}} />
+                {/* </FadeView> */}
+                
             </View>
         );
     }

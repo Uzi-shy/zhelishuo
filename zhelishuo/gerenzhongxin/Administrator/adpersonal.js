@@ -90,7 +90,7 @@ export default class Zheliyouliao extends Component {
           {/* <DialogSelected ref={(dialog) => {
             this.dialog = dialog;
           }} /> */}
-          <ImageBackground style={{ width: '100%' }} source={require('../../img/杜甫2.jpg')}>
+          <ImageBackground style={{ width: '100%' }} source={require('../../img/dufu2.jpg')}>
 
             <TouchableWithoutFeedback style={{ flexDirection: 'row', justifyContent: 'flex-end', marginRight: 25, marginTop: 25, }}
               onPress={() => {
@@ -103,7 +103,7 @@ export default class Zheliyouliao extends Component {
             <View style={{ backgroundColor: "white", width: width, height: 500, marginTop: 220, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderTopColor: '#BEBEBE', borderWidth: 0.3, elevation: 60 }}>
               <TouchableWithoutFeedback style={{ width: 80, height: 80, marginTop: -30, marginLeft: 30, borderRadius: 400, borderWidth: 0.3, elevation: 60 }}
                 onPress={() => { this.showAlertSelected(); }}>
-                <Image source={require('../../img/古风头像男.jpg')} style={{ resizeMode: 'cover', width: 80, height: 80, borderRadius: 400 }} />
+                <Image source={require('../../img/boy.jpg')} style={{ resizeMode: 'cover', width: 80, height: 80, borderRadius: 400 }} />
               </TouchableWithoutFeedback>
 
               <View style={{ marginLeft: 30 }}>

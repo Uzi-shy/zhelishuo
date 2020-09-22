@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 
 //设置监听端口号
 app.listen(3000, () => {
-    console.log('server start:', "http://10.0.2.2:3000/index");
+    console.log('server start:', "http://192.168.50.28:3000/index");
   })
 
   const MongoClient = require('mongodb').MongoClient;
@@ -335,6 +335,8 @@ app.post('/zuoping_wei', async (req, res) => {
   })
 })
 
+
+
 //已过审帖子数据
 app.post('/zuoping_yi', async (req, res) => {
   MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
@@ -353,14 +355,75 @@ app.post('/zuoping_yi', async (req, res) => {
   })
 })
 
+
+//我发布的包括私密
+app.post('/wofabu', async (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("user");
+    dbo.collection("publish_to_administrator").find({
+      "username":req.body.username,
+    }).toArray(function (err, result) {
+      if (err) throw err;
+      res.send({ result });
+      console.log(result);
+      db.close();
+    
+    })
+  })
+})
+
+
+//瀑布流1
+app.post('/zuoping_yi1', async (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("user");
+    dbo.collection("publish_to_administrator").find({
+      "simi":"所有人可见",
+      "promise":true,
+      "idd":1
+    }).toArray(function (err, result) {
+      if (err) throw err;
+      res.send({ result });
+      console.log(result);
+      db.close();
+    
+    })
+  })
+})
+
+//瀑布流2
+app.post('/zuoping_yi2', async (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("user");
+    dbo.collection("publish_to_administrator").find({
+      "simi":"所有人可见",
+      "promise":true,
+      "idd":2
+    }).toArray(function (err, result) {
+      if (err) throw err;
+      res.send({ result });
+      console.log(result);
+      db.close();
+    
+    })
+  })
+})
+
+
+var ObjectID = require('mongodb').ObjectID;
+
 //作品审核通过
 app.post('/sh_get', async (req, res) => {
   MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
     if (err) throw err;
     var dbo = db.db("user");
+    let id = req.body.id;
     var whereStr={
       "username":req.body.username,
-      "title":req.body.title,
+      "_id":new ObjectID(id),
       };
     console.log(whereStr)
     var updateStr={$set:{"promise":true}};
@@ -370,5 +433,101 @@ app.post('/sh_get', async (req, res) => {
         console.log("审核通过成功");   
       db.close(); 
     }) 
+  })
+})
+
+
+//作品审核帖子删除
+app.post('/sh__delete', async (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("user");
+    let id = req.body.id;
+    var whereStr={
+      "username":req.body.username,
+      "_id":new ObjectID(id),
+      };
+    console.log(whereStr)
+    var updateStr={$set:{"promise":true}};
+    dbo.collection("publish_to_administrator").deleteOne(whereStr,function(err,res){
+      if(err) throw err;
+
+        console.log("删除成功");   
+      db.close(); 
+    }) 
+  })
+})
+
+
+// 帖子搜索文本储存
+app.post('/searchtext', async (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+    if (err) throw err; 
+    var dbo = db.db("user");
+    // var myobj =req.body.response;
+    console.log("req.body+"+req.body)
+      var myobj =req.body;
+      dbo.collection("searchtext").insertOne(myobj, function (err, res) {
+        if (err) throw err;
+        console.log("搜索文本发送成功");
+        console.log("searchtext");
+        // db.close();
+      });
+    })
+  });
+
+
+  ////获取最后一条搜索
+app.post('/getsearchtimes', async (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("user");
+    dbo.collection("searchtext").find({}).sort({_id:-1}).limit(1).toArray(function (err, result) {
+      if (err) throw err;
+      res.json({times:result[0].times,title:result[0].searchText });   
+      console.log(result)
+      db.close();
+    
+    })
+  })
+})
+
+//搜索帖子数据
+app.post('/search_zuoping_yi', async (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("user");
+    var title=req.body.title;
+    console.log("dbtitle"+title)
+    dbo.collection("publish_to_administrator").find({
+      "title":{$regex:title,$options:"imxs"},
+      "simi":"所有人可见",
+      "promise":true,
+    }).toArray(function (err, result) {
+      if (err) throw err;
+      res.send({ result });
+      console.log(result);
+      db.close();
+    
+    })
+  })
+})
+
+//搜索用户数据
+app.post('/search_user', async (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("user");
+    var title=req.body.title;
+    console.log("dbtitle"+title)
+    dbo.collection("KouXiangTangxx").find({
+      "name":{$regex:title,$options:"imxs"}
+    }).toArray(function (err, result) {
+      if (err) throw err;
+      res.send({ result });
+      console.log(result);
+      db.close();
+    
+    })
   })
 })

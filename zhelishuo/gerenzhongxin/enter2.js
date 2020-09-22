@@ -23,6 +23,7 @@ import weishenhepl from './Administrator/pinglun_wei';
 import yichuli from './Administrator/jubao_yi';
 import weichuli from './Administrator/jubao_wei';
 import zpshlc from './Administrator/zuoping_look';
+import zpshyilc from './Administrator/zuoping_yilook';
 
 import zhanghaoanquan from './set/zhanghaoanquan';
 import about from './set/about';
@@ -31,6 +32,10 @@ import pingbishezhi from './set/pingbishezhi';
 import tongzhishezhi from './set/tongzhishezhi';
 import tongyongshezhi from './set/tongyong';
 import pingjiafankui from './set/pingjiafankui';
+import gexinqianming from './gexinianming';
+import bianjigerenxinxi from './bianjigerenxinxi';
+import map from '../zheliyouliao/map';
+import renzheng from './renzheng';
 
 
 const Stack = createStackNavigator();
@@ -132,12 +137,21 @@ export default function App(){
     <Stack.Screen name="用户个人中心" component={personal}/>
     <Stack.Screen name="注册" component={register}/>
     <Stack.Screen name="设置" component={set}/>
+    <Stack.Screen name="个性签名" component={gexinqianming}/>
     <Stack.Screen name="个人信息" component={gerenxx}/>
+    <Stack.Screen name="编辑个人资料" component={bianjigerenxinxi}/>
+    <Stack.Screen name="地图" component={map}/>
+    <Stack.Screen name="认证" component={renzheng}/>
+
+
     <Stack.Screen name="管理员个人中心" component={adpersonal}/>
+
     <Stack.Screen name="签约管理" component={qygl}/>
 
     <Stack.Screen name="作品审核" component={zpsh}/>
     <Stack.Screen name="查看作品审核" component={zpshlc}/>
+    <Stack.Screen name="管理已审核作品" component={zpshyilc}/>
+    
 
     <Stack.Screen name="评论审核" component={plsh}/>
 

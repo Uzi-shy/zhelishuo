@@ -9,7 +9,7 @@ import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
-const tabBarHeight = 60;
+const tabBarHeight = 70;
 
 
 
@@ -101,7 +101,16 @@ constructor(props){
                         position: "absolute", bottom: 60, right: 170
                     }}
                     onPress={()=>{
-                        this.props.navigation.navigate("热门细节");
+                        this.props.navigation.navigate("热门细节",
+                        {
+                            
+                            username: this.props.author,
+                            toux: "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=252742683,1933559509&fm=26&gp=0.jpg",
+                            name: this.props.author,
+                            pick: "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=252742683,1933559509&fm=26&gp=0.jpg",
+                            words: this.props.text,
+                            title: this.props.title,
+                          });
                     }}>
                         <AnimatedCloseView style={{ opacity: this.state.opacity }}>
                             <Feather name={'more-horizontal'} size={32} />

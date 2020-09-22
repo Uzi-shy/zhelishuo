@@ -21,7 +21,7 @@ StatusBar.setBackgroundColor("transparent");
 StatusBar.setTranslucent(true);
 StatusBar.setBarStyle('dark-content');
 const { width, height } = Dimensions.get("window");
-
+var loginstate=false;
 
 
 export default class Search extends Component {
@@ -61,10 +61,12 @@ export default class Search extends Component {
 
                 alert("登录成功" + json.username);
                 if(json.username=='huangfan'){
-                    navigation.navigate('管理员个人中心');
+                    navigation.navigate('发布', {
+                        username: json.username
+                    });
                 }
                 else{
-                    navigation.navigate('用户个人中心', {
+                    navigation.navigate('发布', {
                     username: json.username
                 });
                 }
@@ -80,11 +82,13 @@ export default class Search extends Component {
     _onstarjudgeidentity() {
         var navigation = this.props.navigation;
         if (this.state.searchidentity == "用户" && this.state.islogin == true) {
-            navigation.navigate('用户个人中心', {
+            navigation.navigate('发布', {
                 username: this.state.searchText
             });
         } else if (this.state.searchidentity == "管理员") {
-            navigation.navigate('管理员个人中心');
+            navigation.navigate('发布', {
+                username: this.state.searchText
+            });
         }
 
     };
@@ -150,6 +154,7 @@ export default class Search extends Component {
     };
 
     render() {
+        this._onstarjudgeLogin();
         this.judge();
         return (
             <View style={[styles.container]}>
@@ -175,7 +180,7 @@ export default class Search extends Component {
 
 
                 {/* 登陆框 */}
-                <ImageBackground style={{ height: height - 100, width: width }} source={require('../img/dufu2.jpg')}>
+                <ImageBackground style={{ height: height - 100, width: width }} source={require('../img/dufu.jpg')}>
                     <TouchableWithoutFeedback onPress={this.tapBackground}>
                         <View style={{ width: "90%", alignItems: 'center', backgroundColor: "white", height: "65%", marginTop: 20, marginHorizontal: 20, borderRadius: 20, elevation: 10 }}>
 
@@ -223,21 +228,12 @@ export default class Search extends Component {
 
                                         this._onClicksaveloginstate();
                                         this._onClickLogin();
-
                                         this._onstarjudgeidentity();
                                         // this.props.navigation.push('个人中心');         
                                     }}>
                                     <Text style={{ fontSize: 20, color: "#fff" }}>登录</Text>
                                 </TouchableOpacity></View>
-                            <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                                <Text style={{ color: "#000", fontSize: 15, marginTop: 20, marginRight: "25%" }}>忘记密码</Text>
-                                <Text style={{ color: "#000", fontSize: 15, marginTop: 20, marginLeft: "25%" }}
-                                    onPress={() => {
-                                        this.props.navigation.push("注册");
-                                    }}
-
-                                >注册账号</Text>
-                            </View>
+                            
                         </View>
                     </TouchableWithoutFeedback>
                 </ImageBackground>

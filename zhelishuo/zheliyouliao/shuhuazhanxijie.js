@@ -102,6 +102,7 @@ export default class Poet extends Component {
         );
     }
     render() {
+        const { navigation, route } = this.props;
         return (
 
             <View  >
@@ -125,19 +126,21 @@ export default class Poet extends Component {
                     <View>
                         <View style={{ backgroundColor: 'white', padding: 20, flexDirection: 'row' }}>
                             <TouchableWithoutFeedback>
-                                <Image source={require('../img/遗憾.jpg')} style={{ height: 220, width: 150, borderRadius: 10, marginRight: 25 }} />
+                                <Image source={{uri:route.params.pic}} style={{ height: 220, width: 150, borderRadius: 10, marginRight: 25 }} />
                             </TouchableWithoutFeedback>
                             <View>
-                                <Text style={{ fontSize: 25, fontWeight: 'bold', marginBottom: 15 }}>向史而新</Text>
-                                <Text style={{ fontSize: 18, marginBottom: 120 }}>浙江百年水彩画作品展</Text>
+                <Text style={{ fontSize: 22, fontWeight: 'bold', marginBottom: 15 }}>{route.params.title}</Text>
+                <Text style={{ fontSize: 14, marginBottom: 120 }}>{route.params.leibie}</Text>
                                 <Text style={{ fontSize: 25, fontWeight: 'bold' }}>免费</Text>
                             </View>
                         </View>
 
                         <View style={{ padding: 20 }}>
-                            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>2020.08.05 09:00 - 09.03 17:00</Text>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>{route.params.date}</Text>
                             <View style={{ flexDirection: 'row' }}>
-                                <EvilIcons name={'location'} size={25} />
+                                <EvilIcons name={'location'} size={25} onPress={() => {
+                        this.props.navigation.navigate("地图")
+                    }}/>
                                 <Text style={{ fontSize: 18, marginBottom: 20, color: '#272727' }}>杭州 西湖区 浙江美术馆</Text>
                             </View>
                             <Text style={{ fontSize: 20, fontWeight: 'bold' }}>展览介绍</Text>

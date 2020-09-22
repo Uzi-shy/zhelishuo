@@ -27,10 +27,10 @@ import DialogSelected from './alertSelected';
 
 const { width, height } = Dimensions.get("window");
 const selectedArr = ["拍照", "图库"];
-var promise = false;
-var username = "";
-var userstate = [];
-var gerenxx = [];
+
+var one=1;
+
+
 export default class spread extends Component {
 
 
@@ -81,14 +81,119 @@ export default class spread extends Component {
             selectMultiItem: [],
             changeText: '所有人可见',
             author: '',
+            gerenxx : [],
+
         };
 
         this.label = { false: '关', true: '开' }
 
         this.showAlertSelected = this.showAlertSelected.bind(this);
         this.callbackSelected = this.callbackSelected.bind(this);
+    }
+
+    
+
+    //判断登录状态
+    _onstarjudgeLogin = () => {
+
+        var navigation = this.props.navigation;
+        fetch('http://192.168.50.28:3000/judgelogin', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        }).then(function (res) {
+            return res.json();
+        }).then(function (json) {
+            if (json.code == "200") {
+
+                // alert("登录成功" + json.username);
+                if(json.username=='huangfan'){
+                    // navigation.navigate('发布', {
+                    //     username: json.username
+                    // });
+                }
+                else{
+                    
+                }
+            } else if (json.code == "400") {
+                navigation.navigate('发布前要登录的');
+                //   alert("上次登录已退出，请重新登录");
+            }
+        })
+    };
+
+    //发布页获取个人信息
+    _onstargetgerenxx = () => {
+        const {navigation,route}=this.props;
+        console.log(route.params.username);
+        fetch('http://192.168.50.28:3000/personal',
+            {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+
+                    username: route.params.username,
+                })
+            })
+            .then((response) => response.json())
+            .then((json) => {
+                this.setState({gerenxx : json.result})
+                console.log(this.state.gerenxx);
+                
+            })
+            .catch((error) => console.error(error))
+            console.log("grxx:"+this.state.gerenxx);
 
     }
+
+
+    //发布给管理员待审核
+    _onClickpublish_to_administrator = () => {
+        var num=1+parseInt(Math.random() * (4) );
+        const {navigation,route}=this.props;
+        fetch('http://192.168.50.28:3000/publish_to_administrator', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username:  route.params.username,
+                
+                gerenxx: this.state.gerenxx,
+                title: this.state.title,
+                words: this.state.words,
+                pick: this.state.avatarSource,
+                author: this.state.author,
+                label: this.state.selectMultiItem,
+                yuanchuang: this.state.switch1Value,
+                simi: this.state.changeText,
+                promise: false,
+                idd:1+num%2,
+                hight:num*100,
+                pinglun:0,
+                dianzhan:0,
+                zhuanfa:0,
+            })
+        })
+
+        // .then(function (res) {
+        //     return res.json();
+        // }).then(function (json) {
+        //     if (json.errno == 0) {
+        //         // navigation.navigate("bottomTab");
+        //         alert("发布成功")
+        //     } else if (json.errno == -1) {
+        //         alert("发布失败")
+        //     }
+        //     // navigation.goBack();
+        // })
+    };
 
 
     updateState = () => {
@@ -194,125 +299,40 @@ export default class spread extends Component {
     //       })
     //     }
 
-    //判断登录状态
-    _onstarjudgeLogin = () => {
-
-        var navigation = this.props.navigation;
-        fetch('http://10.0.2.2:3000/judgelogin', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-        }).then(function (res) {
-            return res.json();
-        }).then(function (json) {
-            if (json.code == "200") {
-
-                alert("用户" + json.username + "已登录，可以发布");
-                // navigation.navigate('用户个人中心',{
-                //     username:json.username
-                // });
-                promise = true;
-                username = json.username;
-                userstate = json.userstate;
-                
-
-
-            } else if (json.code == "400") {
-                alert("请先登录");
-                promise = false;
-            }
-        })
-        console.log("promise:"+promise);
-    };
-
-    //发布页获取个人信息
-    _onstargetgerenxx = () => {
-        fetch('http://10.0.2.2:3000/personal',
-            {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-
-                    username: username,
-                })
-            })
-            .then((response) => response.json())
-            .then((json) => {
-                gerenxx = json.result;
-                
-            })
-            .catch((error) => console.error(error))
-            console.log("grxx:"+gerenxx);
-
-    }
-
-
-    //发布给管理员待审核
-    _onClickpublish_to_administrator = () => {
-        var navigation = this.props.navigation;
-        fetch('http://10.0.2.2:3000/publish_to_administrator', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username: username,
-                userstate: userstate,
-                gerenxx: gerenxx,
-                title: this.state.title,
-                words: this.state.words,
-                pick: this.state.avatarSource,
-                author: this.state.author,
-                label: this.state.selectMultiItem,
-                yuanchuang: this.state.switch1Value,
-                simi: this.state.changeText,
-                promise: false,
-            })
-        })
-
-        // .then(function (res) {
-        //     return res.json();
-        // }).then(function (json) {
-        //     if (json.errno == 0) {
-        //         // navigation.navigate("bottomTab");
-        //         alert("发布成功")
-        //     } else if (json.errno == -1) {
-        //         alert("发布失败")
-        //     }
-        //     // navigation.goBack();
-        // })
-    };
+    
     render() {
+        
+        if (one==1){
+            this._onstarjudgeLogin();
+            this._onstargetgerenxx();
+            one=one+1;
+        }
 
         // this._onstarjudgeLogin();
         // this._onstargetgerenxx();
         
         return (
+            
             <View style={[styles.container]}>
+                
                 <View style={[styles.top]}>
                     <View style={[styles.top_container]}>
 
                         <Text style={{ fontSize: 20, fontWeight: "bold", fontFamily: 'youran', marginTop: 24, marginLeft: 170 }}>在浙里说</Text>
                         <TouchableOpacity onPress={() => {
-                            this._onstarjudgeLogin();
-                            this._onstargetgerenxx();
-                            if (gerenxx == []) {
+                            
+                            
+                            if (this.state.gerenxx == []) {
                                 alert("用户信息未输入，请再次点击")
-                            }
-                            // console.log("promis:"+promise);
-                            if (promise == true) {
+                            }else{
                                 this._onstargetgerenxx();
                                 this._onClickpublish_to_administrator();
 
-                            } else {
-                                alert("请先到个人中心登录");
                             }
+                            // console.log("promis:"+promise);
+                        
+                                
+                            // this.props.navigation.navigate('动画');
 
                         }}>
                             <Text style={{
@@ -332,6 +352,7 @@ export default class spread extends Component {
                         <TextInput
                             style={{ width: "100%", height: 40, letterSpacing: 1, }}
                             placeholder="标题 "
+                            maxLength={10}
                             onChangeText={(text) => {
                                 this.setState({ title: text });
                             }}
@@ -342,6 +363,8 @@ export default class spread extends Component {
                         <TextInput
                             style={{ width: "100%", height: 40, letterSpacing: 1, }}
                             placeholder="正文"
+                            multiline={true}
+                            
                             onChangeText={(text) => {
                                 this.setState({ words: text });
                                 console.log(this.state.words)
@@ -651,7 +674,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#efefef",
     },
     top: {
-        height: 78,
+        height: 50,
         width: "100%",
         backgroundColor: "#fff",
         borderRadius: 10,

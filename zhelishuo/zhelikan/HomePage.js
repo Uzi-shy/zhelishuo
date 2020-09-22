@@ -364,44 +364,21 @@ const Text=styled.Text``;
 
 const Projects=[
     {
-        title:"遗憾",
-        image:require("../img/遗憾.jpg"),
-        author:"Li ⭐",
+        title:"醒时诗酒醉时歌",
+        image:require("../img/zhelikan/smc.jpg"),
+        author:"极简.",
         text:
-        "别再说是谁的错 让一切成灰\n"+
-        "除非放下心中的负累\n"+
-        "一切难以挽回\n"+
-        "与其让你在我怀中枯萎，宁愿你犯错后悔。\n"+
-        "你总爱让往事跟随 怕过去白费\n"+
-        "你总以为要体会人生\n"+
-        "就要多爱几回\n"+
-        "与其让你在我怀中枯萎\n"+
-        "宁愿你犯错后悔\n"+
-        "让你飞向梦中的世界\n"+
-        "留我独自伤悲\n"+
-        "与其让你在我爱中憔悴\n"+
-        "宁愿你受伤流泪\n"+
-        "莫非要你尝尽了苦悲\n"+
-        "才懂真情可贵\n"+
-        "别再说是谁的错 让一切成灰\n"+
-        "除非放下心中的负累\n"+
-        "一切难以挽回\n"+
-        "与其让你在我怀中枯萎，宁愿你犯错后悔。\n"+
-        "你总爱让往事跟随 怕过去白费\n"+
-        "你总以为要体会人生\n"+
-        "就要多爱几回\n"+
-        "与其让你在我怀中枯萎\n"+
-        "宁愿你犯错后悔\n"+
-        "让你飞向梦中的世界\n"+
-        "留我独自伤悲\n"+
-        "与其让你在我爱中憔悴\n"+
-        "宁愿你受伤流泪\n"+
-        "莫非要你尝尽了苦悲\n"+
-        "才懂真情可贵\n"
+        "宋】范仲淹\n"+
+        "碧云天，黄叶地，秋色连波，波上寒烟翠。\n"+
+        "山映斜阳天接水，芳草无情，更在斜阳外。\n"+
+        "黯乡魂,追旅思,夜夜除非，好梦留人睡。\n"+
+        "明月楼高休独倚，酒入愁肠，化作相思泪。\n"+
+        "【注释】\n"+
+        "①此调原为西域传入唐教坊曲。“苏幕遮”是当时高昌国语之音译。宋代词家 用此调是另度新曲。又名《云雾敛》、《鬓云松令》。双调，六十二字，上下片各五句四仄韵。②黯：形容心情忧郁。黯乡魂：用江淹《别赋》“黯然销魂”语。③追：追随，可引申为纠缠。旅思：羁旅之思。\n"
     },
     {
         title:"rainbow",
-        image:require("../img/彩虹.jpg"),
+        image:require("../img/a.jpg"),
         author:"小😀黄",
         text:
         "啊巴阿巴阿巴阿巴巴啵啵啵啵啵啵................"
@@ -415,35 +392,35 @@ const Projects=[
     },
     {
         title:"Price Tag4",
-        image:require("../img/春.jpg"),
+        image:require("../img/spring.jpg"),
         author:"小红的大作",
         text:
         "Thanks to Design+Code..........57676768..........."
     },
     {
         title:"Price Tag5",
-        image:require("../img/夏.jpg"),
+        image:require("../img/summer.jpg"),
         author:"小红的大作",
         text:
         "Thanks to Design+Code..........57676768..........."
     },
     {
         title:"Price Tag6",
-        image:require("../img/秋.jpg"),
+        image:require("../img/pig.jpg"),
         author:"小红的大作",
         text:
         "Thanks to Design+Code..........57676768..........."
     },
     {
         title:"Price Tag7",
-        image:require("../img/冬.jpg"),
+        image:require("../img/winter.jpg"),
         author:"小红的大作",
         text:
         "Thanks to Design+Code..........57676768..........."
     },
     {
         title:"Price Tag8",
-        image:require("../img/目瞪口呆.gif"),
+        image:require("../img/winter.jpg"),
         author:"小红的大作",
         text:
         "Thanks to Design+Code.......21412156........"+
@@ -452,7 +429,7 @@ const Projects=[
     },
     {
         title:"猪头妹",
-        image:require("../img/猪头妹.jpg"),
+        image:require("../img/ztm.jpg"),
         author:"天才少年",
         text:
         "寻人启事：\n"+

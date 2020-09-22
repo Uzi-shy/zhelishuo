@@ -37,7 +37,9 @@ import zhelishuoxijie from './zhelishuo/zhelishuoxijie';
 
 
 //在浙里说
+import public_login from './src/public_login';
 import plus from './src/plus1';
+import lotte from './src/lott';
 
 
 
@@ -71,6 +73,7 @@ import shirenshouzimu from './zheliyouliao/shiren/shirenshouzimu';
 import shirenliupai from './zheliyouliao/shiren/shirenliupai';
 
 import shirenxijie from './zheliyouliao/shiren/shirenxijie';
+import map from './zheliyouliao/map'
   
 //个人中心
 
@@ -128,15 +131,10 @@ function zaizhelishuo() {
     
 
     <Stack.Navigator mode="modal" headerMode="none">
-
-    <Stack.Screen name="zaizhelis" component={plus}/>
-    <Stack.Screen name="进入个人中心" component={enter2}/>
-    
-    
-    
+    <Stack.Screen name="发布前要登录的" component={public_login}/>
+    <Stack.Screen name="发布" component={plus}/>
+    <Stack.Screen name="动画" component={lotte}/>
     </Stack.Navigator>
-    
-    
   );
 }
 
@@ -310,6 +308,7 @@ export default function App() {
 
     <Stack.Screen name="书画展" component={shuhauzhan}/>
     <Stack.Screen name="书画展细节" component={shuhauzhanxijie}/>
+    <Stack.Screen name="地图" component={map}/>
 
 
 

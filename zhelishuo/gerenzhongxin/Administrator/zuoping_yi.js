@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     Dimensions, SafeAreaView, Text, View, StyleSheet,
-    TouchableOpacity, ActivityIndicator, Image, ScrollView, Alert
+    TouchableOpacity, ActivityIndicator, Image, ScrollView, Alert,RefreshControl
 } from "react-native";
 import { FlatList } from 'react-native-gesture-handler';
 import Feather from 'react-native-vector-icons/Feather'
@@ -19,15 +19,37 @@ export default class ContentWaterfall extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            refreshing: false,
             isLoading: true,
             isdata:[],
 
         }
     }
 
+    _onRefresh() {
+
+        if (this.state.refreshing ==false) {
+            this._updateState( true);
+            this.componentDidMount();
+    
+            //2秒后结束刷新
+            setTimeout( ()=>{
+                this._updateState( false);
+                this.componentDidMount();
+            }, 2000)
+    
+        }
+    }
+    
+    //更新State
+    _updateState( refresh){
+        this.setState({refreshing: refresh});
+    }
+
+
 
     componentDidMount() {
-        fetch('http://10.0.2.2:3000/zuoping_yi',
+        fetch('http://192.168.50.28:3000/zuoping_yi',
             {
                 method: 'POST',
                 headers: {
@@ -65,10 +87,19 @@ export default class ContentWaterfall extends Component {
                                 bounces={true}
                                 numColumns={2}
                                 keyExtractor={({ id }, index) => id}
+                                refreshControl={
+                                    <RefreshControl
+                                        tintColor={'red'}
+                                        titleColor={'brown'}
+                                        title={'正在刷新......'}
+                                        refreshing={this.state.refreshing}
+                                        onRefresh={this._onRefresh.bind(this)}
+                                    />
+                                }
                                 renderItem={({ item }) => (
                                     <View style={styles.item}>
                                         <TouchableOpacity onPress={() => {
-                                this.props.navigation.navigate('查看作品审核',
+                                this.props.navigation.navigate('管理已审核作品',
                                 {
                                     id:item._id,
                                     username:item.username,
@@ -84,7 +115,7 @@ export default class ContentWaterfall extends Component {
                                                 source={{ uri: item.pick[0] }}
                                                 style={{ width: itemWidth, height: 140 }}
                                             />
-                                        </TouchableOpacity>
+                                        </TouchableOpacity >
                                         <Text style={{ fontSize: 15, marginVertical: 5 }}>{item.title}</Text>
                                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -92,7 +123,7 @@ export default class ContentWaterfall extends Component {
                                                 <Text>{item.gerenxx[0].name}</Text>
                                             </View>
                                             <View style={{ marginRight: 5 }}>
-                                                <Feather name={'clock'} size={20} />
+                                            <Feather name={'check-square'} size={20}/>
                                             </View>
                                         </View>
                                     </View>

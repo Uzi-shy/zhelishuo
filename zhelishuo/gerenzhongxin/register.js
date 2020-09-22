@@ -51,7 +51,7 @@ _judgeusername=()=>{
   
   // const [isLoading, setLoading] = useState(true);
   // var navigation=this.props.navigation;
-  fetch('http://10.0.2.2:3000/judgeusername', {
+  fetch('http://192.168.50.28:3000/judgeusername', {
     method: 'post',
     headers: {
       'Accept': 'application/json',
@@ -84,7 +84,7 @@ _judgeusername=()=>{
 
   _insertdate=()=>{
     
-  fetch('http://10.0.2.2:3000/insert', {
+  fetch('http://192.168.50.28:3000/insert', {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',
@@ -132,7 +132,7 @@ _judgeusername=()=>{
 
 
         {/* 登陆框 */}
-        <ImageBackground source={require('../img/杜甫.jpg')} style={{height:height-100,width:width}}>
+        <ImageBackground source={require('../img/dufu.jpg')} style={{height:height-100,width:width}}>
       <TouchableWithoutFeedback onPress={this.tapBackground}>
         <View   style={{width:"90%",alignItems:'center',backgroundColor:"white",height:"79%",marginTop:20,marginHorizontal:20,borderRadius:20,elevation:10}}>
 

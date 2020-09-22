@@ -32,7 +32,7 @@ const {width,height} =Dimensions.get("window")
       introduce:'字太白，号青莲居士。',
     },
     {
-      picture:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597748571790&di=28bfb4c62af3a38e39ccde36e9da021a&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201705%2F11%2F20170511193924_mhwVE.jpeg',
+      picture:'http://121.196.27.141/img/baijuyi.jpg',
       person:'白居易———现实主义',
       introduce:'字乐天，晚年号香山居士。',
     },

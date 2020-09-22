@@ -7,7 +7,7 @@ import { RotationGestureHandler, TouchableHighlight, ScrollView } from "react-na
 export default class extends Component {
 
   _onClickexitloginstate = () => {
-    fetch('http://10.0.2.2:3000/exitlogin', {
+    fetch('http://192.168.50.28:3000/exitlogin', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

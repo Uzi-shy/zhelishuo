@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 
 //设置监听端口号
 app.listen(3000, () => {
-    console.log('server start:', "http://10.0.2.2:3000/index");
+    console.log('server start:', "http://121.196.27.141:3000/index");
   })
 
   const MongoClient = require('mongodb').MongoClient;
