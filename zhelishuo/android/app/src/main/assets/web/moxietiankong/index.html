@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>古诗填空题</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<style type="text/css">
+	body{padding: 20px;}
+*{ margin: 0; padding: 0; list-style:none; border:0; box-sizing:border-box; }
+.answer_input { margin:20px auto; border-bottom:1px dotted gray; overflow:hidden; clear:both; }
+.answer_input span { margin:0 2px; padding:0; display:inline-block; text-align:center; vertical-align:middle; background:#ffffff; border:2px solid #cccccc; border-radius:4px; font-size:16px; color:#da2d20; width:30px; height:30px; line-height:26px; }
+.answer_input span:active { background-color:#f1f1f1; }
+.answer_input span.span_focus { border-color: #da2d20; }
+.h_input { width:1px; height:0px; }
+.ibutton { margin:0 auto; width:100%; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; line-height:25px; -moz-transition: all 0.2s ease-out 0s; -webkit-transition: all 0.2s ease-out 0s; transition: all 0.2s ease-out 0s; padding: 12px 36px; font-size:18px; font-weight:bold; }
+.btn-blue { color: #ffffff; background-color: #428bca; border-color: #357ebd;}
+</style>
+<script type="text/javascript">
+$().ready(function(){
+	var uid,span_val,span_maxlength;
+
+	$(".answer_input").click(function(){
+		uid = $(this).attr("v");
+		span_val = $("#Q_"+uid).val();
+		span_maxlength = $("#u_"+uid+" span").length;
+		$("#h_input").attr("maxlength",span_maxlength);
+
+		$("#h_input").val("").focus().val(span_val);
+
+		GetSpanFocus();
+	});
+
+	$(".h_input").on("input propertychange",function(){
+		span_val = $("#h_input").val();
+		$("#u_"+uid+" span").text("");
+		var arr = span_val.split("");
+
+		$.each(arr,function(i,value){
+			$("#u_"+uid+" span:eq("+i+")").text(value);
+		});
+
+		$("#Q_"+uid).val(span_val);
+
+		GetSpanFocus();
+	});
+
+	$(".h_input").blur(function(){
+		$(".answer_input span").removeClass("span_focus");
+	});
+
+	function GetSpanFocus(){
+		$(".answer_input span").removeClass("span_focus");
+
+		var h_input_curlength = span_val.length;
+		if (h_input_curlength > span_maxlength - 1){
+			h_input_curlength = span_maxlength - 1;
+		}
+
+		$("#u_"+uid+" span:eq("+h_input_curlength+")").addClass("span_focus");
+	}
+
+	$("#ibutton").click(function(){
+
+		var f_id,f_result="",ResultJson="";
+
+		$(".answer_input").each(function(){
+			f_id = $(this).attr("v");
+			f_result = $(this).find("#Q_"+f_id).val();
+			ResultJson += '{"q_id":"'+f_id+'","q_result":"'+f_result+'"},';
+		});
+
+		ResultJson = ResultJson.substring(0,ResultJson.length-1);
+		ResultJson = '[' + ResultJson + ']';
+
+		alert( ResultJson );
+	});
+
+	//如果有初始值，遍历填充
+	$(".answer_input").each(function(){
+		var uid = $(this).attr("v");
+		var span_val = $("#Q_"+uid).val();
+
+		if (span_val != ""){
+			var arr = span_val.split("");
+			$.each(arr,function(i,value){
+				$("#u_"+uid+" span:eq("+i+")").text(value);
+			});
+		}
+	});
+});
+</script>
+</head>
+<body>
+<input id="h_input" class="h_input" type="text" />
+
+<div class="answer_input" id="u_1001" v="1001">
+	浙江古诗词机智问答/n
+	1、渡浙江问舟中人
+	唐代：孟浩然
+
+潮落江平未有风，<span></span><span></span><span></span><span></span>与<span></span><span></span>。/n
+
+时时引领望天末，<span></span><span></span><span></span><span></span>是越中。
+	<input id="Q_1001" type="hidden" />
+</div>
+
+<div class="answer_input" id="u_1002" v="1002">
+	2、普天乐·浙江秋/n
+
+元代：姚燧/n
+
+<span></span><span></span><span></span>，吴山夜。/n
+
+愁随潮去，恨与山叠。/n
+
+寒雁来，芙蓉谢。/n
+
+冷雨青灯读书舍，怕离别又早离别。/n
+
+今宵醉也，明朝去也，宁奈些些。召开。<input id="Q_1002" type="hidden" />
+</div>
+
+<div class="answer_input" id="u_1003" v="1003">
+	3、好事近·浙江楼闻笛
+
+宋代：汪元量
+
+独依浙江楼，满耳怨笳哀笛。犹有梨园声在，<span></span><span></span><span></span><span></span><span></span>。
+
+海棠憔悴怯春寒，风雨怎禁得。回首华清池畔，渺露芜烟荻。<input id="Q_1003" type="hidden" />
+</div>
+
+<button id="ibutton" class="ibutton btn-blue">答题完毕</button>
+
+
+</body>
+</html>
