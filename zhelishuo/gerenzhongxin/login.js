@@ -162,7 +162,7 @@ export default class Search extends Component {
                                 this.props.navigation.goBack()
                             }} /> */}
                         </View>
-                        <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 30 }}>登录</Text>
+                        <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 24 }}>登录</Text>
                         <View>
                             {/* <Entypo name={'home'} size={25} color={'#000'} onPress={() => {
                                 this.props.navigation.popToTop();
@@ -175,7 +175,7 @@ export default class Search extends Component {
 
 
                 {/* 登陆框 */}
-                <ImageBackground style={{ height: height - 100, width: width }} source={require('../img/dufu2.jpg')}>
+                <ImageBackground style={{ height: height - 100, width: width }} source={require('../img/dufu.jpg')}>
                     <TouchableWithoutFeedback onPress={this.tapBackground}>
                         <View style={{ width: "90%", alignItems: 'center', backgroundColor: "white", height: "65%", marginTop: 20, marginHorizontal: 20, borderRadius: 20, elevation: 10 }}>
 
@@ -252,12 +252,12 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff"
     },
     top: {
-        height: 90,
+        height: 50,
         width: "100%",
         backgroundColor: "#FFFFFF",
         borderBottomRightRadius: 15,
         borderBottomLeftRadius: 15,
-        elevation: 8,
+        elevation: 4,
     },
     nav_container: {
         flex: 0.7,

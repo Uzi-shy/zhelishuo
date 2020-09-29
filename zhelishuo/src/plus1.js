@@ -154,7 +154,7 @@ export default class spread extends Component {
 
     //发布给管理员待审核
     _onClickpublish_to_administrator = () => {
-        var num=1+parseInt(Math.random() * (4) );
+        var num=1+parseInt(Math.random() * (3) );
         const {navigation,route}=this.props;
         fetch('http://192.168.50.28:3000/publish_to_administrator', {
             method: 'POST',
@@ -175,7 +175,7 @@ export default class spread extends Component {
                 simi: this.state.changeText,
                 promise: false,
                 idd:1+num%2,
-                hight:num*100,
+                hight:num*10+num*100,
                 pinglun:0,
                 dianzhan:0,
                 zhuanfa:0,
@@ -332,7 +332,7 @@ export default class spread extends Component {
                             // console.log("promis:"+promise);
                         
                                 
-                            // this.props.navigation.navigate('动画');
+                            this.props.navigation.navigate('动画');
 
                         }}>
                             <Text style={{

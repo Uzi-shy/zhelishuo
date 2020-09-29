@@ -244,10 +244,10 @@ export default function huazuo({ navigation }) {
     <View>
       <ImageBackground style={{ width: '100%', height: '100%' }} source={require('../img/dufu.jpg')}>
 
-      <View style={{ height: 90, width: "100%", backgroundColor: "#FFFFFF", borderBottomRightRadius: 15, borderBottomLeftRadius: 15, elevation: 5, }}>
+      <View style={{ height: 50, width: "100%", backgroundColor: "#FFFFFF", borderBottomRightRadius: 15, borderBottomLeftRadius: 15, elevation: 4, }}>
           <View style={{ flex: 0.7, marginTop: '6%', flexDirection: "row", width: "90%", justifyContent: "space-between", alignItems: "center", }}>
             <View style={{ flexDirection: "row" }}>
-              <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
+              <AntDesign name={'left'} size={22} color={'#000'} onPress={() => {
                 navigation.goBack();
               }} />
             </View>
@@ -261,7 +261,7 @@ export default function huazuo({ navigation }) {
         </View>
 
 
-        <ScrollView style={{ marginVertical: 15, marginHorizontal: 5 }}>{/* 按钮栏目 */}
+        <ScrollView style={{ marginVertical: 5, marginHorizontal: 5 }}>{/* 按钮栏目 */}
 
           <View style={{ flexDirection: 'row' }}>
             <View>{/* 左 */}

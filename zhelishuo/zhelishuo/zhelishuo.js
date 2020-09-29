@@ -617,10 +617,10 @@ export default class ContentWaterfall extends Component {
                 </View>
               </TouchableNativeFeedback>
 
-              <TouchableNativeFeedback onPress={() => { this.props.navigation.navigate("其他文学") }}>
+              <TouchableNativeFeedback onPress={() => { this.props.navigation.navigate("飞花令") }}>
                 <View style={{ marginLeft: 15, justifyContent: 'center', alignItems: 'center', width: 80, height: 30, borderWidth: 1, borderColor: "grey", borderRadius: 5 }}>
                   <Text style={{ fontSize: 20, fontFamily: "youran" }} >
-                    其他文学
+                    飞花令
            </Text>
                 </View>
               </TouchableNativeFeedback>
@@ -665,10 +665,13 @@ export default class ContentWaterfall extends Component {
                                     username: item.username,
                                     toux: item.gerenxx[0].toux.uri,
                                     name: item.gerenxx[0].name,
-                                    pick: item.pick[0],
+                                    pick: item.pick,
                                     words: item.words,
                                     title: item.title,
                                     gerenxx: item.gerenxx[0],
+                                    pinglun:item.pinglun,
+                                    dianzhan:item.dianzhan,
+                                    zhuanfa:item.zhuanfa,
                                   });
                               }}>
 

@@ -311,20 +311,13 @@ renderYoYo(){
          
           <View style={{marginHorizontal:15,marginBottom:5}}>
             
-          
-              <ScrollView
-              
+
+      <ScrollView
               showsVerticalScrollIndicator={false}>
-              {this.renderAich()}
-              {this.renderGaGa()}
-              {this.renderYoYo()}
+              {this.renderLucy()}
+              {this.renderMoMo()}
+              {this.renderNaNa()}
           </ScrollView>
-
-
-
-          
-
-      
 
           </View>
     

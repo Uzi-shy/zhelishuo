@@ -30,10 +30,13 @@ export default class PickerTest extends Component {
                  <TouchableOpacity style={{height:35,width:35,backgroundColor:'white',borderColor:'#9D9D9D',borderWidth:0.2,borderRadius:8,position:'absolute',right:10,top:10,alignItems:'center',justifyContent:'center',elevation:5}}>
                  <Feather name={'search'} size={25}/>
                  </TouchableOpacity>
-                 <TouchableOpacity style={{height:35,width:35,backgroundColor:'white',borderColor:'#9D9D9D',borderWidth:0.2,borderRadius:8,position:'absolute',right:10,bottom:380,alignItems:'center',justifyContent:'center',elevation:5}}>
+                 <TouchableOpacity style={{height:35,width:35,backgroundColor:'white',borderColor:'#9D9D9D',borderWidth:0.2,borderRadius:8,position:'absolute',right:10,bottom:380,alignItems:'center',justifyContent:'center',elevation:5}}
+                 onPress={() => {
+                  this.props.navigation.navigate("全景图");
+                }}>
                  <MaterialIcons name={'location-searching'} size={25}/>
                  </TouchableOpacity>
-                 <View style={{position:'absolute',bottom:10,width:width,backgroundColor:'white',paddingHorizontal:20,paddingBottom:30,paddingTop:20}}>
+                 <View style={{position:'absolute',bottom:0,width:width,backgroundColor:'white',paddingHorizontal:20,paddingBottom:30,paddingTop:20}}>
                    <Text style={{fontSize:22,fontWeight:'700',width:"70%",lineHeight:40}}>浙江百年水彩画作品展《向史而新》</Text>
                    <Text style={{fontSize:18,color:'#6C6C6C',marginVertical:10}}>西湖区 浙江美术馆</Text>
                    <View style={{flexDirection:'row',alignItems:'center'}}>
@@ -45,7 +48,7 @@ export default class PickerTest extends Component {
                        <Text style={{color:'white',fontSize:20,fontWeight:'bold'}}>查看路线</Text>
                      </TouchableOpacity>
                    </View>
-                   {/* <View style={{backgroundColor:'#E0E0E0',height:10,width:width,marginVertical:15}}/> */}
+                   <View style={{backgroundColor:'#E0E0E0',height:2,marginVertical:15}}/>
                    <View>
                      <Text style={{fontWeight:'bold',fontSize:22,marginBottom:15}}>周边推荐</Text>
                      <View style={{flexDirection:'row',justifyContent:'space-between'}}>

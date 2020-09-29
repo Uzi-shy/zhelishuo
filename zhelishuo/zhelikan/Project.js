@@ -9,7 +9,7 @@ import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
-const tabBarHeight = 70;
+const tabBarHeight = 75;
 
 
 
@@ -23,7 +23,7 @@ constructor(props){
         cardHeight: new Animated.Value(400),
         titleTop: new Animated.Value(20),
         opacity: new Animated.Value(0),
-        textHeight: new Animated.Value(100),
+        textHeight: new Animated.Value(60),
     };
 
     openCard = () => {
@@ -46,7 +46,6 @@ constructor(props){
         Animated.spring(this.state.titleTop, { toValue: 20 }).start();
         Animated.timing(this.state.opacity, { toValue: 0 }).start();
         Animated.spring(this.state.textHeight, { toValue: 100 }).start();
-
         StatusBar.setHidden(true);
     }
 
@@ -58,7 +57,7 @@ constructor(props){
                 >
 
                     <Cover>
-                        <Image source={this.props.image} />
+                        <Image source={{uri:this.props.image[0]}} />
                         <AnimatedTitle style={{ top: this.state.titleTop }}
                         >{this.props.title}</AnimatedTitle>
                         <Author>作者：{this.props.author}</Author>
@@ -79,15 +78,6 @@ constructor(props){
 
 
 
-
-
-
-
-
-
-
-
-
                     <TouchableOpacity style={{
                         position: "absolute", bottom: 60, right: 120
                     }}
@@ -103,13 +93,15 @@ constructor(props){
                     onPress={()=>{
                         this.props.navigation.navigate("热门细节",
                         {
-                            
                             username: this.props.author,
-                            toux: "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=252742683,1933559509&fm=26&gp=0.jpg",
+                            toux: this.props.toux,
                             name: this.props.author,
-                            pick: "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=252742683,1933559509&fm=26&gp=0.jpg",
+                            pick: this.props.image,
                             words: this.props.text,
                             title: this.props.title,
+                            pinglun:this.props.pinglun,
+                            dianzhan:this.props.dianzhan,
+                            zhuanfa:this.props.zhuanfa,
                           });
                     }}>
                         <AnimatedCloseView style={{ opacity: this.state.opacity }}>

@@ -15,9 +15,9 @@ import shuhuazhan from './shuhuazhan' ;
 
 import srsp from './flastlist1';
 
-import mjjs from '../flastlist2';
+import mjjs from './flastlist2';
 
-import hzpx from '../flatlist3';
+import hzpx from './flatlist3';
 
 
 

@@ -26,15 +26,16 @@ app.get("/", (req, res) => {
 
 //设置监听端口号
 app.listen(3000, () => {
-    console.log('server start:', "http://192.168.50.28:3000/index");
+    console.log('server start:', ip+"/index");
   })
 
   const MongoClient = require('mongodb').MongoClient;
   const assert = require('assert');
   const { request } = require('http');
-const { json } = require('express');
+  const { json } = require('express');
   // Connection URL
   const url = 'mongodb://localhost:27017';
+  const ip="http://192.168.50.28:3000";
 
 
 
@@ -79,8 +80,8 @@ app.post('/judgeusername', async (req, res) => {
       db.close(); 
     })
   })
-
 })
+
 
 // 手机用户名密码数据存储
 app.post('/insert', async (req, res) => {
@@ -183,8 +184,8 @@ app.post('/login', async (req, res) => {
       db.close(); 
     })
   })
-
 })
+
 
 //判断登录状态
 app.post('/judgelogin', async (req, res) => {

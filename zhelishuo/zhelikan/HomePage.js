@@ -232,11 +232,37 @@ class ProjectsScreen extends React.Component{
             ]),
 
             onPanResponderRelease:()=>{
+                const positionx=this.state.pan.x.__getValue();
                 const positionY=this.state.pan.y.__getValue();
                 Animated.timing(this.state.opacity,{toValue:0}).start();
 
+
+                if(positionY<-150){
+                    Animated.timing(this.state.pan,{
+                        toValue:{x:0,y:-900}
+                    }).start(()=>{
+                        this.state.pan.setValue({x:0,y:0});
+                        this.state.scale.setValue(0.9);
+                        this.state.translateY.setValue(44);
+                        this.state.thirdScale.setValue(0.8);
+                        this.state.thirdTranslateY.setValue(-50);
+                        this.setState({index:getNextIndex(this.state.index)})
+                    });
+                }
+                if(positionx<-150||positionx>180){
+                    Animated.timing(this.state.pan,{
+                        toValue:{x:-900,y:0}
+                    }).start(()=>{
+                        this.state.pan.setValue({x:0,y:0});
+                        this.state.scale.setValue(0.9);
+                        this.state.translateY.setValue(44);
+                        this.state.thirdScale.setValue(0.8);
+                        this.state.thirdTranslateY.setValue(-50);
+                        this.setState({index:getNextIndex(this.state.index)})
+                    });
+                }
                 // console.log(positionY);
-                if(positionY>200){
+                if(positionY>180){
                     Animated.timing(this.state.pan,{
                         toValue:{x:0,y:1000}
                     }).start(()=>{
@@ -252,6 +278,8 @@ class ProjectsScreen extends React.Component{
                     toValue: {x:0,y:0}
                 }).start();
 
+                
+
                 Animated.spring(this.state.scale,{toValue:0.9}).start();
                 Animated.spring(this.state.translateY,{toValue:44}).start();
                 
@@ -259,8 +287,7 @@ class ProjectsScreen extends React.Component{
 
                 Animated.spring(this.state.thirdScale,{toValue:0.8}).start();
                 Animated.spring(this.state.thirdTranslateY,{toValue:-50}).start();
-            
-            
+
             }
 
                 
@@ -284,8 +311,12 @@ class ProjectsScreen extends React.Component{
                 <Project 
                 title={Projects[this.state.index].title}
                 image={Projects[this.state.index].image}
+                toux={Projects[this.state.index].toux}
                 author={Projects[this.state.index].author}
                 text={Projects[this.state.index].text}
+                pinglun={Projects[this.state.index].pinglun}
+                dianzhan={Projects[this.state.index].dianzhan}
+                zhuanfa={Projects[this.state.index].zhuanfa}
                 canOpen={true}
                 {...this.props}
                 />
@@ -307,8 +338,12 @@ class ProjectsScreen extends React.Component{
                     <Project 
                     title={Projects[getNextIndex(this.state.index)].title}
                     image={Projects[getNextIndex(this.state.index)].image}
+                    toux={Projects[getNextIndex(this.state.index)].toux}
                     author={Projects[getNextIndex(this.state.index)].author}
                     text={Projects[getNextIndex(this.state.index)].text}
+                    pinglun={Projects[getNextIndex(this.state.index)].pinglun}
+                    dianzhan={Projects[getNextIndex(this.state.index)].dianzhan}
+                    zhuanfa={Projects[getNextIndex(this.state.index)].zhuanfa}
                     {...this.props}
                     />
                 </Animated.View>
@@ -329,8 +364,12 @@ class ProjectsScreen extends React.Component{
                     <Project 
                     title={Projects[getNextIndex(this.state.index+1)].title}
                     image={Projects[getNextIndex(this.state.index+1)].image}
+                    toux={Projects[getNextIndex(this.state.index+1)].toux}
                     author={Projects[getNextIndex(this.state.index+1)].author}
                     text={Projects[getNextIndex(this.state.index+1)].text}
+                    pinglun={Projects[getNextIndex(this.state.index)].pinglun}
+                    zhuanfa={Projects[getNextIndex(this.state.index)].zhuanfa}
+                    dianzhan={Projects[getNextIndex(this.state.index)].dianzhan}
                     {...this.props}
                     />
                 </Animated.View>
@@ -357,16 +396,49 @@ const Container=styled.View`
     flex:1;
     justify-content:center;
     align-items:center;
-    background:#f0f3f5;
+    background:#D3D3D3;
 `;
 
 const Text=styled.Text``;
 
 const Projects=[
     {
+        title:"《浮生六记》\n带我们把日子过成诗",
+        image:[
+            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+           "http://121.196.27.141/img/zhelikan/fslj2.jpg",
+            "http://121.196.27.141/img/zhelikan/fslj.jpg",
+        ],
+        
+        author:"闲庭看花",
+        toux:"http://121.196.27.141/img/girl.jpg",
+        text:
+        "浮生六记》带我们把日子过成诗 晚清小红楼”，\n作者[清]沈复。\n本书讲述了作者沈复与妻子芸娘从年少初识到婚后的甜蜜生活，两人情投意合，一起吟诗作画、赏花弄月、结伴出游、租炉煮茗、田园避暑...生活有滋有味。即使后期遭逢家庭变故，颠沛流离，依然相扶相依，不离不弃。\n芸娘是个很有生活情趣之人，愣是把把柴米油盐酱醋茶，过成了琴棋书画诗酒花，难怪林语堂先生称之为:“中国文学中最可爱 的女人”与芸寄届锡山华氏，时华夫人以两女从芸识字。乡居院旷，夏日逼人，劳教其家，作活花屏法甚妙。\n每屏一扇，用木梢二枝约长四五寸作矮条凳式，虛其中，横四挡，宽- -尺许，四角凿圆眼，插竹编方眼,屏约高六七尺，用砂盆种扁豆置屏中，盘延屏上，两人可移动。\n多编数屏，随意遮拦，恍如绿阴满窗，透风蔽日，纡回曲折，随时可更，故曰活花屏，有此- -法，即一切藤本香草随地可用。此真乡居之良法",  
+        pinglun:1,dianzhan:2,zhuanfa:3,
+    },
+    {
+        title:"浙江山水",
+        image:[
+            "http://121.196.27.141/img/zhelikan/zjss1.png",
+            "http://121.196.27.141/img/zhelikan/zjss2.png",
+            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+        ],
+        author:"美丽人生",
+        toux:"http://121.196.27.141/img/girl.jpg",
+        text:
+        "诗画浙江唐诗之路～古堰画乡 \n美丽的山水，风光无限好～～古堰画乡名不虚传。千年的香樟树，文昌阁，村落里嬉戏的孩童.",
+        pinglun:1,dianzhan:2,zhuanfa:3,
+    },
+    {
         title:"醒时诗酒醉时歌",
-        image:require("../img/zhelikan/smc.jpg"),
+        image:[
+            "http://121.196.27.141/img/zhelikan/smc.jpg",
+            "http://121.196.27.141/img/zhelikan/zjss1.png",
+            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+        ],
+        
         author:"极简.",
+        toux:"http://121.196.27.141/img/boy2.jpg",
         text:
         "宋】范仲淹\n"+
         "碧云天，黄叶地，秋色连波，波上寒烟翠。\n"+
@@ -374,67 +446,23 @@ const Projects=[
         "黯乡魂,追旅思,夜夜除非，好梦留人睡。\n"+
         "明月楼高休独倚，酒入愁肠，化作相思泪。\n"+
         "【注释】\n"+
-        "①此调原为西域传入唐教坊曲。“苏幕遮”是当时高昌国语之音译。宋代词家 用此调是另度新曲。又名《云雾敛》、《鬓云松令》。双调，六十二字，上下片各五句四仄韵。②黯：形容心情忧郁。黯乡魂：用江淹《别赋》“黯然销魂”语。③追：追随，可引申为纠缠。旅思：羁旅之思。\n"
-    },
-    {
-        title:"rainbow",
-        image:require("../img/a.jpg"),
-        author:"小😀黄",
-        text:
-        "啊巴阿巴阿巴阿巴巴啵啵啵啵啵啵................"
-    },
-    {
-        title:"Price Tag3",
-        image:require("../img/c.jpg"),
-        author:"小红的大作",
-        text:
-        "Thanks to Design+Code..........57676768..........."
-    },
-    {
-        title:"Price Tag4",
-        image:require("../img/spring.jpg"),
-        author:"小红的大作",
-        text:
-        "Thanks to Design+Code..........57676768..........."
-    },
-    {
-        title:"Price Tag5",
-        image:require("../img/summer.jpg"),
-        author:"小红的大作",
-        text:
-        "Thanks to Design+Code..........57676768..........."
-    },
-    {
-        title:"Price Tag6",
-        image:require("../img/pig.jpg"),
-        author:"小红的大作",
-        text:
-        "Thanks to Design+Code..........57676768..........."
-    },
-    {
-        title:"Price Tag7",
-        image:require("../img/winter.jpg"),
-        author:"小红的大作",
-        text:
-        "Thanks to Design+Code..........57676768..........."
-    },
-    {
-        title:"Price Tag8",
-        image:require("../img/winter.jpg"),
-        author:"小红的大作",
-        text:
-        "Thanks to Design+Code.......21412156........"+
-        "Thanks to Design+Code.......21412156........"+
-        "Thanks to Design+Code.......21412156........"
+        "①此调原为西域传入唐教坊曲。“苏幕遮”是当时高昌国语之音译。宋代词家 用此调是另度新曲。又名《云雾敛》、《鬓云松令》。双调，六十二字，上下片各五句四仄韵。②黯：形容心情忧郁。黯乡魂：用江淹《别赋》“黯然销魂”语。③追：追随，可引申为纠缠。旅思：羁旅之思。\n",
+        pinglun:1,dianzhan:2,zhuanfa:3,    
     },
     {
         title:"猪头妹",
-        image:require("../img/ztm.jpg"),
-        author:"天才少年",
+        image:[
+            "http://121.196.27.141/img/ztm.jpg",
+           "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+        ],
+        author:"小黄",
+        toux:"http://121.196.27.141/img/boy.jpg",
         text:
         "寻人启事：\n"+
         "图中姑娘年芳13\n"+
-        "体态特征：无下巴\n"
+        "体态特征：无下巴\n",
+        pinglun:1,dianzhan:2,zhuanfa:3,
     },
 ]
 

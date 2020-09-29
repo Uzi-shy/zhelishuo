@@ -112,11 +112,12 @@ const { width, height } = Dimensions.get('window');
 
 
 const img=[
-    {pic:require('../img/spring.jpg')},
-    {pic:require('../img/summer.jpg')},
-    {pic:require('../img/autumn.jpg')},
-    {pic:require('../img/winter.jpg')},
-    {pic:require('../img/bulemt.jpg')},
+    {pic:"http://121.196.27.141/img/start/spring.jpg"},
+    {pic:"http://121.196.27.141/img/start/summer.jpg"},
+    {pic:"http://121.196.27.141/img/start/winter.jpg"},
+    {pic:"http://121.196.27.141/img/start/autumn.jpg"},
+    {pic:"http://121.196.27.141/img/start/bulemt.jpg"},
+    
 ]
 
 //    const pc=img[Math.random(0,4)]
@@ -198,7 +199,7 @@ export default class MainFadeView extends React.Component {
                     }>
                     <Splash />
                 </TouchableNativeFeedback >
-                    <Image source={pc.pic}
+                    <Image source={{uri:pc.pic}}
                         style={{ width:width,height:height}} />
                 {/* </FadeView> */}
                 

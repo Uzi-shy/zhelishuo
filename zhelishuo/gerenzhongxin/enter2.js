@@ -36,6 +36,8 @@ import gexinqianming from './gexinianming';
 import bianjigerenxinxi from './bianjigerenxinxi';
 import map from '../zheliyouliao/map';
 import renzheng from './renzheng';
+//黑夜模式
+import personalnight from './personalnight';
 
 
 const Stack = createStackNavigator();
@@ -135,6 +137,7 @@ export default function App(){
 
     <Stack.Screen name="浙里说账号登录" component={login}/>
     <Stack.Screen name="用户个人中心" component={personal}/>
+    <Stack.Screen name="用户个人中心黑夜模式" component={personalnight}/>
     <Stack.Screen name="注册" component={register}/>
     <Stack.Screen name="设置" component={set}/>
     <Stack.Screen name="个性签名" component={gexinqianming}/>

@@ -251,7 +251,7 @@ export default function huazuo({ navigation }) {
                 navigation.goBack();
               }} />
             </View>
-            <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 30 }}>其他文学</Text>
+            <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 30 }}>飞花令</Text>
             <View>
               {/* <Entypo name={'home'} size={25} color={'#000'} onPress={() => {
                                 this.props.navigation.popToTop();

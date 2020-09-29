@@ -288,7 +288,9 @@
 
 
 import React, { Component } from 'react';
-import { ImageBackground, StyleSheet, Alert, Image, Text, View, TextInput, ScrollView, TouchableWithoutFeedback, TouchableHighlight, TouchableNativeFeedback, FlatList } from 'react-native';
+import { ImageBackground, StyleSheet, Alert, Image, Text, View, 
+  TextInput, ScrollView, TouchableWithoutFeedback, TouchableHighlight, 
+  TouchableNativeFeedback, FlatList,Share } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -358,6 +360,27 @@ export default class yummy extends Component {
 
   // };
 
+  onShare = async () => 
+  {
+    const { navigation, route } = this.props;
+    try {
+      const result = await Share.share({
+        message:route.params.title
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
 
 
 
@@ -377,7 +400,7 @@ export default class yummy extends Component {
     return (
 
       <View style={{ flex: 1 }}  >
-        <PopUp ref={ref => this.popUp = ref} >
+        {/* <PopUp ref={ref => this.popUp = ref} >
           <View style={{ alignItems: 'center' }}>
             <Text style={{ fontSize: 20, fontWeight: '600', marginTop: 10 }}>分享至</Text>
             <View style={{ flexDirection: 'row', padding: 15, justifyContent: 'space-between', width: '100%', padding: 15, marginTop: 10 }}>
@@ -400,19 +423,19 @@ export default class yummy extends Component {
               <View style={{ alignItems: 'center' }}>
                 <Image style={{ height: 50, width: 50, opacity: 0.7, marginBottom: 5 }} source={{ uri: 'https:ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3530194320,3326379785&fm=26&gp=0.jpg' }} />
                 <Text style={{ fontSize: 16 }}>QQ空间</Text>
-              </View>
-              {/* <View style={{alignItems:'center'}}>
+              </View> */
+               /* <View style={{alignItems:'center'}}>
              <Image style={{height:50,width:50}} source={{uri:'https:ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3401603638,3430607400&fm=26&gp=0.jpg'}}/>
            <Text style={{fontSize:16}}>微博</Text>
-         </View> */}
-            </View>
+         </View> */
+            /* </View>
             <View style={{ height: 0.4, backgroundColor: 'black', marginVertical: 5, width: '100%' }} />
             <TouchableOpacity style={{ alignItems: 'center', padding: 10, }}
               onPress={() => { this.popUp.hide() }} >
               <Text style={{ fontSize: 18, color: '#5B5B5B' }}>取消</Text>
             </TouchableOpacity>
           </View>
-        </PopUp>
+        </PopUp> */}
 
 
 
@@ -456,10 +479,12 @@ export default class yummy extends Component {
 
             <BetterBanner
               bannerImages={
-                [{ uri: route.params.pick },
-
+                [{ uri: route.params.pick[0] },
+                { uri: route.params.pick[1] },
+                { uri: route.params.pick[2] },
                 ]
               }
+              
               onPress={(index) => alert('you pressed index is : ' + index)}
               isSeamlessScroll={true}
               isAutoScroll={false}
@@ -480,7 +505,7 @@ export default class yummy extends Component {
               </TouchableOpacity>
             </View>
             <View style={{ height: 0.5, width: "100%", backgroundColor: '#BEBEBE', elevation: 0.5, marginTop: 20, marginBottom: 20 }} />
-            <Text>共x条评论</Text>
+            <Text>共{ route.params.pinglun}条评论</Text>
             <View style={{ flexDirection: 'row', marginTop: 10, marginBottom: 20,marginLeft:20 }} >
               <Image source={{ uri: route.params.toux }} style={{ width: 30, height: 30, borderRadius: 400, marginRight: 20 }} />
               <TextInput
@@ -534,21 +559,21 @@ export default class yummy extends Component {
                 <TouchableOpacity onPress={() => { Alert.alert("点赞+1"); }}>
                   <Ionicons name={'md-heart-outline'} size={21} />
                 </TouchableOpacity>
-                <Text style={{ marginRight: 10 }}>888</Text>
+              <Text style={{ marginRight: 10 }}>{route.params.dianzhan}</Text>
               </View>
 
               <View style={{ flexDirection: 'row', marginLeft: 5 }}>
                 <TouchableOpacity onPress={() => { Alert.alert("评论+1"); }}>
                   <EvilIcons name={'comment'} size={27} />
                 </TouchableOpacity>
-                <Text style={{ marginRight: 10 }}>999</Text>
+                <Text style={{ marginRight: 10 }}>{route.params.pinglun}</Text>
               </View>
 
               <View style={{ flexDirection: 'row', marginLeft: 5 }}>
                 <TouchableOpacity onPress={() => { Alert.alert("收藏+1"); }}>
                   <AntDesign name={'staro'} size={20} />
                 </TouchableOpacity>
-                <Text>000</Text>
+                <Text>{route.params.zhuanfa}</Text>
               </View>
 
             </View>
@@ -557,7 +582,7 @@ export default class yummy extends Component {
             <View style={{ flexDirection: 'row', padding: 10, marginRight: 10 }}>
               <View style={{ marginRight: 15 }}>
                 <TouchableWithoutFeedback
-                  onPress={() => { this.popUp.show() }}>
+                  onPress={() => { this.onShare(); }}>
                   <AntDesign name={'sharealt'} size={20} />
                 </TouchableWithoutFeedback>
 

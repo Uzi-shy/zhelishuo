@@ -9,7 +9,7 @@ import {
     Platform,
     FlatList,
     Image,
-    Alert,
+    Alert,Share
 } from 'react-native';
 import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -101,6 +101,28 @@ export default class Poet extends Component {
             </View>
         );
     }
+
+
+    onShare = async () => 
+  {
+    const { navigation, route } = this.props;
+    try {
+      const result = await Share.share({
+        message:route.params.title+route.params.leibie
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
     render() {
         const { navigation, route } = this.props;
         return (
@@ -116,7 +138,7 @@ export default class Poet extends Component {
 
                     <View style={{ marginRight: 15 }}>
                         <TouchableOpacity
-                            onPress={() => { Alert.alert('分享+1') }}>
+                            onPress={() => { this.onShare() }}>
                             <AntDesign name={'sharealt'} size={23} />
                         </TouchableOpacity>
                     </View>

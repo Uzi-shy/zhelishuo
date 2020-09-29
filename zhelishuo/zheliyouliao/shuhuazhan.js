@@ -481,19 +481,19 @@ const movieclass = [
 
     return (
       <View>
-          <View style={{ flexDirection: 'row', alignItems: 'center', width: "100%", height: 50, backgroundColor: 'white', borderBottomLeftRadius: 20, borderBottomRightRadius: 20, elevation: 10 }}>
-                <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
+          <View style={{ flexDirection: 'row', alignItems: 'center', width: width, height: 60, backgroundColor: 'white',elevation: 5,justifyContent:'center' }}>
+                <AntDesign name={'left'} size={25} color={'#000'} style={{position:'absolute',left:10}} onPress={() => {
                     this.props.navigation.goBack()
                 }} />
-                <View>
-                    <Text style={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'yegenyou', marginTop: 15, marginLeft: 150 }}>书画展</Text>
-                </View>
+                
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'yegenyou', }}>书画展</Text>
+                
             </View>
           
           
         {/* // <ImageBackground source={require('../img/杜甫.jpg')} style={{width:'100%',marginBottom:45,opacity:0.9}}> */}
         {/* <View ItemSeparatorComponent={this._separator} /> */}
-        <ScrollView style={{marginBottom:70}}>
+        <ScrollView style={{marginBottom:60}}>
         {/* {isLoading ? <ActivityIndicator /> : ( */}
           <FlatList
             data={movieclass}
@@ -550,21 +550,22 @@ const movieclass = [
     //       </View>
     //     </View>
     //   </View>
-    <TouchableOpacity style={{flexDirection:'row',marginBottom:5,marginTop:5,padding:5,alignItems:'center'}}  onPress={() => { this.props.navigation.push('书画展细节',{
+    <TouchableOpacity style={{flexDirection:'row',marginBottom:5,marginTop:5,padding:8,alignItems:'center',width:width}}  onPress={() => { this.props.navigation.push('书画展细节',{
       title:item.title,
       leibie:item.leibie,
       pic:item.posters.thumbnail,
       date:item.year,
 
     }),Alert.alert("进入订购系统"); }}>
-     				<Image source={{uri:item.posters.thumbnail}} style={{height:120 ,width:120,borderRadius:20,marginRight:15}}/>		
-     					<View><Text style={{fontSize:18,width:width-180,flexWrap:"wrap"}}>{item.title}</Text>
-               <Text style={{fontSize:18,width:width-180,flexWrap:"wrap"}}>{item.leibie}</Text>
-
+     				<Image source={{uri:item.posters.thumbnail}} style={{height:120 ,width:120,borderRadius:20,marginRight:10}}/>		
+             <View style={{flexDirection:'column'}}>
+     					<Text style={{fontSize:17,width:width-180,}}>{item.title}</Text>
+               <Text style={{fontSize:17,width:width-180,}}>{item.leibie}</Text>
+</View>
                          {/* <Text style={{fontSize:20}}>{item.year}</Text> */}
-                     <TouchableOpacity style={{height:30,width:60,backgroundColor:'#7B7B7B',marginLeft:200,borderRadius:18,justifyContent:'center',alignItems:'center',padding:5}} >
+                     <TouchableOpacity style={{height:30,width:60,backgroundColor:'#7B7B7B',position:'absolute',right:10,bottom:5,borderRadius:18,justifyContent:'center',alignItems:'center',padding:5}} >
                              <Text style={{fontSize:20,color:'white'}}>购票</Text>
-                         </TouchableOpacity></View>
+                         </TouchableOpacity>
      			</TouchableOpacity>
             
           )}

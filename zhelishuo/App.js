@@ -73,8 +73,16 @@ import shirenshouzimu from './zheliyouliao/shiren/shirenshouzimu';
 import shirenliupai from './zheliyouliao/shiren/shirenliupai';
 
 import shirenxijie from './zheliyouliao/shiren/shirenxijie';
-import map from './zheliyouliao/map'
-  
+import map from './zheliyouliao/map';
+import gaokaozhenti from './zheliyouliao/more/gaokaozhenti';
+import taiqiu from './zheliyouliao/more/taiqiu';
+import tiank from './zheliyouliao/more/tiankong';
+import shopy from './zheliyouliao/more/shopy' ;
+import ptyx from './zheliyouliao/more/ptyx';
+import zheliyouliao_night from './zheliyouliao/zheliyouliao_night';
+import vr from './zheliyouliao/more/vr';
+import quanjt from './zheliyouliao/more/map';
+   
 //个人中心
 
 
@@ -286,11 +294,16 @@ export default function App() {
     <Stack.Screen name="画作" component={zhelishuohuazuo}/>
     <Stack.Screen name="名人大家" component={zhelishuomrdj}/>
     <Stack.Screen name="书法大作" component={zhelishuoshufadazuo}/>
-    <Stack.Screen name="其他文学" component={zhelishuoqitawenxue}/>
+    <Stack.Screen name="飞花令" component={zhelishuoqitawenxue}/>
 
 
     <Stack.Screen name="搜索" component={search}/>
-    
+
+
+
+
+
+    <Stack.Screen name="浙里有料黑夜模式" component={zheliyouliao_night}/>
 
     <Stack.Screen name="诗人生平查看更多" component={shiren}/>
         <Stack.Screen name="诗人细节" component={shirenxijie}/>
@@ -309,6 +322,14 @@ export default function App() {
     <Stack.Screen name="书画展" component={shuhauzhan}/>
     <Stack.Screen name="书画展细节" component={shuhauzhanxijie}/>
     <Stack.Screen name="地图" component={map}/>
+    <Stack.Screen name="高考真题" component={gaokaozhenti}/>
+    <Stack.Screen name="台球" component={taiqiu}/>
+    <Stack.Screen name="购物车" component={shopy}/>
+    <Stack.Screen name="填空" component={tiank}/>
+    <Stack.Screen name="拼图" component={ptyx}/>
+    <Stack.Screen name="全景图" component={quanjt}/>
+    <Stack.Screen name="vr" component={vr}/>
+
 
 
 

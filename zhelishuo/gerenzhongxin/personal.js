@@ -23,7 +23,13 @@ import PopUp from './PopUp';
 // import shige from '../src/shige';
 // import login from './login';
 import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler';
+
 const { width, height } = Dimensions.get("window");
+
+
+
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -414,7 +420,11 @@ export default class Zheliyouliao extends Component {
 
                         <TouchableWithoutFeedback style={{ justifyContent: 'flex-end', marginTop: 10, }}
                           onPress={() => {
-                            this.props.navigation.push("设置");
+                            this.props.navigation.push("用户个人中心黑夜模式",
+                              {
+                                username: item.username
+                            }
+                            );
                           }}
                         >
                           <Feather name={"moon"} size={30} style={{ color: '#4F4F4F' }} />
