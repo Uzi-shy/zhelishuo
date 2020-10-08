@@ -97,7 +97,7 @@ export default class spread extends Component {
     _onstarjudgeLogin = () => {
 
         var navigation = this.props.navigation;
-        fetch('http://192.168.50.28:3000/judgelogin', {
+        fetch('http://192.168.50.30:3000/judgelogin', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -110,6 +110,7 @@ export default class spread extends Component {
 
                 // alert("登录成功" + json.username);
                 if(json.username=='huangfan'){
+                    alert("抱歉！管理员不能发帖");
                     // navigation.navigate('发布', {
                     //     username: json.username
                     // });
@@ -128,7 +129,7 @@ export default class spread extends Component {
     _onstargetgerenxx = () => {
         const {navigation,route}=this.props;
         console.log(route.params.username);
-        fetch('http://192.168.50.28:3000/personal',
+        fetch('http://192.168.50.30:3000/personal',
             {
                 method: 'POST',
                 headers: {
@@ -156,7 +157,7 @@ export default class spread extends Component {
     _onClickpublish_to_administrator = () => {
         var num=1+parseInt(Math.random() * (3) );
         const {navigation,route}=this.props;
-        fetch('http://192.168.50.28:3000/publish_to_administrator', {
+        fetch('http://192.168.50.30:3000/publish_to_administrator', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -371,6 +372,7 @@ export default class spread extends Component {
                             }}
                         />
                     </View>
+                    <Text style={{marginLeft:15}}>(请至少放置3张图片)</Text>
                     <TouchableWithoutFeedback onPress={() => {
                         // 从本地相册选择单幅图像
                         // 调用多个图像
@@ -426,6 +428,7 @@ export default class spread extends Component {
                 </View>
                 <View style={{ position: "absolute", backgroundColor: "#2F3843", alignItems: "center", justifyContent: "space-around", flexDirection: "row", height: 50, width: '100%', bottom: 0, left: 0 }}>
                     {/* 获取图片，可能删除 */}
+                    
                     <FontAwesome name='photo' size={20} color="#fff"
                         onPress={() => {
                             // 从本地相册选择单幅图像

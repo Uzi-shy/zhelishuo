@@ -143,10 +143,6 @@ export default class wofabu extends Component {
     this.state = {
         title:"1",
         times:0,
-
-
-
-      
       isdata: [],
       refreshing: false,
       isLoading: true,
@@ -232,7 +228,7 @@ export default class wofabu extends Component {
   getsearchtimes(){
  
   
-    fetch('http://192.168.50.28:3000/getsearchtimes'
+    fetch('http://192.168.50.30:3000/getsearchtimes'
     , {
       method: 'POST',
       headers: {
@@ -252,7 +248,7 @@ export default class wofabu extends Component {
   //搜索帖子数据
   searchzuopingtiezi() {
     console.log("title2:"+this.state.title)
-    fetch('http://192.168.50.28:3000/search_user',
+    fetch('http://192.168.50.30:3000/search_user',
       {
         method: 'POST',
         headers: {

@@ -49,7 +49,7 @@ export default class ContentWaterfall extends Component {
 
 
     componentDidMount() {
-        fetch('http://192.168.50.28:3000/zuoping_yi',
+        fetch('http://192.168.50.30:3000/zuoping_yi',
             {
                 method: 'POST',
                 headers: {

@@ -35,7 +35,6 @@ export default class wofabu extends Component{
 
 
     this.state = {
-        
         searchText:"",
         times:0,
         

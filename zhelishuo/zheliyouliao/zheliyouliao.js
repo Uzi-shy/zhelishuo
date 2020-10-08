@@ -90,13 +90,13 @@ function MyCarousel({ navigation }) {
             <Feather name={"moon"} size={30} style={{ color: '#4F4F4F' }} />
           </TouchableWithoutFeedback>
         </View>
-        <Text style={{ fontSize: 22, fontWeight: 'bold', alignItems: 'center', marginTop: 10, marginLeft: 50 }}>浙里有料</Text>
+        <Text style={{ fontSize: 22, fontWeight: 'bold' }}>浙里有料</Text>
         <TouchableWithoutFeedback style={{ marginTop: 10, marginRight: 20 }} onPress={() => { navigation.navigate("搜索") }}>
           <Ionicons name={'search'} size={30} />
         </TouchableWithoutFeedback>
       </View>
 
-      <ScrollView style={{ marginBottom: 50 }}>
+      <ScrollView style={{ marginBottom: 50 }} showsVerticalScrollIndicator={false}>
 
         <View style={styles.container}>
           <TouchableOpacity onPress={goForward}>
@@ -170,39 +170,39 @@ function MyCarousel({ navigation }) {
           <TouchableOpacity style={{ marginLeft: 20 }} onPress={() => {
             navigation.navigate("高考真题");
           }}>
-            <Image source={{ uri: 'http://121.196.27.141/img/zheliyouliao/53.jpg' }} style={{ height: 80, width: 80, borderRadius: 20, marginRight: 15 }} />
-            <Text style={{ marginTop: 10, marginLeft: 15, fontFamily: "hldj", }}>卷中有诗</Text>
+            <Image source={{ uri: 'http://121.196.27.141/img/zheliyouliao/卷中有诗.jpg' }} style={{ height: 80, width: 80, borderRadius: 20, marginRight: 15 }} />
+            <Text style={{ marginTop: 10, marginLeft: 15,  }}>卷中有诗</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={{ marginLeft: 20 }} onPress={() => {
             navigation.navigate("拼图");
           }}>
-            <Image source={{ uri: 'http://121.196.27.141/img/spring.jpg' }} style={{ height: 80, width: 80, borderRadius: 20, marginRight: 15 }} />
+            <Image source={{ uri: 'http://121.196.27.141/img/zheliyouliao/拼图成画.jpg' }} style={{ height: 80, width: 80, borderRadius: 20, marginRight: 15 }} />
 
-            <Text style={{ marginTop: 10, marginLeft: 15, fontFamily: "hldj", }}>拼图成画</Text>
+            <Text style={{ marginTop: 10, marginLeft: 15,  }}>拼图成画</Text>
 
           </TouchableOpacity>
 
           <TouchableOpacity style={{ marginLeft: 20 }} onPress={() => {
             navigation.navigate("填空");
           }}>
-            <Image source={{ uri: 'http://121.196.27.141/img/summer.jpg' }} style={{ height: 80, width: 80, borderRadius: 20, marginRight: 15 }} />
-            <Text style={{ marginTop: 10, marginLeft: 15, fontFamily: "hldj", }}>腹中有墨</Text>
+            <Image source={{ uri: 'http://121.196.27.141/img/zheliyouliao/腹中有墨.jpg' }} style={{ height: 80, width: 80, borderRadius: 20, marginRight: 15 }} />
+            <Text style={{ marginTop: 10, marginLeft: 15,  }}>腹中有墨</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={{ marginLeft: 20 }} onPress={() => {
             navigation.navigate("购物车");
           }}>
-            <Image source={{ uri: 'http://121.196.27.141/img/dufu.jpg' }} style={{ height: 80, width: 80, borderRadius: 20, marginRight: 15 }} />
-            <Text style={{ marginTop: 10, marginLeft: 15, fontFamily: "hldj", }}>汉服有购</Text>
+            <Image source={{ uri: 'http://121.196.27.141/img/zheliyouliao/汉服有购.jpg' }} style={{ height: 80, width: 80, borderRadius: 20, marginRight: 15 }} />
+            <Text style={{ marginTop: 10, marginLeft: 15,  }}>汉服有购</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={{ marginLeft: 20 }} onPress={() => {
             navigation.navigate("vr");
           }}>
-            <Image source={{ uri: 'http://121.196.27.141/img/winter.jpg' }} style={{ height: 80, width: 80, borderRadius: 20, marginRight: 15 }}
+            <Image source={{ uri: 'http://121.196.27.141/img/zheliyouliao/古风鉴赏.jpg' }} style={{ height: 80, width: 80, borderRadius: 20, marginRight: 15 }}
             />
-            <Text style={{ marginTop: 10, marginLeft: 15, fontFamily: "hldj", }}>古风鉴赏</Text>
+            <Text style={{ marginTop: 10, marginLeft: 15,  }}>古风鉴赏</Text>
           </TouchableOpacity>
 
 

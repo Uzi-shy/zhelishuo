@@ -23,7 +23,8 @@ const { width,height} = Dimensions.get("window");
 
 var promiseinsert=false;
 
-
+// const ip="http://121.196.27.141:3000";
+const ip="http://192.168.50.30:3000";
 
 
 
@@ -51,7 +52,7 @@ _judgeusername=()=>{
   
   // const [isLoading, setLoading] = useState(true);
   // var navigation=this.props.navigation;
-  fetch('http://192.168.50.28:3000/judgeusername', {
+  fetch(ip+'/judgeusername', {
     method: 'post',
     headers: {
       'Accept': 'application/json',
@@ -84,7 +85,7 @@ _judgeusername=()=>{
 
   _insertdate=()=>{
     
-  fetch('http://192.168.50.28:3000/insert', {
+  fetch(ip+'/insert', {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',

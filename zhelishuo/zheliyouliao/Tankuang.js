@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
 })
  
 PopUp.defaultProps = {
-  modalBoxHeight: 220, // 盒子高度
+  modalBoxHeight: 400, // 盒子高度
   modalBoxBg: '#fff', // 背景色
   hide: function () { }, // 关闭时的回调函数
   transparentIsClick: true  // 透明区域是否可以点击

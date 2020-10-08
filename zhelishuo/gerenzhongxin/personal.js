@@ -310,8 +310,8 @@ export default class Zheliyouliao extends Component {
 
 
   componentDidMount() {
-    const { navigation, route } = this.props;
-    fetch('http://192.168.50.28:3000/personal',
+    const {navigation, route} = this.props;
+    fetch('http://192.168.50.30:3000/personal',
       {
         method: 'POST',
         headers: {
@@ -560,7 +560,7 @@ export default class Zheliyouliao extends Component {
   onclik_changetoux() {
     const { navigation, route } = this.props;
     if (this.state.image.uri != "") {
-      fetch('http://192.168.50.28:3000/change_toux', {
+      fetch('http://192.168.50.30:3000/change_toux', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

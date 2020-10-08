@@ -102,6 +102,7 @@ constructor(props){
                             pinglun:this.props.pinglun,
                             dianzhan:this.props.dianzhan,
                             zhuanfa:this.props.zhuanfa,
+                            pinglundate:this.props.pinglundate,
                           });
                     }}>
                         <AnimatedCloseView style={{ opacity: this.state.opacity }}>

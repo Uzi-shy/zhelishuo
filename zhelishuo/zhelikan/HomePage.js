@@ -181,9 +181,9 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import React from "react";
 import styled from "styled-components";
 import Project from "./Project";
-import { PanResponder ,Animated} from 'react-native';
+import { PanResponder ,Animated, ImageBackground,Dimensions} from 'react-native';
 
-
+const { width, height } = Dimensions.get('window');
 
 function getNextIndex(index){
     var nextIndex=index+1
@@ -297,7 +297,10 @@ class ProjectsScreen extends React.Component{
 
     render(){
         return(
+            
             <Container>
+                {/* <ImageBack source={{ uri:"http://121.196.27.141/img/dufu2.jpg"}}> */}
+                <Image2 source={{ uri:"http://121.196.27.141/img/zhelikan/backgroundimage.jpg"}} style={{zIndex:-5,}}></Image2>
                 <AnimatedMask style={{opacity:this.state.opacity}}/>
                 <Animated.View
                 style={{
@@ -315,6 +318,7 @@ class ProjectsScreen extends React.Component{
                 author={Projects[this.state.index].author}
                 text={Projects[this.state.index].text}
                 pinglun={Projects[this.state.index].pinglun}
+                pinglundate={Projects[this.state.index].pinglundate}
                 dianzhan={Projects[this.state.index].dianzhan}
                 zhuanfa={Projects[this.state.index].zhuanfa}
                 canOpen={true}
@@ -342,6 +346,7 @@ class ProjectsScreen extends React.Component{
                     author={Projects[getNextIndex(this.state.index)].author}
                     text={Projects[getNextIndex(this.state.index)].text}
                     pinglun={Projects[getNextIndex(this.state.index)].pinglun}
+                    pinglundate={Projects[getNextIndex(this.state.index)].pinglundate}
                     dianzhan={Projects[getNextIndex(this.state.index)].dianzhan}
                     zhuanfa={Projects[getNextIndex(this.state.index)].zhuanfa}
                     {...this.props}
@@ -368,17 +373,26 @@ class ProjectsScreen extends React.Component{
                     author={Projects[getNextIndex(this.state.index+1)].author}
                     text={Projects[getNextIndex(this.state.index+1)].text}
                     pinglun={Projects[getNextIndex(this.state.index)].pinglun}
+                    pinglundate={Projects[getNextIndex(this.state.index)].pinglundate}
                     zhuanfa={Projects[getNextIndex(this.state.index)].zhuanfa}
                     dianzhan={Projects[getNextIndex(this.state.index)].dianzhan}
                     {...this.props}
                     />
                 </Animated.View>
+                {/* </ImageBack> */}
             </Container>
         );
     }
 }
 
 export default ProjectsScreen;
+
+const  Image2 = styled.Image`
+width:100%;
+height:98%;
+position:absolute;
+  top:2;
+`;
 
 const Mask =styled.View`
   position:absolute;
@@ -393,11 +407,16 @@ const Mask =styled.View`
 const AnimatedMask=Animated.createAnimatedComponent(Mask);
 
 const Container=styled.View`
-    flex:1;
+    flex:1
     justify-content:center;
     align-items:center;
     background:#D3D3D3;
 `;
+
+// const ImageBack=styled.ImageBackground`
+// z-index:2;
+// `;
+
 
 const Text=styled.Text``;
 
@@ -415,6 +434,32 @@ const Projects=[
         text:
         "浮生六记》带我们把日子过成诗 晚清小红楼”，\n作者[清]沈复。\n本书讲述了作者沈复与妻子芸娘从年少初识到婚后的甜蜜生活，两人情投意合，一起吟诗作画、赏花弄月、结伴出游、租炉煮茗、田园避暑...生活有滋有味。即使后期遭逢家庭变故，颠沛流离，依然相扶相依，不离不弃。\n芸娘是个很有生活情趣之人，愣是把把柴米油盐酱醋茶，过成了琴棋书画诗酒花，难怪林语堂先生称之为:“中国文学中最可爱 的女人”与芸寄届锡山华氏，时华夫人以两女从芸识字。乡居院旷，夏日逼人，劳教其家，作活花屏法甚妙。\n每屏一扇，用木梢二枝约长四五寸作矮条凳式，虛其中，横四挡，宽- -尺许，四角凿圆眼，插竹编方眼,屏约高六七尺，用砂盆种扁豆置屏中，盘延屏上，两人可移动。\n多编数屏，随意遮拦，恍如绿阴满窗，透风蔽日，纡回曲折，随时可更，故曰活花屏，有此- -法，即一切藤本香草随地可用。此真乡居之良法",  
         pinglun:1,dianzhan:2,zhuanfa:3,
+        pinglundate:[
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"许三娘",
+                words:"好，写的针不戳",
+                time:"8-10",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"鲁人甲",
+                words:"写到我心坎里了",
+                time:"8-10",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"十二",
+                words:"我是来看腿的",
+                time:"10-4",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"栗林同学",
+                words:"好可爱",
+                time:"10-9",
+            }
+        ]
     },
     {
         title:"浙江山水",
@@ -428,6 +473,32 @@ const Projects=[
         text:
         "诗画浙江唐诗之路～古堰画乡 \n美丽的山水，风光无限好～～古堰画乡名不虚传。千年的香樟树，文昌阁，村落里嬉戏的孩童.",
         pinglun:1,dianzhan:2,zhuanfa:3,
+        pinglundate:[
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"是张露露",
+                words:"还有小船，夏天去不要太凉爽了",
+                time:"8-10",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"亚索儿",
+                words:"哈撒给",
+                time:"8-10",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"十二",
+                words:"来旅游不亏",
+                time:"10-4",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"小林同学",
+                words:"66666666",
+                time:"10-9",
+            }
+        ]
     },
     {
         title:"醒时诗酒醉时歌",

@@ -385,13 +385,13 @@ import {
   TouchableOpacity, ActivityIndicator, Image, ScrollView, Alert, RefreshControl,
   TouchableNativeFeedback,
   TouchableWithoutFeedback,
-  TouchableHighlight,
+  TouchableHighlight,FlatList,
 } from "react-native";
-import { FlatList } from 'react-native-gesture-handler';
+
 import Feather from 'react-native-vector-icons/Feather';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
 const { width, height } = Dimensions.get('window');
 // import MasonryList from "@appandflow/masonry-list';"
 
@@ -417,6 +417,24 @@ export default class ContentWaterfall extends Component {
     }
   }
 
+
+
+  _renderFooter(){
+    return(
+      <View style={{flexDirection:'row',
+            height:24,
+            justifyContent:'center',
+            alignItems:'center',
+            marginBottom:5,}}>
+                <ActivityIndicator animating={this.state.refreshing2}
+        color='grey'
+        size="small" />
+                
+            </View>
+    );
+            
+    }
+
   _onRefresh() {
 
     if (this.state.refreshing == false) {
@@ -440,7 +458,7 @@ export default class ContentWaterfall extends Component {
 
 
   componentDidMount() {
-    fetch('http://192.168.50.28:3000/zuoping_yi1',
+    fetch('http://192.168.50.30:3000/zuoping_yi1',
       {
         method: 'POST',
         headers: {
@@ -459,7 +477,7 @@ export default class ContentWaterfall extends Component {
         this.setState({ isLoading: false });
       });
 
-      fetch('http://192.168.50.28:3000/zuoping_yi2',
+      fetch('http://192.168.50.30:3000/zuoping_yi2',
       {
         method: 'POST',
         headers: {
@@ -536,30 +554,38 @@ export default class ContentWaterfall extends Component {
 
     return (
       <View >
+        <View style={{ height: 50, width: "100%", backgroundColor: "#FFFFFF", borderBottomRightRadius: 15, borderBottomLeftRadius: 15, elevation: 4, }}>
+          <View style={{ flex: 0.7, marginTop: '6%', flexDirection: "row", width: "100%", justifyContent: "center", alignItems: "center", }}>
+            {/* <View style={{ flexDirection: "row" }}>
+              <AntDesign name={'left'} size={22} color={'#000'} onPress={() => {
+                this.props.navigation.goBack();
+              }} />
+            </View> */}
+            {/* <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 24 }}>古诗词</Text> */}
+            <Text style={{ fontSize: 30, fontFamily: "youran" }}>热门</Text>
+            
+            {/* <View> */}
+              {/* <Entypo name={'home'} size={25} color={'#000'} onPress={() => {
+                                this.props.navigation.popToTop();
+                            }} /> */}
+            {/* </View> */}
+          </View>
+          <View style={{position:"absolute",right:15,top:15}}>
+          <TouchableWithoutFeedback style={{  }} onPress={() => { this.props.navigation.navigate("浙里说搜索") }}>
+              <Ionicons name={'search'} size={30}  />
+            </TouchableWithoutFeedback></View>
+        </View>
 
         <View >
 
 
           <View style={{ flexDirection: 'row' }}>
-            <TouchableWithoutFeedback
-
-              style={{ marginLeft: 115 }}
-              onPress={() => {
-              }}>
-              <View style={{ marginTop: 15, marginLeft: 15 }}>
-                <Text style={{ fontSize: 30, fontFamily: "youran" }}>热门</Text>
-              </View>
-            </TouchableWithoutFeedback>
+            
 
 
 
 
-            <TouchableWithoutFeedback style={{ position: 'absolute', right: 10 }} onPress={() => { this.props.navigation.navigate("浙里说搜索") }}>
-              {/* <Image source={require('../img/放大镜.jpg')} style={{width: 30, height:30,borderRadius:10,position:'absolute',right:70,top:15}}/> */}
-
-
-              <AntDesign name={'search1'} size={30} style={{ fontSize: 30, fontFamily: "youran", position: 'absolute', right: 10, top: 12 }} />
-            </TouchableWithoutFeedback>
+            
 
 
 
@@ -604,8 +630,7 @@ export default class ContentWaterfall extends Component {
               <TouchableNativeFeedback onPress={() => { this.props.navigation.navigate("名人大家") }}>
                 <View style={{ marginLeft: 15, justifyContent: 'center', alignItems: 'center', width: 80, height: 30, borderWidth: 1, borderColor: "grey", borderRadius: 5 }}>
                   <Text style={{ fontSize: 20, fontFamily: "youran" }} >
-                    名人大家
-         </Text>
+                    名人大家</Text>
                 </View>
               </TouchableNativeFeedback>
 
@@ -650,6 +675,9 @@ export default class ContentWaterfall extends Component {
                           onRefresh={this._onRefresh.bind(this)}
                         />
                       }
+                      ListFooterComponent={this._renderFooter.bind(this)}
+                      onEndReached={this._onRefresh.bind(this)}
+                      onEndReachedThreshold={0.3}
                       renderItem={({ item }) => (
                         <View>
                           <View>
@@ -672,6 +700,7 @@ export default class ContentWaterfall extends Component {
                                     pinglun:item.pinglun,
                                     dianzhan:item.dianzhan,
                                     zhuanfa:item.zhuanfa,
+                                    pinglundate:item.pinglunstate,
                                   });
                               }}>
 
@@ -745,6 +774,9 @@ export default class ContentWaterfall extends Component {
                           onRefresh={this._onRefresh.bind(this)}
                         />
                       }
+                      ListFooterComponent={this._renderFooter.bind(this)}
+                      onEndReached={this._onRefresh.bind(this)}
+                      onEndReachedThreshold={0.2}
                       renderItem={({ item }) => (
                         <View>
                           <View>
@@ -760,9 +792,14 @@ export default class ContentWaterfall extends Component {
                                     username: item.username,
                                     toux: item.gerenxx[0].toux.uri,
                                     name: item.gerenxx[0].name,
-                                    pick: item.pick[0],
+                                    pick: item.pick,
                                     words: item.words,
                                     title: item.title,
+                                    gerenxx: item.gerenxx[0],
+                                    pinglun:item.pinglun,
+                                    dianzhan:item.dianzhan,
+                                    zhuanfa:item.zhuanfa,
+                                    pinglundate:item.pinglunstate,
                                   });
                               }}>
 

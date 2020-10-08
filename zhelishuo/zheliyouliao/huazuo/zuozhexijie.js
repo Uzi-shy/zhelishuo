@@ -14,10 +14,11 @@ import {
   ListFooterComponent,
   TouchableNativeFeedback,
   Alert,
-  TouchableOpacity
+  TouchableOpacity, Dimensions
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons'
+const {width,height} = Dimensions.get('window')
 
 export default function xxx({ route, navigation }) {
   const { pic } = route.params;
@@ -31,7 +32,7 @@ export default function xxx({ route, navigation }) {
 
 
 
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: "100%", height: 70, backgroundColor: 'white', elevation: 2 }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: "100%", height: 60, backgroundColor: 'white', elevation: 1 }}>
         <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
           navigation.goBack()
         }} />
@@ -57,12 +58,12 @@ export default function xxx({ route, navigation }) {
         </View>
 
       </View>
-      <ScrollView style={{ paddingHorizontal: 15, marginBottom: 40 }}>
-        <View style={{ flexDirection: 'row', marginBottom: 20 }}>
-          <Image source={{ uri: pic }} style={{ height: 200, width: '50%', resizeMode: 'cover', borderRadius: 10, marginRight: 10 }} />
+      <ScrollView style={{ paddingHorizontal: 10, marginBottom: 15 }} showsVerticalScrollIndicator={false}>
+        <View style={{ flexDirection: 'row', paddingHorizontal:10,paddingVertical:20 }}>
+          <Image source={{ uri: pic }} style={{ height: 240, width: (width-60)/2, resizeMode: 'cover', borderRadius: 10, marginRight: 15 }} />
           <View>
-            <Text style={{ fontSize: 25, fontWeight: 'bold' }}>{poet}</Text>
-            <Text style={{ fontSize: 16, marginRight: 10, width: 180 }}>{jieshao}</Text>
+            <Text style={{ fontSize: 22, fontWeight: 'bold' }}>{poet}</Text>
+            <Text style={{ fontSize: 16, marginRight: 10, width: (width-40)/2 }}>{jieshao}</Text>
           </View>
         </View>
 
@@ -80,10 +81,10 @@ export default function xxx({ route, navigation }) {
 
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
-            <View style={{padding:10}}>
+            <View style={{padding:10,alignItems:"center"}}>
               
-               <Image style={{ resizeMode: 'cover', height: 80 }} source={{ uri: item.img1 }} />
-               <Text>{item.name}</Text>
+               <Image style={{ resizeMode: 'cover', height: 100,width:width}} source={{ uri: item.img }} />
+               <Text >{item.name}</Text>
             </View>
 
           

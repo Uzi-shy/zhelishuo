@@ -98,7 +98,7 @@ function MyCarousel({navigation}){
 
     <ScrollView style={{marginBottom:50}}>
 
-    <View style={{backgroundColor:"#333333"}}>
+    <View style={{backgroundColor:"#444444"}}>
       <TouchableOpacity onPress={goForward}>
         <Text style={{fontSize:24,marginLeft:26,marginTop:15,marginBottom:10,color:"white",
     textShadowRadius:2,
@@ -159,10 +159,10 @@ function MyCarousel({navigation}){
 
 
     </View>
-    <View style={{backgroundColor:"#333333"}}>
+    <View style={{backgroundColor:"#444444"}}>
     <Text style={{marginLeft:30,fontSize:24,fontWeight:'bold',color:"white"}}>更多模块</Text>
     
-    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{backgroundColor:"#333333",flexDirection:"row",marginLeft:10,marginTop:10,marginBottom:20}}>
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{backgroundColor:"#444444",flexDirection:"row",marginLeft:10,marginTop:10,marginBottom:20}}>
     
 
       <TouchableOpacity style={{marginLeft:20}} onPress={()=>{

@@ -289,9 +289,9 @@
 
 import React, { Component } from 'react';
 import { ImageBackground, StyleSheet, Alert, Image, Text, View, 
-  TextInput, ScrollView, TouchableWithoutFeedback, TouchableHighlight, 
+  TextInput, ScrollView, TouchableWithoutFeedback, TouchableHighlight, ActivityIndicator,TouchableOpacity,RefreshControl,
   TouchableNativeFeedback, FlatList,Share } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
@@ -301,6 +301,8 @@ import BetterBanner from 'react-native-better-banner';
 import { ButtonGroup } from 'react-native-elements';
 import PopUp from '../zheliyouliao/Tankuang';
 
+// var username="";
+var one =1;
 
 export default class yummy extends Component {
 
@@ -314,10 +316,15 @@ export default class yummy extends Component {
 
 
     this.state = {
+
+      words:"",
+      // userdata:[],
+      isLoading: true,
+      isdata: [],
       flag: false,
       guanzhu: "未关注",
       id: '',
-      username: "",
+      username:'',
       picdata: [
         {
           uri: ""
@@ -326,6 +333,48 @@ export default class yummy extends Component {
     }
   }
 
+
+  _renderFooter(){
+    return(
+      <View style={{flexDirection:'row',
+            height:24,
+            justifyContent:'center',
+            alignItems:'center',
+            marginBottom:5,}}>
+                <ActivityIndicator animating={this.state.refreshing2}
+        color='grey'
+        size="small" />
+                
+            </View>
+    );
+            
+    }
+  
+
+  _onRefresh() {
+
+    if (this.state.refreshing == false) {
+      this._updateState(true);
+      this.componentDidMount();
+      this.componentWillMount();
+      
+
+      //2秒后结束刷新
+      setTimeout(() => {
+        this._updateState(false);
+        
+      }, 2000)
+
+    }
+  }
+
+  //更新State
+  _updateState(refresh) {
+    this.setState({ refreshing: refresh });
+  }
+
+
+  
 
   add() {
     if (this.state.flag) {
@@ -337,28 +386,7 @@ export default class yummy extends Component {
     }
   }
 
-  // //审核通过 
-  // _onClickzpsh_get() {
-  //   const { navigation, route } = this.props;
-
-  //   // this.setState({id:route.params.id});
-  //   // this.setState({username:route.params.username});
-  //   // console.log(this.state.id);
-  //   // console.log(this.state.username);
-  //   fetch('http://192.168.1.4:3000/sh_get', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({
-  //       id: route.params.id,
-  //       username: route.params.username,
-  //       title: route.params.title,
-  //     })
-  //   })
-
-  // };
+  
 
   onShare = async () => 
   {
@@ -382,12 +410,102 @@ export default class yummy extends Component {
   };
 
 
+  
 
+  componentWillMount(){
+    one=1;
+    fetch('http://192.168.50.30:3000/judgelogin', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            
+        })
+        .then(function (res) {
+          return res.json();})
+        
+      .then((json) => {
+        console.log("json.username:"+json.username)
+        this.setState({username:json.username})
+        console.log("username:"+this.state.username)
+      })
+      .catch((error) => console.error(error));
+      // this.componentDidMount();
+  }
+
+  componentDidMount() {
+    // one=1;
+    // this.componentWillMount();
+    fetch('http://192.168.50.30:3000/personal',
+      {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username:this.state.username,
+        })
+      })
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({ isdata: json.result });
+      })
+      .catch((error) => console.error(error))
+      .finally(() => {
+        this.setState({ isLoading: false });
+      });
+  };
+
+
+  _onPressinsertpinglun(){
+    
+    const { navigation, route } = this.props;
+
+    
+    var date = new Date();
+    var seperator1 = "-";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (year ==2020) {
+          year="";
+      }
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+    var currentdate = year+ " " +month + seperator1 + strDate;
+    console.log("time"+currentdate)
+    if(this.state.words!=""){
+      fetch('http://192.168.50.30:3000/insertpinglun', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id:route.params.id,
+          toux:'file:///storage/emulated/0/Android/data/com.zhelishuo/files/Pictures/1452d3ee-b906-4400-a329-6cb3d7113656.jpg',
+          name:"小欣欣",
+          words:this.state.words,
+          time:currentdate,
+        })
+      })
+
+    }
+  };
 
 
   render() {
     const { navigation, route } = this.props;
+    const { userdata,isdata, isLoading } = this.state;
+    // this.setState({username:userdata[0].username})
 
+    // var one=1;
 
     // this.setState({id:route.params.id});
     // this.setState({username:route.params.username});
@@ -396,51 +514,18 @@ export default class yummy extends Component {
     // for (let i = 0; i < len; i++) {
     //     picData[i]="uri:"+picData[i];
     // }
+    if(one<=5){
+      
+      this.componentDidMount();
+      one=one+1;
+    }
+      
+    
 
     return (
 
       <View style={{ flex: 1 }}  >
-        {/* <PopUp ref={ref => this.popUp = ref} >
-          <View style={{ alignItems: 'center' }}>
-            <Text style={{ fontSize: 20, fontWeight: '600', marginTop: 10 }}>分享至</Text>
-            <View style={{ flexDirection: 'row', padding: 15, justifyContent: 'space-between', width: '100%', padding: 15, marginTop: 10 }}>
-              <View style={{ alignItems: 'center' }}>
-                <Image style={{ height: 50, width: 50, opacity: 0.8, borderRadius: 400, marginBottom: 5 }} source={{ uri: 'https:ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3808707680,3285779133&fm=26&gp=0.jpg' }} />
-                <Text style={{ fontSize: 16 }}>站内好友</Text>
-              </View>
-              <View style={{ alignItems: 'center' }}>
-                <Image style={{ height: 50, width: 50, opacity: 0.8, borderRadius: 400, marginBottom: 5 }} source={{ uri: 'https:ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3808707680,3285779133&fm=26&gp=0.jpg' }} />
-                <Text style={{ fontSize: 16 }}>微信好友</Text>
-              </View>
-              <View style={{ alignItems: 'center' }}>
-                <Image style={{ height: 50, width: 50, opacity: 0.8, marginBottom: 5 }} source={{ uri: 'https:timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599578197726&di=e375b446a6abe20bf33d865453f0d045&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F01%2F35%2F50%2F25573be76600ffc.jpg' }} />
-                <Text style={{ fontSize: 16 }}>朋友圈</Text>
-              </View>
-              <View style={{ alignItems: 'center' }}>
-                <Image style={{ height: 50, width: 50, opacity: 0.8, borderRadius: 400, marginBottom: 5 }} source={{ uri: 'https:ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3689593137,3953434942&fm=26&gp=0.jpg' }} />
-                <Text style={{ fontSize: 16 }}>QQ好友</Text>
-              </View>
-              <View style={{ alignItems: 'center' }}>
-                <Image style={{ height: 50, width: 50, opacity: 0.7, marginBottom: 5 }} source={{ uri: 'https:ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3530194320,3326379785&fm=26&gp=0.jpg' }} />
-                <Text style={{ fontSize: 16 }}>QQ空间</Text>
-              </View> */
-               /* <View style={{alignItems:'center'}}>
-             <Image style={{height:50,width:50}} source={{uri:'https:ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3401603638,3430607400&fm=26&gp=0.jpg'}}/>
-           <Text style={{fontSize:16}}>微博</Text>
-         </View> */
-            /* </View>
-            <View style={{ height: 0.4, backgroundColor: 'black', marginVertical: 5, width: '100%' }} />
-            <TouchableOpacity style={{ alignItems: 'center', padding: 10, }}
-              onPress={() => { this.popUp.hide() }} >
-              <Text style={{ fontSize: 18, color: '#5B5B5B' }}>取消</Text>
-            </TouchableOpacity>
-          </View>
-        </PopUp> */}
-
-
-
-
-
+        
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', height: 65, width: '100%', alignItems: 'center', backgroundColor: 'white' }}>
 
@@ -505,18 +590,105 @@ export default class yummy extends Component {
               </TouchableOpacity>
             </View>
             <View style={{ height: 0.5, width: "100%", backgroundColor: '#BEBEBE', elevation: 0.5, marginTop: 20, marginBottom: 20 }} />
-            <Text>共{ route.params.pinglun}条评论</Text>
-            <View style={{ flexDirection: 'row', marginTop: 10, marginBottom: 20,marginLeft:20 }} >
-              <Image source={{ uri: route.params.toux }} style={{ width: 30, height: 30, borderRadius: 400, marginRight: 20 }} />
+            <Text>共{ route.params.pinglundate.length}条评论</Text>
+
+
+
+            {isLoading ? <ActivityIndicator /> : (
+              <FlatList
+              showsVerticalScrollIndicator={false}
+              data={isdata}
+              bounces={true}
+              keyExtractor={({ id }, index) => id}
+              renderItem={({ item }) => (
+                <View style={{ flexDirection: 'row', marginTop: 10, marginBottom: 20,marginLeft:20 }} >
+              <Image source={{ uri: item.toux.uri }} style={{ width: 30, height: 30, borderRadius: 400, marginRight: 20 }} />
               <TextInput
-                style={{ height: 30, width: 300, borderRadius: 20, padding: 5, backgroundColor: '#d0d0d0' }}
+                style={{ height: 30, width: 250, borderRadius: 20, padding: 5, backgroundColor: '#d0d0d0' }}
                 placeholder='说点什么'
                 placeholderTextColor='#5B5B5B'
+                onChangeText={(text) => {
+                  this.setState({ words: text });
+              }}
               />
+              <TouchableOpacity onPress={() => {
+                            this._onPressinsertpinglun();
+                            this.props.navigation.push("浙里说");
+                        }}>
+                            <Text style={{
+                                paddingHorizontal: 15,
+                                backgroundColor: "black",
+                                color: "#fff",
+                                paddingVertical: 5, borderRadius: 20, marginRight: 5,marginLeft:12
+                            }}>
+                                发布
+                              </Text>
+                        </TouchableOpacity>
             </View>
+              )}
+              />
+            )}
+            
+            
 
             <View >
               {/* {this.renderData()} */}
+              <FlatList
+                      showsVerticalScrollIndicator={false}
+                      data={route.params.pinglundate}
+                      // bounces={true}
+                      // numColumns={1}
+                      keyExtractor={({ id }, index) => id}
+                      refreshControl={
+                        <RefreshControl
+                          tintColor={'red'}
+                          titleColor={'brown'}
+                          title={'正在刷新......'}
+                          refreshing={this.state.refreshing}
+                          onRefresh={this._onRefresh.bind(this)}
+                        />
+                      }
+                      ListFooterComponent={this._renderFooter.bind(this)}
+                      onEndReached={this._onRefresh.bind(this)}
+                      onEndReachedThreshold={1}
+                      renderItem={({ item }) => (
+                        <View>
+                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between',alignItems:'center',marginLeft:20 ,marginBottom:15 }}>
+                 <View style={{ flexDirection: 'row' }}>
+                   <TouchableOpacity>
+                     <Image source={{uri:item.toux}} style={{ width: 30, height: 30, borderRadius: 400, marginRight: 10 }} />
+                   </TouchableOpacity>
+                   <TouchableOpacity>
+                     <View>
+                       <Text style={{ fontSize: 15, color: '#4F4F4F' }}>{item.name}</Text>
+                       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                         <Text style={{ fontSize: 17 }}>{item.words}</Text>
+                         <Text style={{ fontSize: 12, alignItems: 'center', justifyContent: 'center', marginLeft: 4 }}>{item.time}</Text>
+                       </View>
+                     </View>
+                   </TouchableOpacity>
+                 </View>
+                 <View></View>
+                 <View >
+                   <TouchableOpacity style={{}}>
+                     <Ionicons name={'md-heart-outline'} size={20} />
+                     <Text >{item.good}1</Text>
+                   </TouchableOpacity>
+                 </View>
+               </View>
+                        </View>
+                      )}
+
+                    // refreshing={this.state.isLoading}
+                    // onRefresh={() => {
+                    //     this.loadData(); }}//下拉刷新加载数据
+                    // getHeightForItem={this._getHeightForItem}
+                    // refreshing = {this.state.refreshing}
+                    // onRefresh = {this.onRefreshing}
+                    // onEndReachedThreshold={0.5}
+                    // onEndReached={this._onEndReached}
+                    // keyExtractor={this._keyExtractor}
+                    />
             </View>
 
 

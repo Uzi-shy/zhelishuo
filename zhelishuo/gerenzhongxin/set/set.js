@@ -7,7 +7,7 @@ import { RotationGestureHandler, TouchableHighlight, ScrollView } from "react-na
 export default class extends Component {
 
   _onClickexitloginstate = () => {
-    fetch('http://192.168.50.28:3000/exitlogin', {
+    fetch('http://192.168.50.30:3000/exitlogin', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -24,14 +24,14 @@ export default class extends Component {
     return (
 
       <ScrollView style={{ marginBottom: 50 ,backgroundColor:'#F0F0F0'}}>
-        <View style={{ height: 90, width: "100%", backgroundColor: "white",elevation:2 }}>
+        <View style={{ height: 50, width: "100%", backgroundColor: "white",elevation:2 ,borderBottomRightRadius:15,borderBottomLeftRadius:15}}>
           <View style={{ flex: 0.7, marginTop: '6%', flexDirection: "row", width: "90%", justifyContent: "space-between", alignItems: "center", }}>
             <View style={{ flexDirection: "row" }}>
               <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
                 this.props.navigation.goBack()
               }} />
             </View>
-            <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 30 }}>设置</Text>
+            <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 24 }}>设置</Text>
             <View>
               {/* <Entypo name={'home'} size={25} color={'#000'} onPress={() => {
                                 this.props.navigation.popToTop();
@@ -120,7 +120,7 @@ export default class extends Component {
               this.props.navigation.popToTop();
             }}
           >
-            <Text style={{ fontSize: 27, color: 'black' }}>退出登录</Text>
+            <Text style={{ fontSize: 22, color: 'black' }}>退出登录</Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ borderColor: 'black', borderRadius: 20, padding: 6,backgroundColor:'#E0E0E0',elevation:2 }}
           onPress={() => {
@@ -128,7 +128,7 @@ export default class extends Component {
             this.props.navigation.popToTop();
           }}
           >
-            <Text style={{ fontSize: 27, color: 'black' }}>切换账号</Text>
+            <Text style={{ fontSize: 22, color: 'black' }}>切换账号</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

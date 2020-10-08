@@ -306,7 +306,7 @@ export default function App() {
     <Stack.Screen name="浙里有料黑夜模式" component={zheliyouliao_night}/>
 
     <Stack.Screen name="诗人生平查看更多" component={shiren}/>
-        <Stack.Screen name="诗人细节" component={shirenxijie}/>
+    <Stack.Screen name="诗人细节" component={shirenxijie}/>
     <Stack.Screen name="名句介绍查看更多" component={mjjieshao}/>
     <Stack.Screen name="名句" component={mingju}/>
 

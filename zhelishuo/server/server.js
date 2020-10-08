@@ -35,7 +35,7 @@ app.listen(3000, () => {
   const { json } = require('express');
   // Connection URL
   const url = 'mongodb://localhost:27017';
-  const ip="http://192.168.50.28:3000";
+  const ip="http://192.168.50.30:3000";
 
 
 
@@ -274,6 +274,24 @@ app.post('/personal', async (req, res) => {
     var dbo = db.db("user");
     dbo.collection("KouXiangTangxx").find({
       "username":req.body.username
+    }).toArray(function (err, result) {
+      if (err) throw err;
+      res.send({ result });
+      console.log(result);
+      db.close();
+    
+    })
+  })
+})
+
+
+//登录的用户
+app.post('/loginin', async (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("user");
+    dbo.collection("KouXiangTang").find({
+      "loginstate":"true",
     }).toArray(function (err, result) {
       if (err) throw err;
       res.send({ result });
@@ -532,3 +550,30 @@ app.post('/search_user', async (req, res) => {
     })
   })
 })
+
+// 评论数据插入 
+app.post('/insertpinglun', async (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+    if (err) throw err; 
+    var dbo = db.db("user");
+    // var myobj =req.body.response;
+    console.log("req.body+"+req.body)
+    var myobj =req.body;
+    let id = req.body.id;
+    var whereStr={
+      "_id":new ObjectID(id),
+      };
+    dbo.collection("publish_to_administrator").updateOne(
+      whereStr,
+      {
+        $addToSet:{
+          "pinglunstate":myobj
+        }
+        }, function (err, res) {
+      if (err) throw err;
+      console.log("评论插入成功");
+    
+      db.close();
+    });
+  })
+});

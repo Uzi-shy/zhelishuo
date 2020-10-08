@@ -22,54 +22,54 @@ const {width,height} =Dimensions.get("window")
               
           Aich :[
     {
-      picture:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597748497618&di=b76e6ce660a9d884dd7d8ccf26632e79&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201703%2F24%2F20170324225828_8CAWJ.jpeg',
-      person:'杜甫———诗圣的一生',
-      introduce:'字子美，号少陵野老，世称“杜工部”。',
+      picture:'http://121.196.27.141/img/zheliyouliao/画作/李嵩《观潮图》.jpg',
+      person:'《观潮图》',
+      introduce:'李嵩——中国南宋画家，钱塘（今浙江杭州）人',
     },
     {
-      picture:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3247279750,3143054548&fm=26&gp=0.jpg',
-      person:'李白———诗仙的浪漫主义',
-      introduce:'字太白，号青莲居士。',
+      picture:'http://121.196.27.141/img/zheliyouliao/画作/林椿《梅竹寒禽图》.jpg',
+      person:'《梅竹寒禽图》',
+      introduce:'林椿——南宋钱塘（今浙江杭州）人',
     },
     {
-      picture:'http://121.196.27.141/img/baijuyi.jpg',
-      person:'白居易———现实主义',
-      introduce:'字乐天，晚年号香山居士。',
+      picture:'http://121.196.27.141/img/zheliyouliao/画作/马麟《秉烛夜游》.jpg',
+      person:'《秉烛夜游》',
+      introduce:'马麟——钱塘（今浙江杭州）人',
     },
 ],
 
 GaGa:[
   {
-  picture:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1987117079,1609681391&fm=26&gp=0.jpg',
-  person:'李清照———婉约词派',
-  introduce:'号易安居士，齐州济南（今山东省济南市章丘区）人。宋代女词人，婉约词派代表，有“千古第一才女”之称。李清照出生于书香门第，早期生活优裕，其父李格非藏书甚富，她小时候就在良好的家庭环境中打下文学基础。出嫁后与丈夫赵明诚共同致力于书画金石的搜集整理。金兵入据中原时，流寓南方，境遇孤苦。所作词，前期多写其悠闲生活，后期多悲叹身世，情调感伤。形式上善用白描手法，自辟途径，语言清丽。论词强调协律，崇尚典雅，提出词“别是一家”之说，反对以作诗文之法作词。能诗，留存不多，部分篇章感时咏史，情辞慷慨，与其词风不同。',
+  picture:'http://121.196.27.141/img/zheliyouliao/画作/钱选《折枝桃花》.jpg',
+  person:'《折枝桃花》',
+  introduce:'钱选——湖州（今浙江吴兴）人',
 },
 {
-  picture:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4294645058,1408623851&fm=26&gp=0.jpg',
-  person:'王维———有“诗佛”之称',
-  introduce:'字摩诘，号摩诘居士。',
+  picture:'http://121.196.27.141/img/zheliyouliao/画作/孙位《高逸图》.jpg',
+  person:'《高逸图》',
+  introduce:'孙位——会稽（今浙江绍兴）人',
 },
 {
-  picture:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2888165445,572368460&fm=26&gp=0.jpg',
-  person:'苏轼———世称苏东坡、苏仙',
-  introduce:'字子瞻、和仲，号铁冠道人、东坡居士。',
+  picture:'http://121.196.27.141/img/zheliyouliao/画作/夏圭《西湖柳艇》.jpg',
+  person:'《西湖柳艇》',
+  introduce:'夏圭——临安（今浙江杭州）人',
 }
 ],
 YoYo:[
   {
-  picture:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2961653525,4093718996&fm=26&gp=0.jpg',
-  person:'王昌龄———七绝圣手',
-  introduce:'字少伯，著名边塞诗人。',
+  picture:'http://121.196.27.141/img/zheliyouliao/画作/刘松年《攆茶图》.jpg',
+  person:'《攆茶图》',
+  introduce:'刘松年——浙江省金华市汤溪镇宅口人',
 },
 {
-  picture:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=105041653,3293125019&fm=26&gp=0.jpg',
-  person:'孟浩然———山水田园派',
-  introduce:'字浩然，号孟山人',
+  picture:'http://121.196.27.141/img/zheliyouliao/画作/马和之《小雅•鹿鸣之什图》.jpg',
+  person:'《小雅•鹿鸣之什图》',
+  introduce:'马和之——钱塘 （今浙江杭州）人',
 },
 {
-  picture:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3891089134,1907640935&fm=26&gp=0.jpg',
-  person:'王勃———与杨炯、卢照邻、骆宾王共称“初唐四杰”',
-  introduce:'字子安',
+  picture:'http://121.196.27.141/img/zheliyouliao/画作/燕文贵《江山楼观图》山水画.jpg',
+  person:'《江山楼观图》',
+  introduce:'燕文贵——吴兴（今浙江湖州）人',
 }
 ],
 

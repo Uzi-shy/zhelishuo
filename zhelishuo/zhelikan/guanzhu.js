@@ -13,19 +13,23 @@ import {
   ActivityIndicator,
   ListFooterComponent,
   TouchableNativeFeedback,
-  
-  Alert
+  Dimensions,
+  Alert,
 } from 'react-native';
+const { width, height } = Dimensions.get("window");
+// import {ip} from '../server/server';
 
 import AntDesign from"react-native-vector-icons/AntDesign";
 import Feather from"react-native-vector-icons/Feather";
+// const ip="http://121.196.27.141:3000";
+const ip="http://192.168.50.30:3000";
 
 export default App = ({navigation}) => {
   const [isLoading, setLoading] = useState(true);
   const [isdata, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://192.168.50.28:3000/index/guanzhu')
+    fetch(ip+'/index/guanzhu')
 
       .then((response) => response.json())
       .then((json) => setData(json.result))
@@ -76,10 +80,15 @@ export default App = ({navigation}) => {
             </TouchableNativeFeedback>
             <Text>{item.pinglun}</Text>
             </View>
+            
           </View>
+          
           </View>
+          
         </View>
+        
     </View>
+    <View style={{ right: 2, height: 0.5, backgroundColor: '#7B7B7B', marginTop: 10,marginBottom:10,width:width }} />
             </View>
             
             )

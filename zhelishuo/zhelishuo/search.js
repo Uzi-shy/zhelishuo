@@ -39,7 +39,7 @@ export default class wofabu extends Component{
 getsearchtimes(){
  
   
-    fetch('http://192.168.50.28:3000/getsearchtimes'
+    fetch('http://192.168.50.30:3000/getsearchtimes'
     , {
       method: 'POST',
       headers: {
@@ -122,7 +122,7 @@ getsearchtimes(){
     //搜索文本插入
 insertsearchtext() {
   
-  fetch('http://192.168.50.28:3000/searchtext',
+  fetch('http://192.168.50.30:3000/searchtext',
     {
       method: 'POST',
       headers: {

@@ -48,7 +48,7 @@ export default class Search extends Component {
     _onstarjudgeLogin = () => {
 
         var navigation = this.props.navigation;
-        fetch('http://192.168.50.28:3000/judgelogin', {
+        fetch('http://192.168.50.30:3000/judgelogin', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -91,7 +91,7 @@ export default class Search extends Component {
 
     //保持登录状态  
     _onClicksaveloginstate = () => {
-        fetch('http://192.168.50.28:3000/savelogin', {
+        fetch('http://192.168.50.30:3000/savelogin', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -112,7 +112,7 @@ export default class Search extends Component {
         // var {searchlogin}=this.state;
 
 
-        fetch('http://192.168.50.28:3000/login', {
+        fetch('http://192.168.50.30:3000/login', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
