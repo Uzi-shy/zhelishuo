@@ -310,7 +310,7 @@ export default class Zheliyouliao extends Component {
 
   componentDidMount() {
     const { navigation, route } = this.props;
-    fetch('http://192.168.50.30:3000/personal',
+    fetch('http://121.196.27.141:3000/personal',
       {
         method: 'POST',
         headers: {
@@ -470,7 +470,7 @@ export default class Zheliyouliao extends Component {
                         <View style={{ marginLeft: 30 }}>
                           <Text style={{ fontSize: 25, marginTop: 10, fontWeight: 'bold' ,color: 'white'}}>{item.name}</Text>
                           <Text style={{ fontSize: 15, color: '#7B7B7B', marginTop: 10 }}>浙里说账号：857857857</Text>
-                          <TouchableWithoutFeedback onPress={() => Alert.alert('ok')}  onPress={() => {
+                          <TouchableWithoutFeedback   onPress={() => {
                             this.props.navigation.push("个性签名");
                           }}>
                             <Text style={{ fontSize: 17, color: 'white', marginTop: 5 }}>{item.gexinqianming}</Text>
@@ -557,7 +557,7 @@ export default class Zheliyouliao extends Component {
   onclik_changetoux() {
     const { navigation, route } = this.props;
     if (this.state.image.uri != "") {
-      fetch('http://192.168.50.30:3000/change_toux', {
+      fetch('http://121.196.27.141:3000/change_toux', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

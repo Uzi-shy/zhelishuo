@@ -518,22 +518,78 @@ const Projects=[
         "明月楼高休独倚，酒入愁肠，化作相思泪。\n"+
         "【注释】\n"+
         "①此调原为西域传入唐教坊曲。“苏幕遮”是当时高昌国语之音译。宋代词家 用此调是另度新曲。又名《云雾敛》、《鬓云松令》。双调，六十二字，上下片各五句四仄韵。②黯：形容心情忧郁。黯乡魂：用江淹《别赋》“黯然销魂”语。③追：追随，可引申为纠缠。旅思：羁旅之思。\n",
-        pinglun:1,dianzhan:2,zhuanfa:3,    
+        pinglun:1,dianzhan:2,zhuanfa:3, 
+        pinglundate:[
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"是张露露",
+                words:"还有小船，夏天去不要太凉爽了",
+                time:"8-10",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"亚索儿",
+                words:"哈撒给",
+                time:"8-10",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"十二",
+                words:"来旅游不亏",
+                time:"10-4",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"小林同学",
+                words:"66666666",
+                time:"10-9",
+            }
+        ]   
     },
     {
-        title:"猪头妹",
+        title:"书籍推荐|徐志摩",
         image:[
-            "http://121.196.27.141/img/ztm.jpg",
-           "http://121.196.27.141/img/zhelikan/fslj1.jpg",
-            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+            "http://121.196.27.141/img/zhelikan/xzm.jpg",
+            "http://121.196.27.141/img/zhelikan/xzm1.jpg",
+            "http://121.196.27.141/img/zhelikan/xzm2.jpg",
         ],
-        author:"小黄",
-        toux:"http://121.196.27.141/img/boy.jpg",
+        
+        author:"芳心.",
+        toux:"http://121.196.27.141/img/boy2.jpg",
         text:
-        "寻人启事：\n"+
-        "图中姑娘年芳13\n"+
-        "体态特征：无下巴\n",
-        pinglun:1,dianzhan:2,zhuanfa:3,
+        "我不知道风是在那一个方向吹残破\n"+
+
+        "正如我要在残破的意识里\n"+
+        
+        "重兴一个残破的天地\n",
+        pinglun:1,dianzhan:2,zhuanfa:3,    
+        pinglundate:[
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"是张露露",
+                words:"还有小船，夏天去不要太凉爽了",
+                time:"8-10",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"亚索儿",
+                words:"哈撒给",
+                time:"8-10",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"十二",
+                words:"来旅游不亏",
+                time:"10-4",
+            },
+            {
+                toux:"http://121.196.27.141/img/girl.jpg",
+                name:"小林同学",
+                words:"66666666",
+                time:"10-9",
+            }
+        ]
     },
+    
 ]
 

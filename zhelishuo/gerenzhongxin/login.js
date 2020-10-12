@@ -48,7 +48,7 @@ export default class Search extends Component {
     _onstarjudgeLogin = () => {
 
         var navigation = this.props.navigation;
-        fetch('http://192.168.50.30:3000/judgelogin', {
+        fetch('http://121.196.27.141:3000/judgelogin', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -59,8 +59,8 @@ export default class Search extends Component {
         }).then(function (json) {
             if (json.code == "200") {
 
-                alert("登录成功" + json.username);
-                if(json.username=='huangfan'){
+                
+                if(json.username=='admin'){
                     navigation.navigate('管理员个人中心');
                 }
                 else{
@@ -91,7 +91,7 @@ export default class Search extends Component {
 
     //保持登录状态  
     _onClicksaveloginstate = () => {
-        fetch('http://192.168.50.30:3000/savelogin', {
+        fetch('http://121.196.27.141:3000/savelogin', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -112,7 +112,7 @@ export default class Search extends Component {
         // var {searchlogin}=this.state;
 
 
-        fetch('http://192.168.50.30:3000/login', {
+        fetch('http://121.196.27.141:3000/login', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
@@ -162,7 +162,7 @@ export default class Search extends Component {
                                 this.props.navigation.goBack()
                             }} /> */}
                         </View>
-                        <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 24 }}>登录</Text>
+                        <Text style={{ fontFamily: "youran", color: "#000", fontSize: 30 }}>登录</Text>
                         <View>
                             {/* <Entypo name={'home'} size={25} color={'#000'} onPress={() => {
                                 this.props.navigation.popToTop();
@@ -175,12 +175,12 @@ export default class Search extends Component {
 
 
                 {/* 登陆框 */}
-                <ImageBackground style={{ height: height - 100, width: width }} source={require('../img/dufu.jpg')}>
+                <ImageBackground style={{ height: height - 100, width: width }} source={{uri:'http://121.196.27.141/img/dufu.jpg'}}>
                     <TouchableWithoutFeedback onPress={this.tapBackground}>
                         <View style={{ width: "90%", alignItems: 'center', backgroundColor: "white", height: "65%", marginTop: 20, marginHorizontal: 20, borderRadius: 20, elevation: 10 }}>
 
                             <View style={[styles.inputBox]}>
-                                <Text style={{ fontFamily: "yegenyou", marginLeft: 27, fontSize: 20 }}>{this.state.searchidentity}名</Text>
+                                <Text style={{ fontFamily: "youran", marginLeft: 27, fontSize: 28 }}>{this.state.searchidentity}名</Text>
                                 <View style={{ flexDirection: "row" }}>
                                     <FontAwesome style={{ alignItems: "center", marginLeft: 27, marginTop: 15 }} name={'user'} size={25} color={'#999999'} />
                                     <TextInput
@@ -191,7 +191,7 @@ export default class Search extends Component {
                                         onChangeText={(text) => {
                                             this.setState({ searchidentity: '用户' })
                                             this.setState({ searchText: text });
-                                            if (text == 'huangfan') {
+                                            if (text == 'admin') {
                                                 this.setState({ searchidentity: '管理员' })
                                             }
 
@@ -201,7 +201,7 @@ export default class Search extends Component {
                             </View>
 
                             <View style={[styles.inputBox]}>
-                                <Text style={{ fontFamily: "yegenyou", marginLeft: 27, fontSize: 20 }}>密码</Text>
+                                <Text style={{ fontFamily: "youran",marginLeft: 27, fontSize: 28 }}>密码</Text>
                                 <View style={{ flexDirection: "row" }}>
                                     <FontAwesome style={{ alignItems: "center", marginLeft: 27, marginTop: 18 }} name={'lock'} size={25} color={'#999999'} />
                                     <TextInput
@@ -227,13 +227,13 @@ export default class Search extends Component {
                                         this._onstarjudgeidentity();
                                         // this.props.navigation.push('个人中心');         
                                     }}>
-                                    <Text style={{ fontSize: 20, color: "#fff" }}>登录</Text>
+                                    <Text style={{ fontFamily: "youran",fontSize: 28, color: "#fff" }}>登录</Text>
                                 </TouchableOpacity></View>
                             <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                                <Text style={{ color: "#000", fontSize: 15, marginTop: 20, marginRight: "25%" }}>忘记密码</Text>
-                                <Text style={{ color: "#000", fontSize: 15, marginTop: 20, marginLeft: "25%" }}
+                                <Text style={{ fontFamily: "youran",color: "#000", fontSize: 24, marginTop: 20, marginRight: "20%" }}>忘记密码</Text>
+                                <Text style={{ fontFamily: "youran",color: "#000", fontSize: 24, marginTop: 20, marginLeft: "20%" }}
                                     onPress={() => {
-                                        this.props.navigation.push("注册");
+                                        this.props.navigation.push("用户协议");
                                     }}
 
                                 >注册账号</Text>
@@ -263,7 +263,7 @@ const styles = StyleSheet.create({
         flex: 0.7,
         marginTop: '6%',
         flexDirection: "row",
-        width: "90%",
+        width: "100%",
         justifyContent: "space-between",
         alignItems: "center",
     },

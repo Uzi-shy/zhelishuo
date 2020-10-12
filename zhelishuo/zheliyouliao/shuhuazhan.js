@@ -276,6 +276,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 const { width, height } = Dimensions.get('window');
 var one =1;
 
@@ -446,34 +447,77 @@ export default class wofabu extends Component {
     //模拟数据
 const movieclass = [
     {
-        title: "相约杭州 诗画江南",
-        leibie:"米·顾依达油画展",
-        year: "2015.08.05 09:00 - 09.03 17:00",
-        posters: { thumbnail: 'http://www.namoc.org/pictures/zlk/m/20101105_wklhjhyegydyhzpz_m.jpg' }
+        title: "歌颂祖国",
+        leibie:"抗疫书画作品展",
+        data: " 2020-09-30 09:00 ~ 2020-10-11 17:30",
+        location:"浙江图书馆一楼内大厅",
+        money:"免费",
+        jieshao:"为庆祝中华人民共和国成立七十一周年，继承和发扬中华民族优秀的传统文化，丰富和活跃群众业余文化生活，加强艺术爱好者之间的交流。同时，歌颂疫情期间的英雄人物、英雄事迹 ，浙江图书馆和北山街道联合举办“庆祝中华人民共和国成立七十一周年暨‘歌颂祖国’抗疫书画作品展”。本次展览将展出160幅书画作品。参展的书法作品篆、隶、行、楷、草种类齐全；绘画作品或写实或会意，或浓墨重彩或轻描淡写，风格多样，各有意趣。作品表达了艺术家们对党，对祖国，对人民，对新时代的衷心热爱和美好祝愿。",
+        posters: { thumbnail: 'http://121.196.27.141/img/zheliyouliao/书画展/歌颂祖国.png', }
     },
     {
-        title: "解衣磅礴",
-        leibie:"钱瘦铁、桥本关雪交流回顾展",
-        year: "2019.08.05 09:00 - 09.03 17:00",
-        posters: { thumbnail: 'https://www.zjam.org.cn/SiteAdmin/Holding/Logo/20200723163026.jpg' }
+        title: "2020一万个太阳",
+        leibie:"大型公益画展在仙居开幕",
+        data: "2020.09.26 09:00 ~ 10.26",
+        location:"浙江省台州市仙居县仙鹤山云鹤春天美术馆",
+        money:"免费",
+        jieshao:"“一万个太阳”是服务以自闭症学生为代表的心智障碍青少年群体的公益项目，也是国内迄今规模最大、规格最高的大型自闭症学生绘画大展。项目以“艺术+公益+文旅IP”的形式，倡导社会关注心智障碍青少年群体。画展以“心性艺术”为学术主线，共含五个分展。《毕加索——全国培智学校学生“山海经”主题创作展》由杭州市杨绫子学校、酒泉特殊教育学校、张家界市特殊教育学校等学生创作，他们用稚嫩却大胆的笔触，展示出自己心中《山海经》的原生世界；《我的太阳——黄太阳作品展》则展示了一个自闭症艺术家独特的精神世界。分展《云鹤——INXX&仙鹤山跨界设计作品联展》来源于上古画作和自闭症学生的绘画作品，这些艺术作品在设计师的手下融入了日常潮服；而绘有飞虎、青鸾、凤凰等图案的汉砖砚精品原作，展出在《长翅膀的王国——“山海经”汉画像提拓展》《汉砖砚精品特展》等区，融历史厚重与人文气息为一体。该画展将持续到10月26日。",
+        posters: { thumbnail: 'http://121.196.27.141/img/zheliyouliao/书画展/一万个太阳.jpg' }
     },
     {
-        title: "向史而新",
+        title: "唐诗之路•诗画剡溪",
         leibie:"浙江百年水彩画作品展",
-        year: "2020.08.05 09:00 - 09.03 17:00",
-        posters: { thumbnail: 'https://www.zjam.org.cn/SiteAdmin/Holding/Logo/20200731205542.jpg' }
+        data: "2020.09.28  ~ 10.08",
+        location:"市文创园",
+        money:"免费",
+        jieshao:"唐诗之路•诗画剡溪”书画展在市文创园开展。市领导柴理明、梁中参加活动。据悉，此次书画展共展出145幅优秀作品，其中28幅为特邀作品，展出时间至10月8日结束，有兴趣的市民朋友可前往观赏。",
+        posters: { thumbnail: 'http://121.196.27.141/img/zheliyouliao/书画展/唐诗.jpg' }
     },
     {
-      title: '运河诗画展强势来袭！',
-      leibie:"公益小天使“加盟”助力展",
-      year: "2020.08.05 09:00 - 09.03 17:00",
-      posters: { thumbnail: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3539623675,3335480476&fm=26&gp=0.jpg'},
+      title: '秋蕊香——齐白石黄宾虹花鸟画展',
+      leibie:"百年浙江美术展",
+      data: "2020.09.08 ~ 10.18",
+      location:"浙江美术馆三层7、8、9号展厅",
+      money:"免费",
+      jieshao:"齐白石、黄宾虹是近现代中国画坛的两位巨匠，在中国近现代美术史上具有卓越的贡献和地位，是近百年中国画创作和发展的巅峰代表。生前分别被授予“人民艺术家”和“中国人民优秀画家”称号，素以“北齐南黄”并称。为进一步弘扬中华优秀传统文化，宣传、推广、展示齐白石和黄宾虹两位大师的艺术成就，浙江美术馆、北京画院、浙江省博物馆共同策划举办“秋蕊香——齐白石黄宾虹花鸟画展”。",
+      posters: { thumbnail: 'http://121.196.27.141/img/zheliyouliao/书画展/秋.gif',
+      thumbnail1:'http://121.196.27.141/img/zheliyouliao/书画展/秋1.png',
+      thumbnail2:'http://121.196.27.141/img/zheliyouliao/书画展/秋2.png',},
     },
     {
-      title: '水色情缘',
-      leibie:"金焕大运河诗画展",
-      year: "2020.08.05 09:00 - 09.03 17:00",
-      posters: { thumbnail: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597135588382&di=52c88a1cc6eda99f48597e15146fe8e6&imgtype=0&src=http%3A%2F%2Fwww.hqwhw.com%2Fhtml%2Fuploadfile%2F201810151804847.jpg'},
+      title: '襟向弁峰开',
+      leibie:"范斌钟文刚书画展",
+      data: "2020.09.15 下午开始",
+      location:"小西街西岸当代美术馆",
+      money:"免费",
+      jieshao:"“襟向弁峰开”出自北宋米芾名帖《苕溪诗帖》中的“句留荆水话，襟向弁峰开”。本次展览由湖州市文学艺术界联合会、湖州师范学院党委宣传部主办，湖州师范学院艺术学院、湖州市新闻传媒中心专题部、市书法家协会、市美术家协会、九三学社湖州文澜书画院承办。",
+      posters: { thumbnail: 'http://121.196.27.141/img/zheliyouliao/书画展/范斌.png'},
+    },
+    {
+      title: '知天命',
+      leibie:"杨力郡中国画小品展",
+      data: "2020.09.26 ~ 10.18",
+      location:"寿崇德艺术馆",
+      money:"免费",
+      jieshao:"“襟向弁峰开”出自北宋米芾名帖《苕溪诗帖》中的“句留荆水话，襟向弁峰开”。本次展览由湖州市文学艺术界联合会、湖州师范学院党委宣传部主办，湖州师范学院艺术学院、湖州市新闻传媒中心专题部、市书法家协会、市美术家协会、九三学社湖州文澜书画院承办。",
+      posters: { thumbnail: 'http://121.196.27.141/img/zheliyouliao/书画展/杨力郡.jpg',
+      // thumbnail1:'http://121.196.27.141/img/zheliyouliao/书画展/迎国庆1.png',
+      // thumbnail2:'http://121.196.27.141/img/zheliyouliao/书画展/迎国庆2.png',
+      // thumbnail3:'http://121.196.27.141/img/zheliyouliao/书画展/迎国庆3.png'
+    },
+    },
+    {
+      title: '文心连社稷，翰墨颂小康',
+      leibie:"古越书画院迎国庆书画作品展",
+      data: "2020.09.25 9:30 ~ 10.13",
+      location:"诸暨市博物馆",
+      money:"免费",
+      jieshao:"2020.09.25日至10月13日，“文心连社稷，翰墨颂小康”古越书画院迎国庆书画作品展将亮相诸暨市博物馆。此次展览共推出百余幅书画作品，体裁多样、内容丰富，或浓墨重彩，或淡雅写意，充分体现了创作者们对伟大祖国的美好祝愿，对幸福生活的向往追求，对家乡故园的热情赞颂。开展当日，古越书画院还策划了丰富的开幕式活动：浙江画院研究员、中国美术家协会会员楼有刚向诸暨市博物馆捐赠国画作品《硕果累累》；邀请十余位知名书画家现场创作15米长卷书画作品；向到场观众送出200本《古越艺丛》。 今年是“两个一百年”奋斗目标的交汇之年，是“两个五年”的交点之年，也是高水平全面建成小康社会的决胜之年。诸暨市委市政府紧紧围绕“健康暨阳、幸福暨阳”目标，统筹城乡区域发展，科学筹划、协调推进、形成以城带乡、以乡促城、城乡互动的发展格局，带领诸暨人民在新时代浪潮中筑梦前行；紧扣乡村振兴总抓手，围绕争创“全面小康指数十强县”新目标，锚定方向、精准施策，狠抓落实、靶向发力，奋力谱写新时代诸暨高水平全面建成小康社会新篇章。文心连社稷，礼赞新时代。用艺术的语言记录时代发展，用艺术的手段弘扬时代精神，是文化工作者的责任和担当。为反映和展示我市在全面建设小康进程的精神面貌和幸福生活，诸暨市博物馆携手古越书画院深入基层、深入生活，精心创作，围绕人民群众切身体会的获得感、幸福感、安全感，用笔墨深情展现人民群众共建美好家园、共享幸福生活的场景，汇聚同心同德奔小康的强大力量。小康源自奋斗，小康点亮生活。此次展览共推出百余幅书画作品，体裁多样、内容丰富，或浓墨重彩，或淡雅写意，充分体现了创作者们对伟大祖国的美好祝愿，对幸福生活的向往追求，对家乡故园的热情赞颂。",
+      posters: { 
+      thumbnail: 'http://121.196.27.141/img/zheliyouliao/书画展/迎国庆.jpg',
+      thumbnail1:'http://121.196.27.141/img/zheliyouliao/书画展/迎国庆1.jpg',
+      thumbnail2:'http://121.196.27.141/img/zheliyouliao/书画展/迎国庆2.jpg',
+      thumbnail3:'http://121.196.27.141/img/zheliyouliao/书画展/迎国庆3.jpg'},
     },
 
 ];
@@ -481,12 +525,12 @@ const movieclass = [
 
     return (
       <View>
-          <View style={{ flexDirection: 'row', alignItems: 'center', width: width, height: 60, backgroundColor: 'white',elevation: 5,justifyContent:'center' }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', width: width, height: 50, backgroundColor: 'white',elevation: 5,justifyContent:'center' }}>
                 <AntDesign name={'left'} size={25} color={'#000'} style={{position:'absolute',left:10}} onPress={() => {
                     this.props.navigation.goBack()
                 }} />
                 
-                    <Text style={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'yegenyou', }}>书画展</Text>
+                    <Text style={{ fontSize: 30,  fontFamily: 'youran', }}>诗画艺术展</Text>
                 
             </View>
           
@@ -550,23 +594,29 @@ const movieclass = [
     //       </View>
     //     </View>
     //   </View>
-    <TouchableOpacity style={{flexDirection:'row',marginBottom:5,marginTop:5,padding:8,alignItems:'center',width:width}}  onPress={() => { this.props.navigation.push('书画展细节',{
-      title:item.title,
-      leibie:item.leibie,
-      pic:item.posters.thumbnail,
-      date:item.year,
-
-    }),Alert.alert("进入订购系统"); }}>
-     				<Image source={{uri:item.posters.thumbnail}} style={{height:120 ,width:120,borderRadius:20,marginRight:10}}/>		
+    <TouchableWithoutFeedback style={{flexDirection:'row',marginBottom:5,marginTop:5,padding:8,alignItems:'center',width:width}} >
+     				<Image source={{uri:item.posters.thumbnail}} style={{height:120 ,width:80,borderRadius:10,marginRight:10}}/>		
              <View style={{flexDirection:'column'}}>
      					<Text style={{fontSize:17,width:width-180,}}>{item.title}</Text>
                <Text style={{fontSize:17,width:width-180,}}>{item.leibie}</Text>
 </View>
                          {/* <Text style={{fontSize:20}}>{item.year}</Text> */}
-                     <TouchableOpacity style={{height:30,width:60,backgroundColor:'#7B7B7B',position:'absolute',right:10,bottom:5,borderRadius:18,justifyContent:'center',alignItems:'center',padding:5}} >
+                     <TouchableOpacity style={{height:30,width:60,backgroundColor:'#3C3C3C',position:'absolute',right:10,bottom:5,borderRadius:18,justifyContent:'center',alignItems:'center',padding:5}} onPress={() => { this.props.navigation.push('书画展细节',{
+      title:item.title,
+      leibie:item.leibie,
+      pic:item.posters.thumbnail,
+      pic1:item.posters.thumbnail1,
+      pic2:item.posters.thumbnail2,
+      pic3:item.posters.thumbnail3,
+      date:item.data,
+      jieshao:item.jieshao,
+      money:item.money,
+      location:item.location
+
+    }) }}>
                              <Text style={{fontSize:20,color:'white'}}>购票</Text>
                          </TouchableOpacity>
-     			</TouchableOpacity>
+     			</TouchableWithoutFeedback>
             
           )}
           >

@@ -51,6 +51,7 @@ export default class LeftCitySection extends Component {
     render() {
         return (
             <FlatList
+            showsVerticalScrollIndicator={false}
                 style={styles.containerStyle}
                 extraData={this.state}
                 data={this.props.dataList}
@@ -94,7 +95,7 @@ let styles = StyleSheet.create({
     viewStyle: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: 70,
+        width: 80,
         marginBottom: 8,
         marginTop: 8,
         minHeight: 34,

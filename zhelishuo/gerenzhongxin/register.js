@@ -24,7 +24,7 @@ const { width,height} = Dimensions.get("window");
 var promiseinsert=false;
 
 // const ip="http://121.196.27.141:3000";
-const ip="http://192.168.50.30:3000";
+const ip="http://121.196.27.141:3000";
 
 
 
@@ -67,7 +67,7 @@ _judgeusername=()=>{
   if (json.code == "200") {
     
 
-    alert("用户名可以使用");
+    // alert("用户名可以使用");
     promiseinsert=true;
     
     // navigation.navigate('个人信息');
@@ -119,7 +119,7 @@ _judgeusername=()=>{
                                 this.props.navigation.goBack();
                             }} />
                         </View>
-                        <Text style={{fontFamily:"yegenyou", color: "#000", fontSize: 30 }}>注册</Text>
+                        <Text style={{ fontFamily: "youran", color: "#000", fontSize: 30 }}>注册</Text>
                         <View>
                             {/* <Entypo name={'home'} size={25} color={'#000'} onPress={() => {
                                 this.props.navigation.popToTop();
@@ -133,12 +133,12 @@ _judgeusername=()=>{
 
 
         {/* 登陆框 */}
-        <ImageBackground source={require('../img/dufu.jpg')} style={{height:height-100,width:width}}>
+        <ImageBackground source={{uri:'http://121.196.27.141/img/dufu.jpg'}} style={{height:height-100,width:width}}>
       <TouchableWithoutFeedback onPress={this.tapBackground}>
         <View   style={{width:"90%",alignItems:'center',backgroundColor:"white",height:"79%",marginTop:20,marginHorizontal:20,borderRadius:20,elevation:10}}>
 
         <View style={[styles.inputBox]}>
-                            <Text style={{ fontFamily:"yegenyou",marginLeft:27, fontSize: 20 }}>手机号注册</Text>
+                            <Text style={{ fontFamily: "youran",marginLeft:27, fontSize: 28 }}>手机号注册</Text>
                             <View style={{ flexDirection: "row" }}>
                                 <FontAwesome style={{ alignItems: "center", marginLeft: 27, marginTop: 15 }} name={'user'} size={25} color={'#999999'} />
                                 <TextInput
@@ -155,7 +155,7 @@ _judgeusername=()=>{
 
 
           <View style={[styles.inputBox]}>
-                            <Text style={{ fontFamily:"yegenyou",marginLeft:27, fontSize: 20 }}>用户名</Text>
+                            <Text style={{ fontFamily: "youran",marginLeft:27, fontSize: 28 }}>用户名</Text>
                             <View style={{ flexDirection: "row" }}>
                                 <FontAwesome style={{ alignItems: "center", marginLeft: 27, marginTop: 15 }} name={'user'} size={25} color={'#999999'} />
                                 <TextInput
@@ -171,7 +171,7 @@ _judgeusername=()=>{
 
 
           <View style={[styles.inputBox]}>
-                            <Text style={{ fontFamily:"yegenyou",marginLeft:27,  fontSize: 20 }}>密码</Text>
+                            <Text style={{ fontFamily: "youran",marginLeft:27,  fontSize: 28 }}>密码</Text>
                             <View style={{ flexDirection: "row" }}>
                                 <FontAwesome style={{ alignItems: "center", marginLeft: 27, marginTop: 18 }} name={'lock'} size={25} color={'#999999'} />
                                 <TextInput
@@ -189,7 +189,7 @@ _judgeusername=()=>{
 
 
                         <View style={[styles.inputBox]}>
-                            <Text style={{ fontFamily:"yegenyou",marginLeft:27,  fontSize: 20 }}>再次输入密码</Text>
+                            <Text style={{ fontFamily: "youran",marginLeft:27,  fontSize: 28 }}>再次输入密码</Text>
                             <View style={{ flexDirection: "row" }}>
                                 <FontAwesome style={{ alignItems: "center", marginLeft: 27, marginTop: 18 }} name={'lock'} size={25} color={'#999999'} />
                                 <TextInput
@@ -221,7 +221,7 @@ _judgeusername=()=>{
                   promiseinsert=false;
                   this._insertdate();
                    }else{
-                     Alert.alert("再次点击注册");
+                    //  Alert.alert("再次点击注册");
                    }
 
                 promiseinsert=false;
@@ -240,7 +240,7 @@ _judgeusername=()=>{
               // this.setState({searchPassagain:''});
               
             }}>
-              <Text style={{ fontSize: 20, color: "#fff" }}>注册</Text>
+              <Text style={{ fontFamily: "youran",fontSize: 30, color: "#fff" }}>注册</Text>
               
             </TouchableOpacity>
       
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   },
   title_view: {
-    height:90,
+    height:50,
         width: "100%",
         backgroundColor: "#FFFFFF",
         borderBottomRightRadius: 15,

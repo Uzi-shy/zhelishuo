@@ -10,7 +10,7 @@ import {
     StatusBar,
     ImageBackground,
     Keyboard,
-    PanResponder
+    PanResponder,TouchableWithoutFeedback, TouchableOpacity
 
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -18,7 +18,7 @@ import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button';
 import DatePicker from "react-native-datepicker";
 import ImagePicker from 'react-native-image-crop-picker';
 import PopUp from './PopUp';
-import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler';
+
 import Entypo from 'react-native-vector-icons/Entypo';
 
 // import CityList from "./cityList";
@@ -244,7 +244,7 @@ export default class gerenxx extends Component {
         // let {password} = route.params;
         // const { username } = route.params;
         // let username = this.props.getusername;
-        fetch('http://192.168.50.30:3000/insertgerenxx', {
+        fetch('http://121.196.27.141:3000/insertgerenxx', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -333,7 +333,7 @@ export default class gerenxx extends Component {
                                 this.props.navigation.goBack();
                             }} />
                         </View>
-                        <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 30 }}>{route.params.username}个人信息</Text>
+                        <Text style={{ fontFamily: "youran", color: "#000", fontSize: 30 }}>{route.params.username}个人信息</Text>
                         <View>
                         </View>
                     </View>
@@ -437,7 +437,7 @@ export default class gerenxx extends Component {
                          <TouchableOpacity
                         style={{
                             backgroundColor: '#6C6C6C',
-                            width: 250,
+                            width: 240,
                             height: 40,
                             justifyContent: 'center',
                             alignItems: 'center',
@@ -507,7 +507,7 @@ export default class gerenxx extends Component {
 }
 const styles = StyleSheet.create({
     top: {
-        height: 90,
+        height: 50,
         width: "100%",
         backgroundColor: "#FFFFFF",
         borderBottomRightRadius: 15,
@@ -518,7 +518,7 @@ const styles = StyleSheet.create({
         flex: 0.7,
         marginTop: '6%',
         flexDirection: "row",
-        width: "90%",
+        width: "100%",
         justifyContent: "space-between",
         alignItems: "center",
     },

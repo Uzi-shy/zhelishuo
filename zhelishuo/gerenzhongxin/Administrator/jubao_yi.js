@@ -13,16 +13,16 @@ export default class weichuli extends Component{
             {
                 pic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599456512443&di=78c688ca02c21a711a40795d37293a05&imgtype=0&src=http%3A%2F%2Ffile.gucn.com%2Ffile%2FCurioPicfile%2F200903%2FGucn_47903_20093205145648CheckCurioPic1.jpg',
                 wen:'著名书画',
-                toux:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=835401448,1403264908&fm=26&gp=0.jpg',
-                name:'小欣欣',
-                reson:'传播色情暴力'
+                toux:'http://121.196.27.141/img/zhelishuo/toux/toux13.jpg',
+                name:'sdghj',
+                reson:'传播色情'
             },
             {
                 pic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599456512443&di=78c688ca02c21a711a40795d37293a05&imgtype=0&src=http%3A%2F%2Ffile.gucn.com%2Ffile%2FCurioPicfile%2F200903%2FGucn_47903_20093205145648CheckCurioPic1.jpg',
                 wen:'著名书画',
-                toux:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=835401448,1403264908&fm=26&gp=0.jpg',
-                name:'小欣欣',
-                reson:'传播色情暴力'
+                toux:'http://121.196.27.141/img/zhelishuo/toux/toux10.jpg',
+                name:'憨憨',
+                reson:'传播非法广告'
             },
         ]
     }}

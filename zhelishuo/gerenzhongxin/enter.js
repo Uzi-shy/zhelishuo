@@ -38,7 +38,7 @@ function enter({navigation}){
 
   return (
       <View style={styles.one}>
-       <ImageBackground style={{width: '100%', height: '100%',alignItems:'center',}} source={require('../img/dufu2.jpg')}>
+       <ImageBackground style={{width: '100%', height: '100%',alignItems:'center',}} source={{uri:'http://121.196.27.141/img/dufu.jpg'}}>
        
         <Text style={{fontSize:40,fontFamily: 'yegenyou',marginTop:100,color:'#3C3C3C'}}>诗情画意 在浙里说</Text>
         <View style={{width:"70%",marginTop:180,flexDirection:'row',justifyContent:'space-between'}}>

@@ -53,7 +53,7 @@ export default class ContentWaterfall extends Component {
 
 
     componentDidMount() {
-        fetch('http://192.168.50.30:3000/wofabu',
+        fetch('http://121.196.27.141:3000/wofabu',
             {
                 method: 'POST',
                 headers: {
@@ -62,7 +62,7 @@ export default class ContentWaterfall extends Component {
                 },
                 body: JSON.stringify({
 
-                    username: "hf",
+                    username: "user1",
                     
                 })
             })
@@ -125,7 +125,7 @@ export default class ContentWaterfall extends Component {
                                                 style={{ width: itemWidth, height: 140 }}
                                             />
                                         </TouchableOpacity>
-                                        <Text style={{ fontSize: 15, marginVertical: 5 }}>{item.title}</Text>
+                                        <Text style={{ fontSize: 15, marginVertical: 5,width:140 }}>{item.title}</Text>
                                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                                 <Image style={{ height: 25, width: 25, borderRadius: 400 }} source={{ uri: item.gerenxx[0].toux.uri }} />

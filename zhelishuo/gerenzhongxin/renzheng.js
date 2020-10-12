@@ -20,7 +20,7 @@ export default class PickerTest extends Component {
     render(){
         return(
 
-            <ImageBackground source={require('../img/dufu2.jpg')} style={{height:height,width:width}}>
+            <ImageBackground source={{uri:'http://121.196.27.141/img/dufu.jpg'}} style={{height:height,width:width}}>
               <View style={{flexDirection:'row',padding:10,justifyContent:'space-between'}}>
                 <EvilIcons name={'close'} size={25} />
                 <Text style={{fontSize:25,fontWeight:'700'}}>身份认证</Text>

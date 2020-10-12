@@ -458,7 +458,7 @@ export default class ContentWaterfall extends Component {
 
 
   componentDidMount() {
-    fetch('http://192.168.50.30:3000/zuoping_yi1',
+    fetch('http://121.196.27.141:3000/zuoping_yi1',
       {
         method: 'POST',
         headers: {
@@ -477,7 +477,7 @@ export default class ContentWaterfall extends Component {
         this.setState({ isLoading: false });
       });
 
-      fetch('http://192.168.50.30:3000/zuoping_yi2',
+      fetch('http://121.196.27.141:3000/zuoping_yi2',
       {
         method: 'POST',
         headers: {
@@ -592,7 +592,7 @@ export default class ContentWaterfall extends Component {
 
           </View>
 
-          <ScrollView showsHorizontalScrollIndicator={false} style={{ marginVertical: 5, marginHorizontal: 5,height:560 }}>{/* 按钮栏目 */}
+          <ScrollView showsVerticalScrollIndicator={false} style={{ marginVertical: 5, marginHorizontal: 5,height:600 }}>{/* 按钮栏目 */}
           <View>
 
             <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={{ marginVertical: 5, }}>

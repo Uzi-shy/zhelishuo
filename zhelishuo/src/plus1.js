@@ -97,7 +97,7 @@ export default class spread extends Component {
     _onstarjudgeLogin = () => {
 
         var navigation = this.props.navigation;
-        fetch('http://192.168.50.30:3000/judgelogin', {
+        fetch('http://121.196.27.141:3000/judgelogin', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -129,7 +129,7 @@ export default class spread extends Component {
     _onstargetgerenxx = () => {
         const {navigation,route}=this.props;
         console.log(route.params.username);
-        fetch('http://192.168.50.30:3000/personal',
+        fetch('http://121.196.27.141:3000/personal',
             {
                 method: 'POST',
                 headers: {
@@ -157,7 +157,7 @@ export default class spread extends Component {
     _onClickpublish_to_administrator = () => {
         var num=1+parseInt(Math.random() * (3) );
         const {navigation,route}=this.props;
-        fetch('http://192.168.50.30:3000/publish_to_administrator', {
+        fetch('http://121.196.27.141:3000/publish_to_administrator', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -319,7 +319,7 @@ export default class spread extends Component {
                 <View style={[styles.top]}>
                     <View style={[styles.top_container]}>
 
-                        <Text style={{ fontSize: 20, fontWeight: "bold", fontFamily: 'youran', marginTop: 24, marginLeft: 170 }}>在浙里说</Text>
+                        <Text style={{ fontSize: 30, fontFamily: 'youran', marginTop: 24, marginLeft: 150 }}>在浙里说</Text>
                         <TouchableOpacity onPress={() => {
                             
                             
@@ -340,7 +340,7 @@ export default class spread extends Component {
                                 paddingHorizontal: 20,
                                 backgroundColor: "black",
                                 color: "#fff",
-                                paddingHorizontal: 10, paddingVertical: 5, borderRadius: 20, marginTop: 25, marginRight: 5
+                                paddingHorizontal: 10, paddingVertical: 5, borderRadius: 20, marginTop: 20, marginRight: 5
                             }}>
                                 发布
                               </Text>
@@ -536,7 +536,7 @@ export default class spread extends Component {
 
 
                         <View style={styles.container1}>
-                            <Text>选择分类：</Text>
+                            <Text>   选择分类：</Text>
                             <ScrollView
                                 style={{ flexDirection: "row" }}
                             >{this._renderMultiMark()}</ScrollView>
@@ -611,7 +611,7 @@ const styles = StyleSheet.create({
     },
     container1: {
 
-        width: "95%",
+        width: "100%",
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginHorizontal: 20, marginTop: 60

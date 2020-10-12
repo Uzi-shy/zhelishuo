@@ -12,12 +12,12 @@ export default class weichuli extends Component {
         this.state = {
             data: [
                 {
-                    toux: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=835401448,1403264908&fm=26&gp=0.jpg',
-                    name: '小欣欣',
+                    toux: 'http://121.196.27.141/img/zhelishuo/toux/toux17.jpg',
+                    name: '竹马道',
                 },
                 {
-                    toux: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=835401448,1403264908&fm=26&gp=0.jpg',
-                    name: '小欣欣',
+                    toux: 'http://121.196.27.141/img/zhelishuo/toux/toux19.jpg',
+                    name: '愚人欢',
                 },
             ]
         }

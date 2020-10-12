@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Platform,
   FlatList,
-  Image,
+  Image, 
   Alert
 } from 'react-native';
 import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
@@ -80,56 +80,56 @@ YoYo:[
 
 
 Lucy:[
-    {
-      picture:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597763682228&di=63122288604b93435fe6c08210f835bc&imgtype=0&src=http%3A%2F%2Fimg2.woyaogexing.com%2F2017%2F10%2F22%2F5bd587ce2d7f79a1%2521400x400_big.jpg',
-      poem:'会当凌绝顶，一览众山小。',
-      theme:'《望岳》———【唐】杜甫',
-    },
-    {
-      picture:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597763724163&di=df12a2a677de2614dc3d64c0ad3413de&imgtype=0&src=http%3A%2F%2Fimg.wxcha.com%2Ffile%2F201812%2F27%2Ffc42f83086.jpg',
-      poem:'君不见黄河之水天上来，奔流到海不复还。',
-      theme:'《将进酒》———【唐】李白',
-    },
-    {
-      picture:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=442163808,1029272987&fm=26&gp=0.jpg',
-      poem:'在天愿做比翼鸟，在地愿为连理枝。',
-      theme:'《长恨歌》———【唐】白居易',
-    },
+  {
+    picture:'http://121.196.27.141/img/zheliyouliao/名句/己亥杂诗·其五.jpg',
+    poem:'浩荡离愁白日斜，吟鞭东指即天涯。',
+    theme:'《己亥杂诗》———【清】龚自珍',
+  },
+  {
+    picture:'http://121.196.27.141/img/zheliyouliao/名句/咏蝉.jpg',
+    poem:'西陆蝉声唱，南冠客思深。',
+    theme:'《在狱咏蝉》———【唐】骆宾王',
+  },
+  {
+    picture:'http://121.196.27.141/img/zheliyouliao/名句/卜算子·咏梅.jpg',
+    poem:'驿外断桥边，寂寞开无主。',
+    theme:'《卜算子·咏梅》———【宋】陆游',
+  },
 ],
 
 MoMo:[
-  {
-    picture:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3779105826,724055153&fm=26&gp=0.jpg',
-    poem:'此情无计可消除，才下眉头，又上心头。',
-    theme:'《将进酒》———【宋】李清照',
-  },
-  {
-    picture:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1548414248,1875484623&fm=26&gp=0.jpg',
-    poem:'大漠孤烟直,长河落日圆。',
-    theme:'《使至塞上》———【唐】王维',
-  },
-  {
-    picture:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1910410778,2847303826&fm=26&gp=0.jpg',
-    poem:'竹外桃花三两枝，春江水暖鸭先知。',
-    theme:'《惠崇春江晚景》———【宋】苏轼',
-  }
+{
+  picture:'http://121.196.27.141/img/zheliyouliao/名句/咏柳.jpg',
+  poem:'不知细叶谁裁出，二月春风似剪刀。',
+  theme:'《咏柳》———【唐】贺知章',
+},
+{
+  picture:'http://121.196.27.141/img/zheliyouliao/名句/游子吟.jpg',
+  poem:'谁言寸草心，报得三春晖。',
+  theme:'《游子吟》———【唐】孟郊',
+},
+{
+  picture:'http://121.196.27.141/img/zheliyouliao/名句/别范安成.jpg',
+  poem:'梦中不识路，何以慰相思？',
+  theme:'《别范安成》———【南北朝】沈约',
+}
 ],
 NaNa:[
-  {
-    picture:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=843553978,445159177&fm=26&gp=0.jpg',
-    poem:'洛阳亲友如相问，一片冰心在玉壶。',
-    theme:'《芙蓉楼送辛渐》———【唐】王昌龄',
-  },
-  {
-    picture:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3273735525,1672395789&fm=15&gp=0.jpg',
-    poem:'春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。',
-    theme:'《春晓》———【唐】孟浩然',
-  },
-  {
-    picture:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1083079680,2890369520&fm=26&gp=0.jpg',
-    poem:'与君离别意，同是宦游人。',
-    theme:'《送杜少府之任蜀州》———【唐】王勃',
-  }
+{
+  picture:'http://121.196.27.141/img/zheliyouliao/名句/白梅.jpg',
+  poem:'忽然一夜清香发，散作乾坤万里春。',
+  theme:'《白梅》———【元】王冕',
+},
+{
+  picture:'http://121.196.27.141/img/zheliyouliao/名句/十二月十五夜.jpg',
+  poem:'沉沉更鼓急，渐渐人声绝。',
+  theme:'《十二月十五夜》———【清】袁枚',
+},
+{
+  picture:'http://121.196.27.141/img/zheliyouliao/名句/观书.jpg',
+  poem:'金鞍玉勒寻芳客，未信我庐别有春。',
+  theme:'《观书》———【明】于谦',
+}
 ]
 }}
 

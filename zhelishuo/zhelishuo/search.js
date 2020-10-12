@@ -39,7 +39,7 @@ export default class wofabu extends Component{
 getsearchtimes(){
  
   
-    fetch('http://192.168.50.30:3000/getsearchtimes'
+    fetch('http://121.196.27.141:3000/getsearchtimes'
     , {
       method: 'POST',
       headers: {
@@ -74,7 +74,7 @@ getsearchtimes(){
                         <View style={{height:40,width:300,flexDirection:'row',marginLeft:20,borderRadius:15,marginRight:20,padding:5,backgroundColor:'#d0d0d0'}}>
                         <AntDesign name={'search1'} size={30}  />
                         <TextInput
-                          placeholder="点此输入(多打一个空格)"
+                          placeholder="点此输入"
 
                           onChangeText={(text) => {
                             if(text!=''){
@@ -122,7 +122,7 @@ getsearchtimes(){
     //搜索文本插入
 insertsearchtext() {
   
-  fetch('http://192.168.50.30:3000/searchtext',
+  fetch('http://121.196.27.141:3000/searchtext',
     {
       method: 'POST',
       headers: {

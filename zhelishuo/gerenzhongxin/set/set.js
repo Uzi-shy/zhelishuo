@@ -7,7 +7,7 @@ import { RotationGestureHandler, TouchableHighlight, ScrollView } from "react-na
 export default class extends Component {
 
   _onClickexitloginstate = () => {
-    fetch('http://192.168.50.30:3000/exitlogin', {
+    fetch('http://121.196.27.141:3000/exitlogin', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -31,7 +31,7 @@ export default class extends Component {
                 this.props.navigation.goBack()
               }} />
             </View>
-            <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 24 }}>设置</Text>
+            <Text style={{ fontFamily: "youran", color: "#000", fontSize: 30 }}>设置</Text>
             <View>
               {/* <Entypo name={'home'} size={25} color={'#000'} onPress={() => {
                                 this.props.navigation.popToTop();

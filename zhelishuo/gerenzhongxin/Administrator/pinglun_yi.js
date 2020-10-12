@@ -10,20 +10,35 @@ export default class weichuli extends Component{
         super(props);
          this.state={
              data:[
-            {
-                s1:'小帆帆',
-                t1:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599468081343&di=0b0869dc2b7d7b56cc410900ea4d4ab7&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201810%2F06%2F20181006163755_ZkiF8.jpeg',
-                s2:'小欣欣',
-                t2:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2084290249,3105048292&fm=26&gp=0.jpg',
-                pinglun:'哇塞，写的真好！'
-            },
-            {
-                s1:'小帆帆',
-                t1:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599468081343&di=0b0869dc2b7d7b56cc410900ea4d4ab7&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201810%2F06%2F20181006163755_ZkiF8.jpeg',
-                s2:'小欣欣',
-                t2:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2084290249,3105048292&fm=26&gp=0.jpg',
-                pinglun:'哇塞，写的真好！'
-            },
+                {
+                    s1:'白茶与风',
+                    t1:'http://121.196.27.141/img/baicha.jpg',
+                    s2:'清茶与酒',
+                    t2:'http://121.196.27.141/img/girl.jpg',
+                    pinglun:'哇塞！'
+                },
+                {
+                    s1:'雷弗斯',
+                    t1:'http://121.196.27.141/img/zhelishuo/toux/toux7.jpg',
+                    s2:'熟四',
+                    t2:'http://121.196.27.141/img/zhelishuo/toux/toux3.jpg',
+                    pinglun:'俺也一样'
+                },
+                {
+                    s1:'格局',
+                    t1:'http://121.196.27.141/img/zhelishuo/toux/toux12.jpg',
+                    s2:'瓜田李下',
+                    t2:'http://121.196.27.141/img/zhelishuo/toux/toux13.jpg',
+                    pinglun:'浙江文化底蕴深厚！'
+                },
+                
+                {
+                    s1:'人来人往',
+                    t1:'http://121.196.27.141/img/zhelishuo/toux/toux11.jpg',
+                    s2:'左顾右盼',
+                    t2:'http://121.196.27.141/img/zhelishuo/toux/toux9.jpg',
+                    pinglun:'伤心的人何必深情'
+                },
         ]
     }}
     

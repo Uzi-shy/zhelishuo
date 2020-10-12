@@ -393,7 +393,7 @@ export default class yummy extends Component {
     const { navigation, route } = this.props;
     try {
       const result = await Share.share({
-        message:route.params.title
+        message:"来自浙里说的分享\n--------------\n"+route.params.title+"\n"+route.params.words+"\n"+route.params.pick[0]
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
@@ -414,7 +414,7 @@ export default class yummy extends Component {
 
   componentWillMount(){
     one=1;
-    fetch('http://192.168.50.30:3000/judgelogin', {
+    fetch('http://121.196.27.141:3000/judgelogin', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -437,7 +437,7 @@ export default class yummy extends Component {
   componentDidMount() {
     // one=1;
     // this.componentWillMount();
-    fetch('http://192.168.50.30:3000/personal',
+    fetch('http://121.196.27.141:3000/personal',
       {
         method: 'POST',
         headers: {
@@ -481,7 +481,7 @@ export default class yummy extends Component {
     var currentdate = year+ " " +month + seperator1 + strDate;
     console.log("time"+currentdate)
     if(this.state.words!=""){
-      fetch('http://192.168.50.30:3000/insertpinglun', {
+      fetch('http://121.196.27.141:3000/insertpinglun', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -529,7 +529,7 @@ export default class yummy extends Component {
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', height: 65, width: '100%', alignItems: 'center', backgroundColor: 'white' }}>
 
-          <View style={{ flexDirection: 'row', marginLeft: 5, marginTop: 15,justifyContent: 'space-between', }}>
+          <View style={{ flexDirection: 'row', marginLeft: 5, marginTop: 15,width:"100%" }}>
 
             <TouchableOpacity style={{ marginTop: -5, marginLeft: 5, width: 40, height: 40, borderRadius: 400 }}>
               <Image source={{ uri: route.params.toux }} style={{ width: 40, height: 40, borderRadius: 400 }} />
@@ -541,7 +541,7 @@ export default class yummy extends Component {
               height: 30,
               borderRadius: 20,
               borderColor: 'grey',
-              marginLeft: 200,
+              position:"absolute",right:20,
               borderWidth: 1, alignItems: 'center', justifyContent: 'center', padding: 5
             }}
               onPress={() => {
@@ -551,7 +551,6 @@ export default class yummy extends Component {
               <Text>{this.state.guanzhu}</Text>
             </TouchableOpacity>
           </View>
-
         </View>
 
 
@@ -632,6 +631,10 @@ export default class yummy extends Component {
             
 
             <View >
+            <View style={{marginTop:5,width:"100%",height:0.5,borderBottomRightRadius:20,backgroundColor:"#333333"}}/>
+            <View style={{width:40,height:20,borderBottomRightRadius:20,backgroundColor:"#FF7575"}}>
+                            <Text style={{color:"white"}}>神评</Text>
+                          </View>
               {/* {this.renderData()} */}
               <FlatList
                       showsVerticalScrollIndicator={false}
@@ -653,6 +656,7 @@ export default class yummy extends Component {
                       onEndReachedThreshold={1}
                       renderItem={({ item }) => (
                         <View>
+                          
                                  <View style={{ flexDirection: 'row', justifyContent: 'space-between',alignItems:'center',marginLeft:20 ,marginBottom:15 }}>
                  <View style={{ flexDirection: 'row' }}>
                    <TouchableOpacity>
@@ -672,10 +676,11 @@ export default class yummy extends Component {
                  <View >
                    <TouchableOpacity style={{}}>
                      <Ionicons name={'md-heart-outline'} size={20} />
-                     <Text >{item.good}1</Text>
+                     <Text >{item.good}</Text>
                    </TouchableOpacity>
                  </View>
                </View>
+               <View style={{marginTop:5,marginBottom:10,width:"100%",height:0.5,borderBottomRightRadius:20,backgroundColor:"#333333"}}/>
                         </View>
                       )}
 
@@ -728,21 +733,21 @@ export default class yummy extends Component {
               </TouchableOpacity>
 
               <View style={{ flexDirection: 'row', marginLeft: 5 }}>
-                <TouchableOpacity onPress={() => { Alert.alert("点赞+1"); }}>
+                <TouchableOpacity onPress={() => {  }}>
                   <Ionicons name={'md-heart-outline'} size={21} />
                 </TouchableOpacity>
               <Text style={{ marginRight: 10 }}>{route.params.dianzhan}</Text>
               </View>
 
               <View style={{ flexDirection: 'row', marginLeft: 5 }}>
-                <TouchableOpacity onPress={() => { Alert.alert("评论+1"); }}>
+                <TouchableOpacity onPress={() => { }}>
                   <EvilIcons name={'comment'} size={27} />
                 </TouchableOpacity>
                 <Text style={{ marginRight: 10 }}>{route.params.pinglun}</Text>
               </View>
 
               <View style={{ flexDirection: 'row', marginLeft: 5 }}>
-                <TouchableOpacity onPress={() => { Alert.alert("收藏+1"); }}>
+                <TouchableOpacity onPress={() => { }}>
                   <AntDesign name={'staro'} size={20} />
                 </TouchableOpacity>
                 <Text>{route.params.zhuanfa}</Text>
@@ -761,7 +766,7 @@ export default class yummy extends Component {
               </View>
               <View style={{ marginRight: 10 }}>
                 <TouchableWithoutFeedback
-                  onPress={() => { Alert.alert('ok') }}>
+                  onPress={() => { }}>
                   <Feather name={'more-horizontal'} size={20} />
                 </TouchableWithoutFeedback>
               </View>

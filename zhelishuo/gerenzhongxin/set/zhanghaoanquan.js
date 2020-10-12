@@ -15,14 +15,14 @@ export default class xx extends Component{
                 this.props.navigation.goBack()
               }}/>
                     </TouchableOpacity>
-                    <Text style={{fontSize:25}}>账号与安全</Text>
+                    <Text style={{fontSize:30,fontFamily:"youran"}}>账号与安全</Text>
                     <Text>    </Text>
                 </View>
                 <View style={{backgroundColor:'white',marginTop:15,elevation:2}}>
                 <TouchableOpacity style={{flexDirection:'row',width:'100%',padding:15,justifyContent:'space-between',alignItems:'center'}}>
                     <Text style={{fontSize:18}}>浙里说账号</Text>
                     <View style={{flexDirection:'row',alignItems:'center'}}>
-                    <Text style={{fontSize:15,marginRight:10}}>xxsgxty</Text>
+                    <Text style={{fontSize:15,marginRight:10}}>10000</Text>
                     
                     <AntDesign name={'right'} size={25}/>
                     
@@ -32,7 +32,7 @@ export default class xx extends Component{
                 <TouchableOpacity style={{flexDirection:'row',width:'100%',padding:15,justifyContent:'space-between',alignItems:'center'}}>
                     <Text style={{fontSize:18}}>手机号</Text>
                     <View style={{flexDirection:'row',alignItems:'center'}}>
-                    <Text style={{fontSize:15,marginRight:10}}>198****2042</Text>
+                    <Text style={{fontSize:15,marginRight:10}}>198********</Text>
                     
                     <AntDesign name={'right'} size={25}/>
                     

@@ -1,4 +1,3 @@
-// 
 // import React, {Component} from "react";
 // import {Image, LayoutAnimation, NativeModules, Platform, StyleSheet, Text, View} from "react-native";
 // const {UIManager} = NativeModules;
@@ -256,18 +255,18 @@ export default class ContentWaterfall extends Component {
       isLoading: true,
       isdata1: [
         {
-          height:140,
-          title: "《浮生六记》\n带我们把日子过成诗",
+          height:180,
+          title: "*日积月累*飞花令【日月同辉】\nxx",
           pick: 
-            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+            "http://121.196.27.141/img/zhelishuo/feihualing/日月同辉.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj2.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj.jpg",
           
 
-          author: "闲庭看花",
-          toux: "http://121.196.27.141/img/girl.jpg",
+          author: "南烟",
+          toux: "http://121.196.27.141/img/zhelishuo/toux/toux11.jpg",
           text:
-            "浮生六记》带我们把日子过成诗 晚清小红楼”，\n作者[清]沈复。\n本书讲述了作者沈复与妻子芸娘从年少初识到婚后的甜蜜生活，两人情投意合，一起吟诗作画、赏花弄月、结伴出游、租炉煮茗、田园避暑...生活有滋有味。即使后期遭逢家庭变故，颠沛流离，依然相扶相依，不离不弃。\n芸娘是个很有生活情趣之人，愣是把把柴米油盐酱醋茶，过成了琴棋书画诗酒花，难怪林语堂先生称之为:“中国文学中最可爱 的女人”与芸寄届锡山华氏，时华夫人以两女从芸识字。乡居院旷，夏日逼人，劳教其家，作活花屏法甚妙。\n每屏一扇，用木梢二枝约长四五寸作矮条凳式，虛其中，横四挡，宽- -尺许，四角凿圆眼，插竹编方眼,屏约高六七尺，用砂盆种扁豆置屏中，盘延屏上，两人可移动。\n多编数屏，随意遮拦，恍如绿阴满窗，透风蔽日，纡回曲折，随时可更，故曰活花屏，有此- -法，即一切藤本香草随地可用。此真乡居之良法",
+            "《浮生六记》带我们把日子过成诗 晚清小红楼”，\n作者[清]沈复。\n本书讲述了作者沈复与妻子芸娘从年少初识到婚后的甜蜜生活，两人情投意合，一起吟诗作画、赏花弄月、结伴出游、租炉煮茗、田园避暑...生活有滋有味。即使后期遭逢家庭变故，颠沛流离，依然相扶相依，不离不弃。\n芸娘是个很有生活情趣之人，愣是把把柴米油盐酱醋茶，过成了琴棋书画诗酒花，难怪林语堂先生称之为:“中国文学中最可爱 的女人”与芸寄届锡山华氏，时华夫人以两女从芸识字。乡居院旷，夏日逼人，劳教其家，作活花屏法甚妙。\n每屏一扇，用木梢二枝约长四五寸作矮条凳式，虛其中，横四挡，宽- -尺许，四角凿圆眼，插竹编方眼,屏约高六七尺，用砂盆种扁豆置屏中，盘延屏上，两人可移动。\n多编数屏，随意遮拦，恍如绿阴满窗，透风蔽日，纡回曲折，随时可更，故曰活花屏，有此- -法，即一切藤本香草随地可用。此真乡居之良法",
           pinglun: 1, dianzhan: 2, zhuanfa: 3,
           pinglundate: [
             {
@@ -297,16 +296,16 @@ export default class ContentWaterfall extends Component {
           ]
         },
         {
-          height:240,
-          title: "《浮生六记》\n带我们把日子过成诗",
+          height:140,
+          title: "《中国诗词大会》飞花令：月\n春江潮水连海平，海上明月共潮生。",
           pick: 
-            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+            "http://121.196.27.141/img/zhelishuo/feihualing/中国诗词大会.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj2.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj.jpg",
           
 
-          author: "闲庭看花",
-          toux: "http://121.196.27.141/img/girl.jpg",
+          author: "故人泪",
+          toux: "http://121.196.27.141/img/zhelishuo/toux/toux12.jpg",
           text:
             "浮生六记》带我们把日子过成诗 晚清小红楼”，\n作者[清]沈复。\n本书讲述了作者沈复与妻子芸娘从年少初识到婚后的甜蜜生活，两人情投意合，一起吟诗作画、赏花弄月、结伴出游、租炉煮茗、田园避暑...生活有滋有味。即使后期遭逢家庭变故，颠沛流离，依然相扶相依，不离不弃。\n芸娘是个很有生活情趣之人，愣是把把柴米油盐酱醋茶，过成了琴棋书画诗酒花，难怪林语堂先生称之为:“中国文学中最可爱 的女人”与芸寄届锡山华氏，时华夫人以两女从芸识字。乡居院旷，夏日逼人，劳教其家，作活花屏法甚妙。\n每屏一扇，用木梢二枝约长四五寸作矮条凳式，虛其中，横四挡，宽- -尺许，四角凿圆眼，插竹编方眼,屏约高六七尺，用砂盆种扁豆置屏中，盘延屏上，两人可移动。\n多编数屏，随意遮拦，恍如绿阴满窗，透风蔽日，纡回曲折，随时可更，故曰活花屏，有此- -法，即一切藤本香草随地可用。此真乡居之良法",
           pinglun: 1, dianzhan: 2, zhuanfa: 3,
@@ -339,15 +338,15 @@ export default class ContentWaterfall extends Component {
         },
         {
           height:200,
-          title: "《浮生六记》\n带我们把日子过成诗",
+          title: "【落笔时光】字帖书 诗经+飞花令\nxx",
           pick: 
-            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+            "http://121.196.27.141/img/zhelishuo/feihualing/落笔时光.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj2.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj.jpg",
           
 
-          author: "闲庭看花",
-          toux: "http://121.196.27.141/img/girl.jpg",
+          author: "笑叹轻舞芳华",
+          toux: "http://121.196.27.141/img/zhelishuo/toux/toux13.jpg",
           text:
             "浮生六记》带我们把日子过成诗 晚清小红楼”，\n作者[清]沈复。\n本书讲述了作者沈复与妻子芸娘从年少初识到婚后的甜蜜生活，两人情投意合，一起吟诗作画、赏花弄月、结伴出游、租炉煮茗、田园避暑...生活有滋有味。即使后期遭逢家庭变故，颠沛流离，依然相扶相依，不离不弃。\n芸娘是个很有生活情趣之人，愣是把把柴米油盐酱醋茶，过成了琴棋书画诗酒花，难怪林语堂先生称之为:“中国文学中最可爱 的女人”与芸寄届锡山华氏，时华夫人以两女从芸识字。乡居院旷，夏日逼人，劳教其家，作活花屏法甚妙。\n每屏一扇，用木梢二枝约长四五寸作矮条凳式，虛其中，横四挡，宽- -尺许，四角凿圆眼，插竹编方眼,屏约高六七尺，用砂盆种扁豆置屏中，盘延屏上，两人可移动。\n多编数屏，随意遮拦，恍如绿阴满窗，透风蔽日，纡回曲折，随时可更，故曰活花屏，有此- -法，即一切藤本香草随地可用。此真乡居之良法",
           pinglun: 1, dianzhan: 2, zhuanfa: 3,
@@ -379,16 +378,16 @@ export default class ContentWaterfall extends Component {
           ]
         },
         {
-          height:300,
-          title: "《浮生六记》\n带我们把日子过成诗",
+          height:140,
+          title: "那些好听的诗词 中国风/古风/文艺/摘抄\n1.入我相思门，知我相思苦",
           pick: 
-            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+            "http://121.196.27.141/img/zhelishuo/feihualing/中国风.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj2.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj.jpg",
           
 
-          author: "闲庭看花",
-          toux: "http://121.196.27.141/img/girl.jpg",
+          author: "尘世孤行。",
+          toux: "http://121.196.27.141/img/zhelishuo/toux/toux4.jpg",
           text:
             "浮生六记》带我们把日子过成诗 晚清小红楼”，\n作者[清]沈复。\n本书讲述了作者沈复与妻子芸娘从年少初识到婚后的甜蜜生活，两人情投意合，一起吟诗作画、赏花弄月、结伴出游、租炉煮茗、田园避暑...生活有滋有味。即使后期遭逢家庭变故，颠沛流离，依然相扶相依，不离不弃。\n芸娘是个很有生活情趣之人，愣是把把柴米油盐酱醋茶，过成了琴棋书画诗酒花，难怪林语堂先生称之为:“中国文学中最可爱 的女人”与芸寄届锡山华氏，时华夫人以两女从芸识字。乡居院旷，夏日逼人，劳教其家，作活花屏法甚妙。\n每屏一扇，用木梢二枝约长四五寸作矮条凳式，虛其中，横四挡，宽- -尺许，四角凿圆眼，插竹编方眼,屏约高六七尺，用砂盆种扁豆置屏中，盘延屏上，两人可移动。\n多编数屏，随意遮拦，恍如绿阴满窗，透风蔽日，纡回曲折，随时可更，故曰活花屏，有此- -法，即一切藤本香草随地可用。此真乡居之良法",
           pinglun: 1, dianzhan: 2, zhuanfa: 3,
@@ -424,15 +423,15 @@ export default class ContentWaterfall extends Component {
       isdata2: [
         {
           height:220,
-          title: "《浮生六记》\n带我们把日子过成诗",
+          title: "“飞花令”集锦，这些诗词你一定不能错过。\nxx",
           pick: 
-            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+            "http://121.196.27.141/img/zhelishuo/feihualing/集锦.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj2.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj.jpg",
           
 
-          author: "闲庭看花",
-          toux: "http://121.196.27.141/img/girl.jpg",
+          author: "青山独往",
+          toux: "http://121.196.27.141/img/zhelishuo/toux/toux5.jpg",
           text:
             "浮生六记》带我们把日子过成诗 晚清小红楼”，\n作者[清]沈复。\n本书讲述了作者沈复与妻子芸娘从年少初识到婚后的甜蜜生活，两人情投意合，一起吟诗作画、赏花弄月、结伴出游、租炉煮茗、田园避暑...生活有滋有味。即使后期遭逢家庭变故，颠沛流离，依然相扶相依，不离不弃。\n芸娘是个很有生活情趣之人，愣是把把柴米油盐酱醋茶，过成了琴棋书画诗酒花，难怪林语堂先生称之为:“中国文学中最可爱 的女人”与芸寄届锡山华氏，时华夫人以两女从芸识字。乡居院旷，夏日逼人，劳教其家，作活花屏法甚妙。\n每屏一扇，用木梢二枝约长四五寸作矮条凳式，虛其中，横四挡，宽- -尺许，四角凿圆眼，插竹编方眼,屏约高六七尺，用砂盆种扁豆置屏中，盘延屏上，两人可移动。\n多编数屏，随意遮拦，恍如绿阴满窗，透风蔽日，纡回曲折，随时可更，故曰活花屏，有此- -法，即一切藤本香草随地可用。此真乡居之良法",
           pinglun: 1, dianzhan: 2, zhuanfa: 3,
@@ -465,15 +464,15 @@ export default class ContentWaterfall extends Component {
         },
         {
           height:140,
-          title: "《浮生六记》\n带我们把日子过成诗",
+          title: "书籍装帧再设计 | 样机 | 原创\n飞花令里读诗词\nxx",
           pick: 
-            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+            "http://121.196.27.141/img/zhelishuo/feihualing/书籍.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj2.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj.jpg",
           
 
-          author: "闲庭看花",
-          toux: "http://121.196.27.141/img/girl.jpg",
+          author: "连城",
+          toux: "http://121.196.27.141/img/zhelishuo/toux/toux6.jpg",
           text:
             "浮生六记》带我们把日子过成诗 晚清小红楼”，\n作者[清]沈复。\n本书讲述了作者沈复与妻子芸娘从年少初识到婚后的甜蜜生活，两人情投意合，一起吟诗作画、赏花弄月、结伴出游、租炉煮茗、田园避暑...生活有滋有味。即使后期遭逢家庭变故，颠沛流离，依然相扶相依，不离不弃。\n芸娘是个很有生活情趣之人，愣是把把柴米油盐酱醋茶，过成了琴棋书画诗酒花，难怪林语堂先生称之为:“中国文学中最可爱 的女人”与芸寄届锡山华氏，时华夫人以两女从芸识字。乡居院旷，夏日逼人，劳教其家，作活花屏法甚妙。\n每屏一扇，用木梢二枝约长四五寸作矮条凳式，虛其中，横四挡，宽- -尺许，四角凿圆眼，插竹编方眼,屏约高六七尺，用砂盆种扁豆置屏中，盘延屏上，两人可移动。\n多编数屏，随意遮拦，恍如绿阴满窗，透风蔽日，纡回曲折，随时可更，故曰活花屏，有此- -法，即一切藤本香草随地可用。此真乡居之良法",
           pinglun: 1, dianzhan: 2, zhuanfa: 3,
@@ -505,16 +504,16 @@ export default class ContentWaterfall extends Component {
           ]
         },
         {
-          height:300,
-          title: "《浮生六记》\n带我们把日子过成诗",
+          height:260,
+          title: "何当共剪西窗烛，却话巴山夜雨时\n作为一个自诩热爱古诗词的人，由于学习和工作的原因，",
           pick: 
-            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+            "http://121.196.27.141/img/zhelishuo/feihualing/巴山.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj2.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj.jpg",
           
 
-          author: "闲庭看花",
-          toux: "http://121.196.27.141/img/girl.jpg",
+          author: "三重门。",
+          toux: "http://121.196.27.141/img/zhelishuo/toux/toux7.jpg",
           text:
             "浮生六记》带我们把日子过成诗 晚清小红楼”，\n作者[清]沈复。\n本书讲述了作者沈复与妻子芸娘从年少初识到婚后的甜蜜生活，两人情投意合，一起吟诗作画、赏花弄月、结伴出游、租炉煮茗、田园避暑...生活有滋有味。即使后期遭逢家庭变故，颠沛流离，依然相扶相依，不离不弃。\n芸娘是个很有生活情趣之人，愣是把把柴米油盐酱醋茶，过成了琴棋书画诗酒花，难怪林语堂先生称之为:“中国文学中最可爱 的女人”与芸寄届锡山华氏，时华夫人以两女从芸识字。乡居院旷，夏日逼人，劳教其家，作活花屏法甚妙。\n每屏一扇，用木梢二枝约长四五寸作矮条凳式，虛其中，横四挡，宽- -尺许，四角凿圆眼，插竹编方眼,屏约高六七尺，用砂盆种扁豆置屏中，盘延屏上，两人可移动。\n多编数屏，随意遮拦，恍如绿阴满窗，透风蔽日，纡回曲折，随时可更，故曰活花屏，有此- -法，即一切藤本香草随地可用。此真乡居之良法",
           pinglun: 1, dianzhan: 2, zhuanfa: 3,
@@ -547,15 +546,15 @@ export default class ContentWaterfall extends Component {
         },
         {
           height:140,
-          title: "《浮生六记》\n带我们把日子过成诗",
+          title: "飞花令之花\n",
           pick: 
-            "http://121.196.27.141/img/zhelikan/fslj1.jpg",
+            "http://121.196.27.141/img/zhelishuo/feihualing/飞花令之花.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj2.jpg",
             // "http://121.196.27.141/img/zhelikan/fslj.jpg",
           
 
-          author: "闲庭看花",
-          toux: "http://121.196.27.141/img/girl.jpg",
+          author: "空水漫漫",
+          toux: "http://121.196.27.141/img/zhelishuo/toux/toux18.jpg",
           text:
             "浮生六记》带我们把日子过成诗 晚清小红楼”，\n作者[清]沈复。\n本书讲述了作者沈复与妻子芸娘从年少初识到婚后的甜蜜生活，两人情投意合，一起吟诗作画、赏花弄月、结伴出游、租炉煮茗、田园避暑...生活有滋有味。即使后期遭逢家庭变故，颠沛流离，依然相扶相依，不离不弃。\n芸娘是个很有生活情趣之人，愣是把把柴米油盐酱醋茶，过成了琴棋书画诗酒花，难怪林语堂先生称之为:“中国文学中最可爱 的女人”与芸寄届锡山华氏，时华夫人以两女从芸识字。乡居院旷，夏日逼人，劳教其家，作活花屏法甚妙。\n每屏一扇，用木梢二枝约长四五寸作矮条凳式，虛其中，横四挡，宽- -尺许，四角凿圆眼，插竹编方眼,屏约高六七尺，用砂盆种扁豆置屏中，盘延屏上，两人可移动。\n多编数屏，随意遮拦，恍如绿阴满窗，透风蔽日，纡回曲折，随时可更，故曰活花屏，有此- -法，即一切藤本香草随地可用。此真乡居之良法",
           pinglun: 1, dianzhan: 2, zhuanfa: 3,
@@ -653,7 +652,7 @@ export default class ContentWaterfall extends Component {
                 this.props.navigation.goBack();
               }} />
             </View>
-            <Text style={{ fontFamily: "yegenyou", color: "#000", fontSize: 24 }}>飞花令</Text>
+            <Text style={{ fontFamily: "youran",  fontSize: 30 }}>飞花令</Text>
             <View>
               {/* <Entypo name={'home'} size={25} color={'#000'} onPress={() => {
                                 this.props.navigation.popToTop();
@@ -663,7 +662,7 @@ export default class ContentWaterfall extends Component {
         </View>
 
 
-        <ScrollView style={{ marginVertical: 5, marginHorizontal: 5,height:height-60 }}>{/* 按钮栏目 */}
+        <ScrollView style={{ marginVertical: 5, marginHorizontal: 5,height:height-60 }} showsVerticalScrollIndicator={false}>{/* 按钮栏目 */}
           <View style={{ flexDirection: 'row' }}>
             {/*左*/}
             <View >
@@ -692,7 +691,7 @@ export default class ContentWaterfall extends Component {
                     <View>
                       <View>
                         <View style={styles.item} style={{
-                          margin: 5, borderRadius: 10,
+                          margin: 5, borderRadius: 5,
                           backgroundColor: 'white',
 
                         }}>
@@ -703,17 +702,17 @@ export default class ContentWaterfall extends Component {
                             <Image
                               // onLoadStart={() => { this.setSize(item.pick[0]) }}
                               source={{ uri: item.pick }}
-                              style={{ width: itemWidth + 20, height:item.height, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
+                              style={{ width: itemWidth + 20, height:item.height, borderTopLeftRadius: 5, borderTopRightRadius: 5 }}
                             />
                           </TouchableOpacity>
-                          <Text style={{ padding: 5, width: itemWidth + 20, fontSize: 15, marginVertical: 5 }}>{item.title}</Text>
+                          <Text style={{ padding: 5, width: itemWidth + 20, fontSize: 12, marginVertical: 5 }} numberOfLines={2}>{item.title}</Text>
                           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                              <Image style={{ height: 25, width: 25, borderRadius: 400 }} source={{ uri: item.toux}} />
-                              <Text>{item.author}</Text>
+                            <View style={{ flexDirection: 'row', alignItems: 'center' ,padding:5}}>
+                              <Image style={{ height: 20, width: 20, borderRadius: 400 }} source={{ uri: item.toux}} />
+                              <Text style={{fontSize:10}}>{item.author}</Text>
                             </View>
                             <View style={{ marginRight: 5 }}>
-                              <Feather name={'heart'} size={20} />
+                              <Feather name={'heart'} size={15} />
                             </View>
                           </View>
                         </View>
@@ -777,7 +776,7 @@ export default class ContentWaterfall extends Component {
                     <View>
                       <View>
                         <View style={styles.item} style={{
-                          margin: 5, borderRadius: 10,
+                          margin: 5, borderRadius: 5,
                           backgroundColor: 'white',
 
                         }}>
@@ -788,17 +787,17 @@ export default class ContentWaterfall extends Component {
                             <Image
                               // onLoadStart={() => { this.setSize(item.pick[0]) }}
                               source={{ uri: item.pick }}
-                              style={{ width: itemWidth + 20, height:item.height, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
+                              style={{ width: itemWidth + 20, height:item.height, borderTopLeftRadius: 5, borderTopRightRadius: 5 }}
                             />
                           </TouchableOpacity>
-                          <Text style={{ width: itemWidth + 20, fontSize: 15, marginVertical: 5 }}>{item.title}</Text>
+                          <Text style={{ padding: 5, width: itemWidth + 20, fontSize: 12, marginVertical: 5 }} numberOfLines={2}>{item.title}</Text>
                           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                              <Image style={{ height: 25, width: 25, borderRadius: 400 }} source={{ uri: item.toux}} />
-                              <Text>{item.author}</Text>
+                            <View style={{ flexDirection: 'row', alignItems: 'center',padding:5 }}>
+                              <Image style={{ height: 20, width: 20, borderRadius: 400,marginRight:8 }} source={{ uri: item.toux}} />
+                              <Text style={{fontSize:10}}>{item.author}</Text>
                             </View>
                             <View style={{ marginRight: 5 }}>
-                              <Feather name={'heart'} size={20} />
+                              <Feather name={'heart'} size={15} />
                             </View>
                           </View>
                         </View>

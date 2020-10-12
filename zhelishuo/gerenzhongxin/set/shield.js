@@ -13,7 +13,7 @@ export default class xx extends Component{
                     <TouchableOpacity>
                     <AntDesign name={'left'} size={25}/>
                     </TouchableOpacity>
-                    <Text style={{fontSize:25}}>屏蔽设置</Text>
+                    <Text style={{fontSize:30,fontFamily:"youran"}}>屏蔽设置</Text>
                     <Text>    </Text>
                 </View>
                <View style={{marginTop:10,backgroundColor:'white',elevation:3}}>

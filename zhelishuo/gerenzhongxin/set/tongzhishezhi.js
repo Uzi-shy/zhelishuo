@@ -26,7 +26,7 @@ export default class xx extends Component{
                 this.props.navigation.goBack()
               }}/>
                     </TouchableOpacity>
-                    <Text style={{fontSize:25}}>通知设置</Text>
+                    <Text style={{fontSize:30,fontFamily:"youran"}}>通知设置</Text>
                     <Text>    </Text>
                 </View>
                <View style={{padding:15,flexDirection:'row',alignItems:'center'}}>

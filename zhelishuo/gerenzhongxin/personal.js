@@ -311,7 +311,7 @@ export default class Zheliyouliao extends Component {
 
   componentDidMount() {
     const {navigation, route} = this.props;
-    fetch('http://192.168.50.30:3000/personal',
+    fetch('http://121.196.27.141:3000/personal',
       {
         method: 'POST',
         headers: {
@@ -365,7 +365,7 @@ export default class Zheliyouliao extends Component {
     return (
 
       <View style={{ marginBottom: 50 }}>
-        <ScrollView style={{}}>
+        <ScrollView showsVerticalScrollIndicator={false} style={{}}>
           <PopUp ref={ref => this.popUp = ref}>
             <View style={{ alignItems: 'center', padding: 10 }}>
               <Text style={{ fontSize: 20, marginBottom: 5 }}>选择照片</Text>
@@ -415,7 +415,7 @@ export default class Zheliyouliao extends Component {
 
                   <ScrollView style={{}}>
 
-                    <ImageBackground style={{ width: '100%' }} source={{ uri: item.toux.uri }}>
+                    <ImageBackground style={{ width: '100%'}} source={{ uri: 'http://121.196.27.141/img/dufu2.jpg' }}>
                       <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
 
                         <TouchableWithoutFeedback style={{ justifyContent: 'flex-end', marginTop: 10, }}
@@ -473,7 +473,7 @@ export default class Zheliyouliao extends Component {
                         <View style={{ marginLeft: 30 }}>
                           <Text style={{ fontSize: 25, marginTop: 10, fontWeight: 'bold' }}>{item.name}</Text>
                           <Text style={{ fontSize: 15, color: '#7B7B7B', marginTop: 10 }}>浙里说账号：857857857</Text>
-                          <TouchableWithoutFeedback onPress={() => Alert.alert('ok')}  onPress={() => {
+                          <TouchableWithoutFeedback   onPress={() => {
                             this.props.navigation.push("个性签名");
                           }}>
                             <Text style={{ fontSize: 17, color: '#272727', marginTop: 5 }}>{item.gexinqianming}</Text>
@@ -560,7 +560,7 @@ export default class Zheliyouliao extends Component {
   onclik_changetoux() {
     const { navigation, route } = this.props;
     if (this.state.image.uri != "") {
-      fetch('http://192.168.50.30:3000/change_toux', {
+      fetch('http://121.196.27.141:3000/change_toux', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

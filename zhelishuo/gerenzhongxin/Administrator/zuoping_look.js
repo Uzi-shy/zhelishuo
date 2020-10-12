@@ -36,7 +36,7 @@ export default class yummy extends Component {
         // this.setState({username:route.params.username});
         // console.log(this.state.id);
         // console.log(this.state.username);
-        fetch('http://192.168.50.30:3000/sh_get', {
+        fetch('http://121.196.27.141:3000/sh_get', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

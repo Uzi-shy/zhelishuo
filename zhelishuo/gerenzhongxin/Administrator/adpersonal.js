@@ -90,7 +90,7 @@ export default class Zheliyouliao extends Component {
           {/* <DialogSelected ref={(dialog) => {
             this.dialog = dialog;
           }} /> */}
-          <ImageBackground style={{ width: '100%' }} source={require('../../img/dufu2.jpg')}>
+          <ImageBackground style={{ width: '100%' }} source={{uri:'http://121.196.27.141//img/dufu2.jpg'}}>
 
             <TouchableWithoutFeedback style={{ flexDirection: 'row', justifyContent: 'flex-end', marginRight: 25, marginTop: 25, }}
               onPress={() => {
@@ -103,14 +103,14 @@ export default class Zheliyouliao extends Component {
             <View style={{ backgroundColor: "white", width: width, height: 500, marginTop: 220, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderTopColor: '#BEBEBE', borderWidth: 0.3, elevation: 60 }}>
               <TouchableWithoutFeedback style={{ width: 80, height: 80, marginTop: -30, marginLeft: 30, borderRadius: 400, borderWidth: 0.3, elevation: 60 }}
                 onPress={() => { this.showAlertSelected(); }}>
-                <Image source={require('../../img/boy.jpg')} style={{ resizeMode: 'cover', width: 80, height: 80, borderRadius: 400 }} />
+                <Image source={{uri:'http://121.196.27.141//img/boy.jpg'}} style={{ resizeMode: 'cover', width: 80, height: 80, borderRadius: 400 }} />
               </TouchableWithoutFeedback>
 
               <View style={{ marginLeft: 30 }}>
-            <Text style={{ fontSize: 25, marginTop: 10, fontWeight: 'bold' }}>狗管理</Text>
-                <Text style={{ fontSize: 15, color: '#7B7B7B', marginTop: 10 }}>浙里说账号：857857857</Text>
-                <TouchableWithoutFeedback onPress={() => Alert.alert('ok')}>
-                  <Text style={{ fontSize: 17, color: '#272727', marginTop: 5 }}>点击添加简介，让大家更快认识你</Text>
+            <Text style={{ fontSize: 25, marginTop: 10, fontWeight: 'bold' }}>管理员</Text>
+                <Text style={{ fontSize: 15, color: '#7B7B7B', marginTop: 10 }}>浙里说账号：10000</Text>
+                <TouchableWithoutFeedback >
+                  <Text style={{ fontSize: 17, color: '#272727', marginTop: 5 }}>这是一个内测管理员</Text>
                 </TouchableWithoutFeedback>
                 {/* <View style={{ flexDirection: 'row', justifyContent: 'flex-start', width: "100%", marginTop: 10 }}>
                   <TouchableWithoutFeedback style={{ backgroundColor: '#d0d0d0', opacity: 0.8, height: 25, width: 45, borderRadius: 8, marginRight: 10 }}>

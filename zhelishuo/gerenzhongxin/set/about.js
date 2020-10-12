@@ -15,11 +15,11 @@ export default class xx extends Component{
               }}>
                     <AntDesign name={'left'} size={25}/>
                     </TouchableOpacity>
-                    <Text style={{fontSize:25,fontWeight:'bold'}}>关于浙里说</Text>
+                    <Text style={{fontSize:30,fontFamily:"youran"}}>关于浙里说</Text>
                     <Text>      </Text>
                 </View>
                 <View>
-                    <Image style={{resizeMode:'cover',height:200,width:"100%"}} source={require('../../img/logo_1.png')}/>
+                    <Image style={{resizeMode:'cover',height:200,width:"100%"}} source={{uri:'http://121.196.27.141/img/logo_1.png'}}/>
                 </View>
                 <View style={{height:0.2,backgroundColor:'#BEBEBE'}}/>
                 <View>
@@ -40,8 +40,8 @@ export default class xx extends Component{
                <View style={{height:0.5,backgroundColor:'#7B7B7B'}}/>
                </View>
                <View style={{alignItems:'center',justifyContent:'center',marginTop:200}}>
-                   <Text style={{color:'#0080FF'}}>小欣欣&小黄黄</Text>
-                   <Text style={{color:'#0080FF'}}>瓜山科技有限公司</Text>
+                   <Text style={{color:'#0080FF'}}>浙里说团队</Text>
+                   <Text style={{color:'#0080FF'}}>浙里说科技有限公司</Text>
                </View>
             </View>
         );

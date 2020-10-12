@@ -21,8 +21,8 @@ const { width, height } = Dimensions.get("window");
 
 import AntDesign from"react-native-vector-icons/AntDesign";
 import Feather from"react-native-vector-icons/Feather";
-// const ip="http://121.196.27.141:3000";
-const ip="http://192.168.50.30:3000";
+const ip="http://121.196.27.141:3000";
+// const ip="http://192.168.50.30:3000";
 
 export default App = ({navigation}) => {
   const [isLoading, setLoading] = useState(true);
@@ -36,6 +36,8 @@ export default App = ({navigation}) => {
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }, []);
+
+  
 
   return (
       <View style={{ flex: 1, padding: 24 }}>
@@ -66,19 +68,27 @@ export default App = ({navigation}) => {
               good:item.good,
               pinglun:item.pinglun,
               quanwen:item.quanwen,
-            }) ,Alert.alert("进入细节页面");}}>
+            }) }}>
             <Image     source={{uri: item.pic}} style={{width: '100%', height: '65%'}} />
             </TouchableNativeFeedback>
-            <Text style={{fontSize:20,fontFamily: 'yegenyou'}}>{item.txt}</Text>
+            <Text style={{fontSize:20}}>{item.txt}</Text>
             <View style={{width:'100%', height:'15%',position:'absolute', flexDirection: 'row' ,padding:5,justifyContent: 'space-between',bottom:0}}>{/* 功能栏*/}
-            <TouchableNativeFeedback onPress={()=>{ Alert.alert("评论+1");}}>
+            <View style={{flexDirection:"row",marginLeft:30}}>
+              <TouchableNativeFeedback style={{}} onPress={()=>{ }}>
             <Feather name={'message-square'} size={25}/>
             </TouchableNativeFeedback>
-            <Text>{item.good}</Text>
-            <TouchableNativeFeedback onPress={()=>{ Alert.alert("点赞+1");}}>
+             <Text>{item.good}</Text>
+            </View>
+            <View style={{flexDirection:"row",marginRight:30}}> 
+              <TouchableNativeFeedback onPress={()=>{ }}>
             <AntDesign name={'like2'} size={25}/>
             </TouchableNativeFeedback>
             <Text>{item.pinglun}</Text>
+
+            </View>
+            
+           
+           
             </View>
             
           </View>

@@ -36,6 +36,7 @@ import gexinqianming from './gexinianming';
 import bianjigerenxinxi from './bianjigerenxinxi';
 import map from '../zheliyouliao/map';
 import renzheng from './renzheng';
+import yonghuxieyi from './yonghuxieyi';
 //黑夜模式
 import personalnight from './personalnight';
 
@@ -174,6 +175,7 @@ export default function App(){
 
     <Stack.Screen name="关于浙里说" component={about}/>
     
+    <Stack.Screen name="用户协议" component={yonghuxieyi}/>
 
 
 

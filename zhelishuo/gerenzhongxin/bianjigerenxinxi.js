@@ -29,7 +29,7 @@ export default class PickerTest extends Component {
                     <View style={{marginTop:10,backgroundColor:'white',width:width,paddingHorizontal:15}}>
                         <TouchableOpacity style={{flexDirection:'row',alignItems:'center'}}>
                             
-                            <Image source={require('../img/logo1.png')} style={{height:70,width:70,borderRadius:400}}/>
+                            <Image source={{uri:'http://121.196.27.141/img/baicha.jpg'}} style={{height:70,width:70,borderRadius:400}}/>
                            
                             <Text style={{fontSize:18,color:'#7B7B7B',position:'absolute',left:120}}>修改头像</Text>
                             <Entypo name={'chevron-right'} size={20} color={'#7B7B7B'} style={{position:'absolute',right:10}}/>
@@ -38,7 +38,7 @@ export default class PickerTest extends Component {
                     <View style={{backgroundColor:'white',width:width,padding:15,}}>
                         <TouchableOpacity style={{flexDirection:'row',alignItems:'center'}}>
                         <Text style={{fontSize:18,color:'#7B7B7B'}}>昵称</Text>
-                        <Text style={{fontSize:18,position:'absolute',left:120}}>小黄。</Text>
+                        <Text style={{fontSize:18,position:'absolute',left:120}}>白茶与风</Text>
                         <Entypo name={'chevron-right'} size={20} color={'#7B7B7B'} style={{position:'absolute',right:10}}/>
                         </TouchableOpacity>
                     </View>

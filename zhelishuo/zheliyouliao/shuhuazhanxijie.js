@@ -424,7 +424,7 @@ export default class Poet extends Component {
                 resizeMode="contain"
                 source={{ uri: route.params.pic }}
               />
-              <Image
+              {/* <Image
                 style={{ flex: 1 }}
                 resizeMode="contain"
                 source={{ uri: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3642376305,872256515&fm=26&gp=0.jpg' }}
@@ -438,7 +438,7 @@ export default class Poet extends Component {
                 style={{ flex: 1 }}
                 resizeMode="contain"
                 source={{ uri: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3738250302,931647034&fm=26&gp=0.jpg' }}
-              />
+              /> */}
               
             </Carousel>
           )
@@ -471,7 +471,7 @@ export default class Poet extends Component {
                             <View>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10,width:150 }}>{route.params.title}</Text>
                 <Text style={{ fontSize: 14,width:150  }}>{route.params.leibie}</Text>
-                                <Text style={{ fontSize: 22, fontWeight: 'bold',position:'absolute',bottom:0 }}>免费</Text>
+                <Text style={{ fontSize: 22, fontWeight: 'bold',position:'absolute',bottom:0 }}>{route.params.money}</Text>
                             </View>
                         </View>
 
@@ -479,19 +479,26 @@ export default class Poet extends Component {
                 <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>{route.params.date}</Text>
                             <View style={{ flexDirection: 'row' }}>
                                 <EvilIcons name={'location'} size={25} onPress={() => {
-                        this.props.navigation.navigate("地图")
+                        this.props.navigation.navigate("地图",
+                        {
+                            title:route.params.title,
+                            leibie:route.params.leibie,
+                            location:route.params.location
+
+                        }
+                        )
                     }}/>
-                                <Text style={{ fontSize: 18, marginBottom: 20, color: '#272727' }}>杭州 西湖区 浙江美术馆</Text>
+                                <Text style={{ fontSize: 18, marginBottom: 20, color: '#272727' }}>{route.params.location}</Text>
                             </View>
                             <Text style={{ fontSize: 20, fontWeight: 'bold' }}>展览介绍</Text>
                             <View style={{ backgroundColor: 'black', height: 0.5, marginTop: 8, marginBottom: 8 }} />
-                            <Text style={{ lineHeight: 20, fontSize: 16 }}>&emsp;&emsp;2020年8月5日，“向史而新——浙江百年水彩画作品展”在位于杭州的浙江美术馆开展，展览共展出包括李叔同、林风眠、吴冠中等众多美术先驱创作的水彩画作品140余件，涵盖了风景、静物、人物等诸多题材。展览以中国水彩画所表现的民族性、时代性、观念性三个学术概念为起点，回望中国水彩画的发生和发展，思考中国水彩画与浙江的紧密联系，并希望以此展览对中国水彩画的未来发展有所启迪。</Text>
-                            <Text style={{ fontSize: 20, fontWeight: 'bold' ,marginTop:10}}>展览作品</Text>
-                            <View style={{ backgroundColor: 'black', height: 0.5, marginTop: 8, marginBottom: 8 }} />
+                <Text style={{ lineHeight: 20, fontSize: 16 }}>&emsp;&emsp;{route.params.jieshao}</Text>
+                            
+                            <View style={{ backgroundColor: 'black', height: 0.5, marginTop: 8, marginBottom: 8,marginTop:10 }} />
                             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                                <Image style={{ height: 100, width:100, marginHorizontal: 10, borderRadius: 10 }} source={{ uri: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3642376305,872256515&fm=26&gp=0.jpg' }} />
-                                <Image style={{ height: 100, width:100, marginHorizontal: 10, borderRadius: 10 }} source={{ uri: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599062021086&di=78be241097fa3d2b46757b67df79e3c1&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20181015%2F78149ec6fbb242448a60df9a30cafcbc.jpeg' }} />
-                                <Image style={{ height: 100, width:100, marginHorizontal: 10, borderRadius: 10 }} source={{ uri: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3738250302,931647034&fm=26&gp=0.jpg' }} />
+                                <Image style={{ height: 250, width:120, marginHorizontal: 10, borderRadius: 5 }} source={{uri:route.params.pic1}} />
+                                <Image style={{ height: 250, width:120, marginHorizontal: 10, borderRadius: 5 }} source={{uri:route.params.pic2}} />
+                                <Image style={{ height: 250, width:120, marginHorizontal: 10, borderRadius: 5 }} source={{uri:route.params.pic3}} />
                             </ScrollView>
                         </View></View>
                         <Text></Text> 
@@ -502,9 +509,8 @@ export default class Poet extends Component {
                         
                 </ScrollView>
                 <View style={{ width: '100%', position: 'absolute', bottom: 0, alignItems: 'center', backgroundColor: 'white', padding: 20 }}>
-                    <TouchableOpacity style={{ width: 200, borderRadius: 30, borderColor: 'black', borderWidth: 3, alignItems: 'center', padding: 5, marginBottom: 10 }}
-                     onPress={() =>{this.popUp.show()} }
-                    >
+                    <TouchableOpacity style={{ width: 200, borderRadius: 30, borderColor: 'black', borderWidth: 3, alignItems: 'center', padding: 5, marginBottom: 25 }}
+                     onPress={() =>{this.popUp.show()} }>
                         <Text style={{ fontWeight: 'bold', fontSize: 20 }}>立即预约</Text>
                     </TouchableOpacity>
                    
@@ -526,7 +532,7 @@ export default class Poet extends Component {
           <View style={{height:0.5,backgroundColor:'black',marginTop:10,marginBottom:10}} />
           <View style={{flexDirection:'row',alignItems:'flex-end'}}>
           <Text style={{marginTop:10,marginLeft:20,fontSize:16,fontWeight:'700',marginRight:5}}>数量</Text>
-          <Text style={{color:'#5B5B5B',fontSize:12}}>每笔订单限购6张</Text>
+          <Text style={{color:'#5B5B5B',fontSize:12}}>每个账户限购6张</Text>
           </View>
           <View style={{flexDirection:'row',marginTop:10,marginLeft:10,alignItems:'center'}}>
           <ListView style={{marginTop: 10,}}
@@ -537,9 +543,9 @@ export default class Poet extends Component {
           </ListView>
              
           </View>
-          <View style={{height:0.5,width:width,backgroundColor:'black',position:'absolute',bottom:50}}/>
-          <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',paddingHorizontal:20,position:'absolute',bottom:0}}>
-          <Text style={{color:'red',position:'absolute',left:10,bottom:10}}>{' '+ '¥' + this.state.totalPrice}</Text>
+          <View style={{height:0.5,width:width,backgroundColor:'black',position:'absolute',bottom:70}}/>
+          <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',paddingHorizontal:10,position:'absolute',bottom:26,right:4}}>
+          {/* <Text style={{color:'red',position:'absolute',left:10,bottom:10}}>{' '+  + this.state.totalPrice}</Text> */}
               <TouchableOpacity style={{width:100,height:40,backgroundColor:'#3C3C3C',borderRadius:20,alignItems:'center',justifyContent:'center',marginLeft:210}}>
                   <Text>确定</Text>
               </TouchableOpacity>

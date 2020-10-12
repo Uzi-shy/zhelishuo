@@ -30,7 +30,7 @@ export default class recommend extends Component {
   }
 
   componentDidMount() {
-    fetch('http://192.168.50.30:3000/api/travels/travel/queryAllRelease', {
+    fetch('http://121.196.27.141:3000/api/travels/travel/queryAllRelease', {
       method: 'POST',
       credentials: "include",
       headers: {

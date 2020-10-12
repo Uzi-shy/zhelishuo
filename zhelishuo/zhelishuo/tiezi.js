@@ -121,7 +121,7 @@ export default class wofabu extends Component {
   getsearchtimes(){
  
   
-    fetch('http://192.168.50.30:3000/getsearchtimes'
+    fetch('http://121.196.27.141:3000/getsearchtimes'
     , {
       method: 'POST',
       headers: {
@@ -141,7 +141,7 @@ export default class wofabu extends Component {
   //搜索帖子数据
   searchzuopingtiezi() {
     console.log("title2:"+this.state.title)
-    fetch('http://192.168.50.30:3000/search_zuoping_yi',
+    fetch('http://121.196.27.141:3000/search_zuoping_yi',
       {
         method: 'POST',
         headers: {
@@ -222,7 +222,7 @@ export default class wofabu extends Component {
         </TouchableOpacity>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 8, marginRight: 15 }}>
           <View style={{ flexDirection: 'row', marginLeft: 5 }}>
-            <TouchableOpacity onPress={() => { Alert.alert("点赞+1"); }}>
+            <TouchableOpacity onPress={() => { }}>
               <Ionicons name={'md-heart-outline'} size={21} />
             </TouchableOpacity>
             <Text style={{ marginRight: 10 }}>{item.dianzhan}</Text>
@@ -230,21 +230,21 @@ export default class wofabu extends Component {
 
 
           <View style={{ flexDirection: 'row', marginLeft: 5 }}>
-            <TouchableOpacity onPress={() => { Alert.alert("评论+1"); }}>
+            <TouchableOpacity onPress={() => {  }}>
               <EvilIcons name={'comment'} size={27} />
             </TouchableOpacity>
             <Text style={{ marginRight: 10 }}>{item.pinglun}</Text>
           </View>
 
           <View style={{ flexDirection: 'row', marginLeft: 5 }}>
-            <TouchableOpacity onPress={() => { Alert.alert("收藏+1"); }}>
+            <TouchableOpacity onPress={() => {  }}>
               <AntDesign name={'staro'} size={20} />
             </TouchableOpacity>
             <Text>{item.dianzhan}</Text>
           </View>
 
           <View style={{ flexDirection: 'row', marginLeft: 5 }}>
-            <TouchableOpacity onPress={() => { Alert.alert("转发+1"); }}>
+            <TouchableOpacity onPress={() => {  }}>
               <Fontisto name={'share-a'} size={21} />
             </TouchableOpacity>
             <Text style={{ marginRight: 10 }}>{item.dianzhan}</Text>

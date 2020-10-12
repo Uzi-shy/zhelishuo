@@ -48,7 +48,7 @@ export default class Search extends Component {
     _onstarjudgeLogin = () => {
 
         var navigation = this.props.navigation;
-        fetch('http://192.168.50.30:3000/judgelogin', {
+        fetch('http://121.196.27.141:3000/judgelogin', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -59,7 +59,7 @@ export default class Search extends Component {
         }).then(function (json) {
             if (json.code == "200") {
 
-                alert("登录成功" + json.username);
+                // alert("登录成功" + json.username);
                 if(json.username=='huangfan'){
                     navigation.navigate('发布', {
                         username: json.username
@@ -95,7 +95,7 @@ export default class Search extends Component {
 
     //保持登录状态  
     _onClicksaveloginstate = () => {
-        fetch('http://192.168.50.30:3000/savelogin', {
+        fetch('http://121.196.27.141:3000/savelogin', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -116,7 +116,7 @@ export default class Search extends Component {
         // var {searchlogin}=this.state;
 
 
-        fetch('http://192.168.50.30:3000/login', {
+        fetch('http://121.196.27.141:3000/login', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
@@ -180,7 +180,7 @@ export default class Search extends Component {
 
 
                 {/* 登陆框 */}
-                <ImageBackground style={{ height: height - 100, width: width }} source={require('../img/dufu.jpg')}>
+                <ImageBackground style={{ height: height - 100, width: width }} source={{uri:'http://121.196.27.141/img/dufu.jpg'}}>
                     <TouchableWithoutFeedback onPress={this.tapBackground}>
                         <View style={{ width: "90%", alignItems: 'center', backgroundColor: "white", height: "65%", marginTop: 20, marginHorizontal: 20, borderRadius: 20, elevation: 10 }}>
 

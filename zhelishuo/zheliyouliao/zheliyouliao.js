@@ -20,29 +20,38 @@ import Feather from 'react-native-vector-icons/Feather';
 
 const ENTRIES1 = [
   {
-    title: '“相约杭州 诗画江南”米·顾依达油画展',
+    title: '秋蕊香——齐白石黄宾虹花鸟画展',
     subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    illustration: 'http://www.namoc.org/pictures/zlk/m/20101105_wklhjhyegydyhzpz_m.jpg',
-  },
+    illustration: 'http://121.196.27.141/img/zheliyouliao/书画展/秋.jpg',
+  }, 
   {
-    title: '解衣磅礴———钱瘦铁、桥本关雪交流回顾展',
+    title: '“襟向弁峰开”范斌钟文刚书画展',
     subtitle: 'Lorem ipsum dolor sit amet',
-    illustration: 'https://www.zjam.org.cn/SiteAdmin/Holding/Logo/20200723163026.jpg',
+    illustration: 'http://121.196.27.141/img/zheliyouliao/书画展/范斌2.jpg',
   },
   {
-    title: '向史而新——浙江百年水彩画作品展',
+    title: '“文心连社稷，翰墨颂小康”古越书画院迎国庆书画作品展',
     subtitle: 'Lorem ipsum dolor sit amet et nuncat ',
-    illustration: 'https://www.zjam.org.cn/SiteAdmin/Holding/Logo/20200731205542.jpg',
+    illustration: 'http://121.196.27.141/img/zheliyouliao/书画展/迎国庆.png',
   },
   {
-    title: '运河诗画展强势来袭！公益小天使“加盟”助力',
+    title: '“知天命”杨力郡中国画小品展',
     subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    illustration: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3539623675,3335480476&fm=26&gp=0.jpg',
+    illustration: 'http://121.196.27.141/img/zheliyouliao/书画展/杨力郡.jpg',
   },
+  // {
+  //   title: '“2020一万个太阳”大型公益画展',
+  //   subtitle: 'Lorem ipsum dolor sit amet',
+  //   illustration: 'http://121.196.27.141/img/zheliyouliao/书画展/一万个太阳.jpg',
+  // },
   {
-    title: '水色情缘”金焕大运河诗画展',
+    title: '“唐诗之路•诗画剡溪”浙江百年水彩画作品展',
     subtitle: 'Lorem ipsum dolor sit amet',
-    illustration: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597135588382&di=52c88a1cc6eda99f48597e15146fe8e6&imgtype=0&src=http%3A%2F%2Fwww.hqwhw.com%2Fhtml%2Fuploadfile%2F201810151804847.jpg',
+    illustration: 'http://121.196.27.141/img/zheliyouliao/书画展/唐诗.jpg',
+  },{
+    title: '“歌颂祖国”抗疫书画作品展',
+    subtitle: 'Lorem ipsum dolor sit amet',
+    illustration: 'http://121.196.27.141/img/zheliyouliao/书画展/歌颂祖国.png',
   },
 ];
 
@@ -84,14 +93,15 @@ function MyCarousel({ navigation }) {
 
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: "100%", height: 50, backgroundColor: 'white', borderBottomLeftRadius: 20, borderBottomRightRadius: 20, elevation: 5 }}>
         <View>
-          <TouchableWithoutFeedback style={{ justifyContent: 'flex-end', marginTop: 6, marginLeft: 4 }}
+          <TouchableWithoutFeedback style={{ justifyContent: 'flex-end', marginTop: 10, marginLeft: 10 }}
             onPress={() => {
               navigation.push("浙里有料黑夜模式");}}>
             <Feather name={"moon"} size={30} style={{ color: '#4F4F4F' }} />
           </TouchableWithoutFeedback>
         </View>
-        <Text style={{ fontSize: 22, fontWeight: 'bold' }}>浙里有料</Text>
-        <TouchableWithoutFeedback style={{ marginTop: 10, marginRight: 20 }} onPress={() => { navigation.navigate("搜索") }}>
+        <View style={{ marginTop: 10, marginLeft: 10}}>
+        <Text style={{ fontFamily: "youran",fontSize: 30}}>浙里有料</Text></View>
+        <TouchableWithoutFeedback style={{ marginTop: 10, marginRight: 10 }} onPress={() => { navigation.navigate("搜索") }}>
           <Ionicons name={'search'} size={30} />
         </TouchableWithoutFeedback>
       </View>

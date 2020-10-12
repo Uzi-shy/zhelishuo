@@ -43,7 +43,7 @@ const renderCarousel = () => (
 
 export default function xxx({route,navigation}){
     const { pic } = route.params;
-    const { p } = route.params;
+    const { name } = route.params;
     const { jieshao } = route.params;
     const { shengping } = route.params;
     const { diwei } = route.params;
@@ -61,18 +61,18 @@ export default function xxx({route,navigation}){
                             }} />
                             <View style={{flexDirection:'row'}}>
                             <View style={{marginRight:10}}>
-          <TouchableOpacity onPress={()=>{Alert.alert("点赞+1");}}>
+          <TouchableOpacity onPress={()=>{}}>
             <Ionicons name={'md-heart-outline'} size={23}/>
           </TouchableOpacity>  
             </View>
             <View style={{marginRight:8}}>
-          <TouchableOpacity onPress={()=>{ Alert.alert("收藏+1");}}>
+          <TouchableOpacity onPress={()=>{ }}>
            <AntDesign name={'staro'} size={22}/>
           </TouchableOpacity>
           </View>
           <View style={{marginRight:15}}>
             <TouchableOpacity 
-            onPress={()=>{Alert.alert('分享+1')}}>
+            onPress={()=>{}}>
             <AntDesign name={'sharealt'} size={23}/>
             </TouchableOpacity>
             </View>
@@ -89,7 +89,7 @@ export default function xxx({route,navigation}){
 
 
     <View>
-    <Text style={{fontSize:25,fontWeight:'bold'}}>{p}</Text>
+    <Text style={{fontSize:25,fontWeight:'bold'}}>{name}</Text>
     <Text style={{fontSize:16,marginRight:10,width:180}}>{jieshao}</Text>
     </View>
 </View>

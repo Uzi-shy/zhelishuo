@@ -67,7 +67,7 @@ constructor(props){
                         >{this.props.text}</AnimatedText>
 
                     <TouchableOpacity style={{
-                        position: "absolute", top: 20, right: 20
+                        position: "absolute", top: 15, right: 15
                     }}
                         onPress={this.closeCard}>
                         <AnimatedCloseView style={{ opacity: this.state.opacity }}>

@@ -27,7 +27,7 @@ export default class xx extends Component{
                 this.props.navigation.goBack()
               }}/>
                     </TouchableOpacity>
-                    <Text style={{fontSize:25}}>通用设置</Text>
+                    <Text style={{fontSize:30,fontFamily:"youran"}}>通用设置</Text>
                     <Text>    </Text>
                 </View>
                <View style={{marginTop:10,backgroundColor:'white',elevation:3,paddingHorizontal:15}}>
