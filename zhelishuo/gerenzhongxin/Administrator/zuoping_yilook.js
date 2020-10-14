@@ -75,16 +75,16 @@ export default class yummy extends Component {
 
 
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', height: 65, width: '100%', alignItems: 'center', backgroundColor: 'white' }}>
+                <View style={{ flexDirection: 'row', height: 65, width: '100%', alignItems: 'center', backgroundColor: 'white' }}>
 
-                    <View style={{ flexDirection: 'row', marginLeft: 25,marginTop: 15  }}>
-                        <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
+                    <View style={{ flexDirection: 'row',alignItems:'center',elevation:2, }}>
+                        <AntDesign name={'left'} style={{position:'absolute',left:10}} size={22} color={'#000'} onPress={() => {
                             this.props.navigation.goBack();
                         }} />
-                        <TouchableOpacity style={{marginTop: -5 ,marginLeft: 15 , width: 40, height: 40, borderRadius: 400 }}>
-                            <Image source={{uri:route.params.toux}} style={{ width: 40, height: 40, borderRadius: 400 }} />
+                        <TouchableOpacity style={{marginLeft:45 }}>
+                            <Image source={{uri:route.params.toux}} style={{ width: 35, height: 35, borderRadius: 400 }} />
                         </TouchableOpacity>
-                        <Text style={{ fontSize: 23, marginLeft: 10, alignItems: 'center' }}>{route.params.name}</Text>
+                        <Text style={{ fontSize: 18, marginLeft: 8, alignItems: 'center' }}>{route.params.name}</Text>
                     </View>
 
                     <View>
@@ -126,7 +126,7 @@ export default class yummy extends Component {
 
 
                     </ScrollView>
-                    <View style={{ bottom: 15, position: "absolute", flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10 }}>
+                    <View style={{ bottom: 20, position: "absolute", flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10 }}>
 
 
 

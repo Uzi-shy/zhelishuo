@@ -42,7 +42,7 @@ export default class wofabu extends Component {
                     </View>
 
                 </View>
-                <ScrollView style={{height:height-120}}>
+                <ScrollView style={{height:height-140}}>
                     <View style={{margin:20,padding:10,borderWidth:2}}>
                     <View style={{justifyContent: "center", alignItems: "center"}}>
                         <Text style={{ fontSize: 24, padding: 16}}>用户注册服务协议 </Text>

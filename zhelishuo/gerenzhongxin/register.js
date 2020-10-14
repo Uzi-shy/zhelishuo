@@ -212,8 +212,8 @@ _judgeusername=()=>{
               
               
               if( this.state.searchPass==this.state.searchPassagain){
-                Alert.alert('您输入的账号为：' + this.state.searchusername
-                + "您输入的密码为：" + this.state.searchPass)
+                // Alert.alert('您输入的账号为：' + this.state.searchusername
+                // + "您输入的密码为：" + this.state.searchPass)
 
                 this._judgeusername();
                 

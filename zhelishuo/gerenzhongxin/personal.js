@@ -427,27 +427,27 @@ export default class Zheliyouliao extends Component {
                             );
                           }}
                         >
-                          <Feather name={"moon"} size={30} style={{ color: '#4F4F4F' }} />
+                          <Feather name={"moon"} size={28} style={{ color: '#4F4F4F', }} />
                         </TouchableWithoutFeedback>
-
-                        <TouchableWithoutFeedback style={{ justifyContent: 'flex-end', marginLeft: 5, marginTop: 10, }}
-                          onPress={() => {
-                            this.props.navigation.push("设置");
-                          }}
-                        >
-                          <AntDesign name={"bells"} size={27} style={{ color: '#4F4F4F' }} />
-                        </TouchableWithoutFeedback>
-
-
-
-
 
                         <TouchableWithoutFeedback style={{ justifyContent: 'flex-end', marginTop: 10, }}
                           onPress={() => {
                             this.props.navigation.push("设置");
                           }}
                         >
-                          <AntDesign name={"setting"} size={30} style={{ color: '#4F4F4F' }} />
+                          <AntDesign name={"bells"} size={27} style={{ color: '#4F4F4F' ,marginHorizontal:5}} />
+                        </TouchableWithoutFeedback>
+
+
+
+
+
+                        <TouchableWithoutFeedback style={{ justifyContent: 'flex-end', marginTop: 10,marginRight:5 }}
+                          onPress={() => {
+                            this.props.navigation.push("设置");
+                          }}
+                        >
+                          <AntDesign name={"setting"} size={28} style={{ color: '#4F4F4F' }} />
                         </TouchableWithoutFeedback>
 
                       </View>
@@ -472,7 +472,7 @@ export default class Zheliyouliao extends Component {
 
                         <View style={{ marginLeft: 30 }}>
                           <Text style={{ fontSize: 25, marginTop: 10, fontWeight: 'bold' }}>{item.name}</Text>
-                          <Text style={{ fontSize: 15, color: '#7B7B7B', marginTop: 10 }}>浙里说账号：857857857</Text>
+                          <Text style={{ fontSize: 12, color: '#7B7B7B', marginTop: 10 }}>浙里说账号：857857857</Text>
                           <TouchableWithoutFeedback   onPress={() => {
                             this.props.navigation.push("个性签名");
                           }}>

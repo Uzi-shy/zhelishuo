@@ -42,7 +42,7 @@ render(){
 
     renderItem=({item})=>{
         return(
-            <View style={{backgroundColor:'#E0E0E0',padding:8,marginHorizontal:20,marginTop:20,flexDirection:'row',alignItems:'center'}}>
+            <View style={{backgroundColor:'#E0E0E0',padding:8,marginHorizontal:20,marginTop:20,flexDirection:'row',alignItems:'center',borderRadius:10}}>
             <View>
               <Image style={{height:80,width:120}} source={{uri:item.pic}}/>
               <Text style={{fontSize:16,marginVertical:4}}>{item.wen}</Text>
@@ -59,7 +59,7 @@ render(){
                </View>
                <View style={{width:0.4,height:120,backgroundColor:'black',marginHorizontal:10}}/>
                <View style={{alignItems:'center',justifyContent:'center'}}>
-                 <Ioncions name={'time-outline'} size={40} style={{marginLeft:20}}/>
+                 <Ioncions name={'time-outline'} size={30} style={{marginLeft:20}}/>
                </View>
           </View>
         );

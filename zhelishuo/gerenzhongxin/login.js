@@ -180,7 +180,7 @@ export default class Search extends Component {
                         <View style={{ width: "90%", alignItems: 'center', backgroundColor: "white", height: "65%", marginTop: 20, marginHorizontal: 20, borderRadius: 20, elevation: 10 }}>
 
                             <View style={[styles.inputBox]}>
-                                <Text style={{ fontFamily: "youran", marginLeft: 27, fontSize: 28 }}>{this.state.searchidentity}名</Text>
+                                <Text style={{ fontFamily: "youran", marginLeft: 27, fontSize: 25 }}>{this.state.searchidentity}名</Text>
                                 <View style={{ flexDirection: "row" }}>
                                     <FontAwesome style={{ alignItems: "center", marginLeft: 27, marginTop: 15 }} name={'user'} size={25} color={'#999999'} />
                                     <TextInput
@@ -201,7 +201,7 @@ export default class Search extends Component {
                             </View>
 
                             <View style={[styles.inputBox]}>
-                                <Text style={{ fontFamily: "youran",marginLeft: 27, fontSize: 28 }}>密码</Text>
+                                <Text style={{ fontFamily: "youran",marginLeft: 27, fontSize: 25 }}>密码</Text>
                                 <View style={{ flexDirection: "row" }}>
                                     <FontAwesome style={{ alignItems: "center", marginLeft: 27, marginTop: 18 }} name={'lock'} size={25} color={'#999999'} />
                                     <TextInput
@@ -218,8 +218,8 @@ export default class Search extends Component {
                                 <TouchableOpacity
                                     style={styles.button}
                                     onPress={() => {
-                                        Alert.alert('您输入的账号为：' + this.state.searchText
-                                            + "您输入的密码为：" + this.state.searchPass)
+                                        // Alert.alert('您输入的账号为：' + this.state.searchText
+                                        //     + "您输入的密码为：" + this.state.searchPass)
 
                                         this._onClicksaveloginstate();
                                         this._onClickLogin();
@@ -255,16 +255,13 @@ const styles = StyleSheet.create({
         height: 50,
         width: "100%",
         backgroundColor: "#FFFFFF",
-        borderBottomRightRadius: 15,
-        borderBottomLeftRadius: 15,
         elevation: 4,
     },
     nav_container: {
-        flex: 0.7,
-        marginTop: '6%',
+        flex: 1,
         flexDirection: "row",
         width: "100%",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
     },
     imgBox: {

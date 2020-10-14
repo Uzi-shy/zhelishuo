@@ -23,7 +23,7 @@ export default class PickerTest extends Component {
             <ImageBackground source={{uri:'http://121.196.27.141/img/dufu.jpg'}} style={{height:height,width:width}}>
               <View style={{flexDirection:'row',padding:10,justifyContent:'space-between'}}>
                 <EvilIcons name={'close'} size={25} />
-                <Text style={{fontSize:25,fontWeight:'700'}}>身份认证</Text>
+                <Text style={{fontSize:30,fontFamily:"youran"}}>身份认证</Text>
                 <Feather name={'more-horizontal'} size={25}/>
               </View>
               <View style={{alignItems:'center',justifyContent:'center',height:"75%"}}>
@@ -37,7 +37,7 @@ export default class PickerTest extends Component {
                 </TouchableOpacity>
                 <View style={{backgroundColor:'#5B5B5B',height:0.5,width:"90%"}}/>
                 <TouchableOpacity style={{flexDirection:'row',width:"90%",paddingVertical:10,alignItems:'center'}}>
-                <FontAwesome name={'mobile-phone'} size={18} style={{marginRight:10}} />
+                <FontAwesome name={'mobile-phone'} size={25} style={{marginRight:10}} />
                 <Text style={{fontSize:18}}>绑定手机</Text>
                 <Text style={{fontSize:18,position:'absolute',right:15}}>已满足</Text>
                 </TouchableOpacity>

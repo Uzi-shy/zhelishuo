@@ -150,11 +150,11 @@ function zaizhelishuo() {
 function huazuotop ({navigation}){
   return(
     <View>
-      <View style={{flexDirection:'row',alignItems:'center',width:"100%",height:50,backgroundColor:'white',borderBottomLeftRadius:20,borderBottomRightRadius:20,elevation:5}}>
-            <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
+      <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',width:"100%",height:50,backgroundColor:'white',elevation:4}}>
+            <AntDesign name={'left'} style={{position:'absolute',left:10}}size={25} color={'#000'} onPress={() => {
                                 navigation.goBack();
                             }} />
-            <Text style={{fontSize:30,fontFamily:'youran',marginTop:15,marginLeft:120}}>画作评析</Text>
+            <Text style={{fontSize:30,fontFamily:'youran'}}>画作评析</Text>
             
           </View>
           <View style={{height:'100%',width:'100%',backgroundColor:"pink",}}>
@@ -175,13 +175,13 @@ function huazuotop ({navigation}){
 function shiren({navigation}){
   return(<View>
                 
-    <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',width:"100%",height:50,backgroundColor:'white',borderBottomLeftRadius:20,borderBottomRightRadius:20,elevation:5}}>
+    <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',width:"100%",height:50,backgroundColor:'white',elevation:4,paddingHorizontal:10}}>
     <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
                         navigation.goBack()
                     }} />
-    <Text style={{fontSize:30,fontFamily:'youran',marginTop:15}}>诗人生平</Text>
-    <TouchableWithoutFeedback style={{marginTop:15,marginRight:20}}>
-      <Ionicons name={'search'} size={30}  />
+    <Text style={{fontSize:30,fontFamily:'youran',}}>诗人生平</Text>
+    <TouchableWithoutFeedback >
+      <Ionicons name={'search'} size={25}  />
     </TouchableWithoutFeedback>
   </View>
   <View style={{height:'100%',width:'100%',backgroundColor:"pink",}}>

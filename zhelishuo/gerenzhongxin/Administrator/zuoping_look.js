@@ -78,7 +78,7 @@ export default class yummy extends Component {
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', height: 65, width: '100%', alignItems: 'center', backgroundColor: 'white' }}>
 
                     <View style={{ flexDirection: 'row', marginLeft: 25,marginTop: 15  }}>
-                        <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
+                        <AntDesign name={'left'} style={{position:'absolute',left:10}} size={25} color={'#000'} onPress={() => {
                             this.props.navigation.goBack();
                         }} />
                         <TouchableOpacity style={{marginTop: -5 ,marginLeft: 15 , width: 40, height: 40, borderRadius: 400 }}>

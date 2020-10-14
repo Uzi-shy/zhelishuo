@@ -9,14 +9,14 @@ export default class xx extends Component{
     render(){
         return(
             <View style={{flex:1,backgroundColor:'#F0F0F0'}}>
-                <View style={{flexDirection:'row',justifyContent:'space-between',paddingLeft:10,paddingVertical:10,backgroundColor:'white',elevation:2}}>
-                    <TouchableOpacity onPress={() => {
+                <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center',padding:10,paddingVertical:10,backgroundColor:'white',elevation:2}}>
+                   
+                    <AntDesign name={'left'} style={{position:'absolute',left:10}} size={25} onPress={() => {
                 this.props.navigation.goBack()
-              }}>
-                    <AntDesign name={'left'} size={25}/>
-                    </TouchableOpacity>
+              }} />
+                 
                     <Text style={{fontSize:30,fontFamily:"youran"}}>关于浙里说</Text>
-                    <Text>      </Text>
+                   
                 </View>
                 <View>
                     <Image style={{resizeMode:'cover',height:200,width:"100%"}} source={{uri:'http://121.196.27.141/img/logo_1.png'}}/>
@@ -31,13 +31,13 @@ export default class xx extends Component{
                </View>
                <View style={{height:0.5,backgroundColor:'#7B7B7B'}}/>
                
-               <View style={{backgroundColor:'white',elevation:3,paddingHorizontal:15}}>
+               <View style={{backgroundColor:'white',elevation:1,paddingHorizontal:15}}>
                    <TouchableOpacity style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',paddingVertical:10}}>
                        <Text style={{fontSize:18}}>检查新版本</Text>
                        <AntDesign name={'right'} size={25}/>
                    </TouchableOpacity>
                </View>
-               <View style={{height:0.5,backgroundColor:'#7B7B7B'}}/>
+               {/* <View style={{height:0.5,backgroundColor:'#7B7B7B'}}/> */}
                </View>
                <View style={{alignItems:'center',justifyContent:'center',marginTop:200}}>
                    <Text style={{color:'#0080FF'}}>浙里说团队</Text>

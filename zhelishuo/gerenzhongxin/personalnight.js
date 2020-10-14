@@ -414,7 +414,7 @@ export default class Zheliyouliao extends Component {
 
                   <ScrollView style={{}}>
 
-                    <ImageBackground style={{ width: '100%' }} source={{ uri: item.toux.uri }}>
+                    <ImageBackground style={{ width: '100%' }} source={{ uri: 'http://121.196.27.141/img/dufu2.jpg' }}>
                       <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
 
                         <TouchableWithoutFeedback style={{ justifyContent: 'flex-end', marginTop: 10, }}

@@ -116,11 +116,11 @@ export default class ContentWaterfall extends Component {
                                                 style={{ width: itemWidth, height: 140 }}
                                             />
                                         </TouchableOpacity >
-                                        <Text style={{ fontSize: 15, marginVertical: 5 }}>{item.title}</Text>
+                                        <Text style={{ fontSize: 12, marginVertical: 5 ,width:140}} numberOfLines={2}>{item.title}</Text>
                                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                                <Image style={{ height: 25, width: 25, borderRadius: 400 }} source={{ uri: item.gerenxx[0].toux.uri }} />
-                                                <Text>{item.gerenxx[0].name}</Text>
+                                                <Image style={{ height: 20, width: 20, borderRadius: 400,marginRight:5 }} source={{ uri: item.gerenxx[0].toux.uri }} />
+                                                <Text style={{fontSize:10}}>{item.gerenxx[0].name}</Text>
                                             </View>
                                             <View style={{ marginRight: 5 }}>
                                             <Feather name={'check-square'} size={20}/>

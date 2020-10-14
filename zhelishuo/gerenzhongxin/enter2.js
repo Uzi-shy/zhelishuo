@@ -48,11 +48,11 @@ const Top = createMaterialTopTabNavigator();
 function qygl ({navigation}){
   return(
     <View>
-      <View style={{flexDirection:'row',alignItems:'center',width:"100%",height:80,backgroundColor:'white',borderBottomLeftRadius:20,borderBottomRightRadius:20,elevation:5}}>
-            <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
+      <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',width:"100%",height:50,backgroundColor:'white',elevation:4}}>
+            <AntDesign name={'left'} size={25} style={{position:'absolute',left:10}} color={'#000'} onPress={() => {
                                 navigation.goBack();
                             }} />
-            <Text style={{fontSize:30,fontWeight:'bold',fontFamily:'yegenyou',marginTop:15,marginLeft:140}}>签约管理</Text>
+            <Text style={{fontSize:30, fontFamily: "youran",}}>签约管理</Text>
             
           </View>
           <View style={{height:'100%',width:'100%',backgroundColor:"pink",}}>
@@ -69,11 +69,11 @@ function qygl ({navigation}){
 function zpsh ({navigation}){
   return(
   <View>
-      <View style={{flexDirection:'row',alignItems:'center',width:"100%",height:80,backgroundColor:'white',borderBottomLeftRadius:20,borderBottomRightRadius:20,elevation:5}}>
-            <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
+      <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',width:"100%",height:50,backgroundColor:'white',elevation:4}}>
+            <AntDesign name={'left'} style={{position:'absolute',left:10}} size={25} color={'#000'} onPress={() => {
                                 navigation.goBack();
                             }} />
-            <Text style={{fontSize:30,fontWeight:'bold',fontFamily:'yegenyou',marginTop:15,marginLeft:140}}>作品审核</Text>
+            <Text style={{fontSize:30, fontFamily: "youran"}}>作品审核</Text>
             
           </View>
           <View style={{height:'100%',width:'100%',backgroundColor:"pink",}}>
@@ -91,11 +91,11 @@ function plsh ({navigation}){
 
  
   <View>
-      <View style={{flexDirection:'row',alignItems:'center',width:"100%",height:80,backgroundColor:'white',borderBottomLeftRadius:20,borderBottomRightRadius:20,elevation:5}}>
-            <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
+      <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',width:"100%",height:50,backgroundColor:'white',elevation:4}}>
+            <AntDesign name={'left'} style={{position:'absolute',left:10}} size={25} color={'#000'} onPress={() => {
                                 navigation.goBack();
                             }} />
-            <Text style={{fontSize:30,fontWeight:'bold',fontFamily:'yegenyou',marginTop:15,marginLeft:140}}>评论审核</Text>
+            <Text style={{fontSize:30, fontFamily: "youran",}}>评论审核</Text>
             
           </View>
           <View style={{height:'100%',width:'100%',backgroundColor:"pink",}}>
@@ -110,11 +110,11 @@ function plsh ({navigation}){
 function jbcl ({navigation}){
   return(
   <View>
-      <View style={{flexDirection:'row',alignItems:'center',width:"100%",height:80,backgroundColor:'white',borderBottomLeftRadius:20,borderBottomRightRadius:20,elevation:5}}>
-            <AntDesign name={'left'} size={25} color={'#000'} onPress={() => {
+      <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',width:"100%",height:50,backgroundColor:'white',elevation:4}}>
+            <AntDesign name={'left'} style={{position:'absolute',left:10}} size={25} color={'#000'} onPress={() => {
                                 navigation.goBack();
                             }} />
-            <Text style={{fontSize:30,fontWeight:'bold',fontFamily:'yegenyou',marginTop:15,marginLeft:140}}>举报处理</Text>
+            <Text style={{fontSize:30,fontFamily: "youran",}}>举报处理</Text>
             
           </View>
           <View style={{height:'100%',width:'100%',backgroundColor:"pink",}}>

@@ -38,12 +38,12 @@ export default class weichuli extends Component {
 
     renderItem = ({ item }) => {
         return (
-            <View style={{ backgroundColor: '#E0E0E0', padding: 8, marginHorizontal: 20, marginTop: 20, flexDirection: 'row', alignItems: 'center' }}>
+            <View style={{ backgroundColor: '#E0E0E0', padding: 8, marginHorizontal: 20, marginTop: 20, flexDirection: 'row', alignItems: 'center',borderRadius:10 }}>
                 <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}>
                     
                     <View style={{flexDirection: 'row',alignItems: 'center'}}>
-                        <Image style={{ height: 50, width: 50, borderRadius: 400, marginRight: 10 }} source={{ uri: item.toux }} />
-                        <Text style={{ fontSize: 20 }}>{item.name}</Text>
+                        <Image style={{ height: 40, width: 40, borderRadius: 400, marginRight: 10 }} source={{ uri: item.toux }} />
+                        <Text style={{ fontSize: 15 }}>{item.name}</Text>
                     </View>
                 </TouchableOpacity>
             </View>

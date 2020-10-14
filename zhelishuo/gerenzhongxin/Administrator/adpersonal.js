@@ -97,7 +97,7 @@ export default class Zheliyouliao extends Component {
                 this.props.navigation.push("设置");
               }}
             >
-              <AntDesign name={"setting"} size={30} style={{ color: '#4F4F4F' }} />
+              <AntDesign name={"setting"} size={25} style={{ color: '#4F4F4F' }} />
             </TouchableWithoutFeedback>
 
             <View style={{ backgroundColor: "white", width: width, height: 500, marginTop: 220, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderTopColor: '#BEBEBE', borderWidth: 0.3, elevation: 60 }}>
@@ -107,10 +107,10 @@ export default class Zheliyouliao extends Component {
               </TouchableWithoutFeedback>
 
               <View style={{ marginLeft: 30 }}>
-            <Text style={{ fontSize: 25, marginTop: 10, fontWeight: 'bold' }}>管理员</Text>
-                <Text style={{ fontSize: 15, color: '#7B7B7B', marginTop: 10 }}>浙里说账号：10000</Text>
+            <Text style={{ fontSize: 22, marginTop: 10, fontWeight: 'bold' }}>管理员</Text>
+                <Text style={{ fontSize: 12, color: '#7B7B7B', marginTop: 10 }}>浙里说账号：10000</Text>
                 <TouchableWithoutFeedback >
-                  <Text style={{ fontSize: 17, color: '#272727', marginTop: 5 }}>这是一个内测管理员</Text>
+                  <Text style={{ fontSize: 15, color: '#272727', marginTop: 5 }}>这是一个内测管理员</Text>
                 </TouchableWithoutFeedback>
                 {/* <View style={{ flexDirection: 'row', justifyContent: 'flex-start', width: "100%", marginTop: 10 }}>
                   <TouchableWithoutFeedback style={{ backgroundColor: '#d0d0d0', opacity: 0.8, height: 25, width: 45, borderRadius: 8, marginRight: 10 }}>
@@ -151,39 +151,39 @@ export default class Zheliyouliao extends Component {
 
 
               </View>
-              <View style={{ height: 0.9, backgroundColor: '#ADADAD', marginTop: 20 }} />
+              <View style={{ height: 0.5, backgroundColor: '#ADADAD', marginTop: 20 }} />
 
 
 
-              <View style={{padding:20}}>
-              <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',height:40}} onPress={() => {
+              <View style={{padding:15}}>
+              <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',height:40,alignItems:'center'}} onPress={() => {
                                 this.props.navigation.navigate('签约管理');
                             }}>
-              <Text style={{fontSize:20}}>签约管理</Text>
-              <AntDesign name={'right'} size={25} color={'#000'} />
+              <Text style={{fontSize:18}}>签约管理</Text>
+              <AntDesign name={'right'} size={22} color={'#000'} />
               </TouchableOpacity>
-              <View style={{ height: 0.9, backgroundColor: '#ADADAD',marginBottom:7 }} />
-              <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',height:40}} onPress={() => {
+              <View style={{ height: 0.5, backgroundColor: '#ADADAD',marginBottom:7 }} />
+              <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',height:40,alignItems:'center'}} onPress={() => {
                                 this.props.navigation.navigate('作品审核');
                             }}>
-              <Text style={{fontSize:20}}>作品审核</Text>
-              <AntDesign name={'right'} size={25} color={'#000'} />
+              <Text style={{fontSize:18}}>作品审核</Text>
+              <AntDesign name={'right'} size={22} color={'#000'} />
               </TouchableOpacity>
-              <View style={{ height: 0.9, backgroundColor: '#ADADAD',marginBottom:7 }} />
-              <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',height:40}} onPress={() => {
+              <View style={{ height: 0.5, backgroundColor: '#ADADAD',marginBottom:7 }} />
+              <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',height:40,alignItems:'center'}} onPress={() => {
                                 this.props.navigation.navigate('评论审核');
                             }}>
-              <Text style={{fontSize:20}}>评论审核</Text>
-              <AntDesign name={'right'} size={25} color={'#000'} />
+              <Text style={{fontSize:18}}>评论审核</Text>
+              <AntDesign name={'right'} size={22} color={'#000'} />
               </TouchableOpacity>
-              <View style={{ height: 0.9, backgroundColor: '#ADADAD',marginBottom:7 }} />
-              <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',height:40}} onPress={() => {
+              <View style={{ height: 0.5, backgroundColor: '#ADADAD',marginBottom:7 }} />
+              <TouchableOpacity style={{flexDirection:'row',justifyContent:'space-between',height:40,alignItems:'center'}} onPress={() => {
                                 this.props.navigation.navigate('举报处理');
                             }}>
-              <Text style={{fontSize:20}}>举报处理</Text>
-              <AntDesign name={'right'} size={25} color={'#000'} />
+              <Text style={{fontSize:18}}>举报处理</Text>
+              <AntDesign name={'right'} size={22} color={'#000'} />
               </TouchableOpacity>
-              <View style={{ height: 0.9, backgroundColor: '#ADADAD',marginBottom:7 }} />
+              <View style={{ height: 0.5, backgroundColor: '#ADADAD',marginBottom:7 }} />
               </View>
               {/* <Personalnavigation /> */}
 

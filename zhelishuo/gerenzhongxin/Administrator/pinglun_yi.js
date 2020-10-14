@@ -57,19 +57,19 @@ render(){
 
     renderItem=({item})=>{
         return(
-                <View style={{backgroundColor:'#E0E0E0',padding:8,marginHorizontal:20,marginTop:20,flexDirection:'row',justifyContent:'space-between'}}>
+                <View style={{backgroundColor:'#E0E0E0',padding:8,marginHorizontal:20,marginTop:20,flexDirection:'row',justifyContent:'space-between',borderRadius:10}}>
                     <View >
                     <View style={{flexDirection:'row',alignItems:'center',marginBottom:10}}>
-                  <Image style={{height:30,width:30,borderRadius:400}} source={{uri:item.t1}}/>
-        <Text style={{fontSize:18,marginLeft:2}}>{item.s1}</Text>
-                  <Text style={{fontSize:15,marginHorizontal:7}}>评论</Text>
-                      <Image style={{height:30,width:30,borderRadius:400}} source={{uri:item.t2}}/>
-                      <Text style={{fontSize:18,marginLeft:2}}>{item.s2}</Text>
+                  <Image style={{height:25,width:25,borderRadius:400}} source={{uri:item.t1}}/>
+        <Text style={{fontSize:15,marginLeft:2}}>{item.s1}</Text>
+                  <Text style={{fontSize:12,marginHorizontal:7}}>评论</Text>
+                      <Image style={{height:25,width:25,borderRadius:400}} source={{uri:item.t2}}/>
+                      <Text style={{fontSize:15,marginLeft:2}}>{item.s2}</Text>
                       </View>
                       <Text style={{fontSize:15}}>{item.pinglun}</Text>
                       </View>
                       <View style={{marginRight:10,justifyContent:'center'}}>
-                          <Feather name={'check-square'} size={30}/>
+                          <Feather name={'check-square'} size={25}/>
                       </View>
                 </View>
                 
